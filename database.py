@@ -144,6 +144,17 @@ class Database:
             logger.error(f"Error checking post_exists: {e}")
             return False
 
+    def thread_exists_by_link(self, link: str) -> bool:
+        """Check thread đã tồn tại trong database chưa (bằng link)"""
+        query = "SELECT 1 FROM f319_list WHERE link = %s LIMIT 1"
+        try:
+            with self.get_cursor() as cursor:
+                cursor.execute(query, (link,))
+                return cursor.fetchone() is not None
+        except psycopg2.Error as e:
+            logger.error(f"Error checking thread_exists_by_link: {e}")
+            return False
+
     def get_last_post_id(self, thread_id: str) -> Optional[str]:
         """Lấy last_post_id đã lưu của thread"""
         query = "SELECT last_post_id FROM f319_list WHERE id = %s"

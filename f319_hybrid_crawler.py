@@ -307,16 +307,21 @@ class F319HybridCrawler:
 
         return (posts_list, old_posts_count, found_last_post)
 
-    def collect_thread_posts(self, url: str) -> int:
-        """Crawl posts với early stop + batch insert + crawl ngược (NHANH HƠN)"""
+    def collect_thread_posts(self, url: str, is_new_thread: bool = None) -> int:
+        """
+        Crawl posts với 2 chiến lược:
+        - Thread mới: crawl xuôi (1→cuối) để lấy hết data
+        - Thread cũ: crawl ngược (cuối→1) chỉ lấy posts mới
+        """
         start_time = time.time()
         total_collected = 0
         thread_id = self._extract_thread_id(url)
 
-        # Lấy last_post_id đã crawl lần trước
-        last_post_id = self.db.get_last_post_id(thread_id)
-        if last_post_id:
-            logger.info(f"[Thread {thread_id}] Found last_post_id: {last_post_id}, will crawl incremental")
+        # Check thread đã tồn tại trong database chưa (nếu chưa được pass từ ngoài)
+        if is_new_thread is None:
+            thread_exists = self.db.thread_exists_by_link(url)
+        else:
+            thread_exists = not is_new_thread
 
         # Fetch trang đầu để lấy total_pages
         soup = self._fetch_page(url)
@@ -326,64 +331,90 @@ class F319HybridCrawler:
         time.sleep(self.config.delay_between_requests)
 
         total_pages = self._get_total_pages(soup)
-        logger.info(f"[Thread {thread_id}] Has {total_pages} pages, starting reverse crawl...")
 
         # Buffer để batch insert
         posts_buffer = []
-        consecutive_old_posts = 0
-        should_stop = False
         newest_post_id = None
+        last_crawled_post_id = None
 
-        # CRAWL NGƯỢC: Từ page cuối về page đầu (posts mới nhất ở cuối)
-        for page in range(total_pages, 0, -1):
-            if should_stop:
-                break
+        if not thread_exists:
+            # THREAD MỚI: Crawl XUÔI từ page 1 → cuối
+            logger.info(f"[Thread {thread_id}] New thread, crawling forward 1→{total_pages}...")
 
-            page_url = f"{url}page-{page}" if page > 1 else url
+            for page in range(1, total_pages + 1):
+                page_url = f"{url}page-{page}" if page > 1 else url
 
-            soup = self._fetch_page(page_url)
-            if not soup:
-                continue
+                soup = self._fetch_page(page_url)
+                if not soup:
+                    continue
 
-            time.sleep(self.config.delay_between_requests)
+                time.sleep(self.config.delay_between_requests)
 
-            # Collect posts từ page
-            posts_list, old_count, found_last = self._collect_posts_from_page(soup, thread_id, last_post_id)
+                # Collect posts từ page (không cần check last_post_id vì là thread mới)
+                posts_list, _, _ = self._collect_posts_from_page(soup, thread_id, None)
 
-            # Lưu newest_post_id (từ page cuối cùng)
-            if not newest_post_id and posts_list:
-                newest_post_id = posts_list[0]['id']
+                # Lưu newest_post_id (post cuối cùng crawl được)
+                if posts_list:
+                    last_crawled_post_id = posts_list[-1]['id']  # Post cuối trong list
 
-            # Thêm vào buffer
-            posts_buffer.extend(posts_list)
+                # Thêm vào buffer
+                posts_buffer.extend(posts_list)
 
-            # Early stop nếu gặp last_post_id
-            if found_last:
-                logger.info(f"[Thread {thread_id}] Found last_post_id at page {page}, stopping...")
-                should_stop = True
-                break
+                # Batch insert khi buffer đầy
+                if len(posts_buffer) >= self.config.batch_size:
+                    inserted = self.db.batch_insert_posts(posts_buffer[:self.config.batch_size])
+                    total_collected += inserted
+                    logger.info(f"[Thread {thread_id}] Batch inserted {inserted}/{self.config.batch_size} posts at page {page}")
+                    posts_buffer = posts_buffer[self.config.batch_size:]
 
-            # Early stop nếu gặp nhiều posts cũ liên tiếp
-            consecutive_old_posts += old_count
-            if consecutive_old_posts >= self.config.early_stop_threshold:
-                logger.info(f"[Thread {thread_id}] Found {consecutive_old_posts} old posts, stopping at page {page}")
-                should_stop = True
-                break
+                    # Update last_post_id sau mỗi batch (để resume khi kill)
+                    if last_crawled_post_id:
+                        self.db.update_last_post_id(thread_id, last_crawled_post_id)
 
-            # Reset nếu có posts mới
-            if posts_list:
-                consecutive_old_posts = 0
+        else:
+            # THREAD CŨ: Crawl NGƯỢC từ page cuối → 1, dừng khi gặp last_post_id
+            last_post_id = self.db.get_last_post_id(thread_id)
+            logger.info(f"[Thread {thread_id}] Existing thread, crawling reverse {total_pages}→1 until last_post_id: {last_post_id}")
 
-            # Batch insert khi buffer đầy
-            if len(posts_buffer) >= self.config.batch_size:
-                inserted = self.db.batch_insert_posts(posts_buffer[:self.config.batch_size])
-                total_collected += inserted
-                logger.info(f"[Thread {thread_id}] Batch inserted {inserted}/{self.config.batch_size} posts at page {page}")
-                posts_buffer = posts_buffer[self.config.batch_size:]
+            should_stop = False
+            for page in range(total_pages, 0, -1):
+                if should_stop:
+                    break
 
-                # Update last_post_id ngay sau batch insert (để resume nhanh khi bị kill)
-                if newest_post_id:
-                    self.db.update_last_post_id(thread_id, newest_post_id)
+                page_url = f"{url}page-{page}" if page > 1 else url
+
+                soup = self._fetch_page(page_url)
+                if not soup:
+                    continue
+
+                time.sleep(self.config.delay_between_requests)
+
+                # Collect posts từ page
+                posts_list, _, found_last = self._collect_posts_from_page(soup, thread_id, last_post_id)
+
+                # Lưu newest_post_id (từ page cuối cùng)
+                if not newest_post_id and posts_list:
+                    newest_post_id = posts_list[0]['id']
+
+                # Thêm vào buffer
+                posts_buffer.extend(posts_list)
+
+                # Stop nếu gặp last_post_id
+                if found_last:
+                    logger.info(f"[Thread {thread_id}] Found last_post_id at page {page}, stopping...")
+                    should_stop = True
+                    break
+
+                # Batch insert khi buffer đầy
+                if len(posts_buffer) >= self.config.batch_size:
+                    inserted = self.db.batch_insert_posts(posts_buffer[:self.config.batch_size])
+                    total_collected += inserted
+                    logger.info(f"[Thread {thread_id}] Batch inserted {inserted}/{self.config.batch_size} posts at page {page}")
+                    posts_buffer = posts_buffer[self.config.batch_size:]
+
+                    # Update last_post_id ngay sau batch insert
+                    if newest_post_id:
+                        self.db.update_last_post_id(thread_id, newest_post_id)
 
         # Insert posts còn lại trong buffer
         if posts_buffer:
@@ -392,12 +423,9 @@ class F319HybridCrawler:
             logger.info(f"[Thread {thread_id}] Final batch inserted {inserted}/{len(posts_buffer)} posts")
 
             # Update last_post_id sau final batch
-            if newest_post_id:
-                self.db.update_last_post_id(thread_id, newest_post_id)
-
-        # Log final update
-        if newest_post_id:
-            logger.debug(f"[Thread {thread_id}] last_post_id = {newest_post_id}")
+            final_post_id = newest_post_id if thread_exists else last_crawled_post_id
+            if final_post_id:
+                self.db.update_last_post_id(thread_id, final_post_id)
 
         elapsed = time.time() - start_time
         logger.info(f"[Thread {thread_id}] Collected {total_collected} posts in {elapsed:.1f}s")
@@ -409,8 +437,15 @@ class F319HybridCrawler:
             thread_data = thread_info["data"]
             link = thread_info["link"]
 
+            # Check thread đã tồn tại chưa TRƯỚC khi insert
+            is_new_thread = not self.db.thread_exists_by_link(link)
+
+            # Chuẩn hóa thread_id: xóa prefix "thread-" để khớp với f319_post
+            normalized_thread_id = thread_data.id.replace("thread-", "")
+
+            # Insert thread info vào database
             self.db.insert_f319_list({
-                "id": thread_data.id,
+                "id": normalized_thread_id,
                 "title": thread_data.title,
                 "author": thread_data.author,
                 "start_date": thread_data.start_date,
@@ -422,7 +457,8 @@ class F319HybridCrawler:
 
             logger.info(f"[{index}/{total}] Crawl thread: {thread_data.title[:50]}...")
 
-            posts_count = self.collect_thread_posts(link)
+            # Pass flag is_new_thread để không phải check lại
+            posts_count = self.collect_thread_posts(link, is_new_thread=is_new_thread)
             logger.info(f"Thu thập được {posts_count} posts từ thread")
             return posts_count
 
@@ -482,25 +518,39 @@ class F319HybridCrawler:
                     # Đã ở trang đầu rồi sau khi click
                     pass
                 else:
-                    # Navigate trực tiếp bằng URL (tránh lỗi khi trang bị redirect sau idle lâu)
+                    # Lấy href từ nút "Tiếp >" và navigate trực tiếp (giữ session)
                     try:
-                        page_url = f"{base_url}?page={page}"
-                        self.driver.get(page_url)
-                        time.sleep(2)
-                        logger.info(f"Navigated to page {page}: {page_url}")
+                        next_btn = self.driver.find_element(By.XPATH, "//a[@class='text' and contains(text(), 'Tiếp')]")
+                        next_url = next_btn.get_attribute('href')
+
+                        if next_url:
+                            self.driver.get(next_url)
+                            time.sleep(2)
+                        else:
+                            logger.warning(f"Không lấy được URL trang {page}")
+                            break
                     except InvalidSessionIdException:
                         logger.warning(f"Driver crashed at page {page}, restarting...")
                         self.stop()
                         self.start()
-                        # Navigate lại đến trang hiện tại
+                        # Navigate lại đến base_url rồi click đến page hiện tại
                         try:
-                            retry_url = f"{base_url}?page={page}"
-                            self.driver.get(retry_url)
+                            self.driver.get(base_url)
                             time.sleep(3)
+                            # Click qua các trang cho đến page hiện tại
+                            for p in range(2, page + 1):
+                                next_btn = self.driver.find_element(By.XPATH, "//a[@class='text' and contains(text(), 'Tiếp')]")
+                                next_url = next_btn.get_attribute('href')
+                                if next_url:
+                                    self.driver.get(next_url)
+                                    time.sleep(2)
                             logger.info(f"Driver restarted, resumed at page {page}")
                         except Exception as retry_error:
                             logger.error(f"Failed to restart driver: {retry_error}")
                             break
+                    except NoSuchElementException:
+                        logger.warning(f"Không tìm thấy nút next tại trang {page}")
+                        break
                     except TimeoutException:
                         logger.error(f"Timeout khi navigate trang {page}")
                         break
