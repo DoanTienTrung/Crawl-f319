@@ -1,0 +1,22 @@
+# Requirements cho F319 Crawler
+# Python 3.8+
+
+# Selenium WebDriver
+selenium>=4.15.0
+
+# WebDriver Manager - tự động download chromedriver
+webdriver-manager>=4.0.1
+
+# PostgreSQL adapter
+psycopg2-binary>=2.9.9
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Logging và utilities
+colorlog>=6.7.0
+
+# Fast crawling với Requests + BeautifulSoup
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0

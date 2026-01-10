@@ -1,0 +1,478 @@
+
+import time
+import random
+import re
+import logging
+import requests
+from typing import Optional, List
+from datetime import datetime
+from dataclasses import dataclass
+from bs4 import BeautifulSoup
+
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from webdriver_manager.chrome import ChromeDriverManager
+
+from config import CrawlerConfig
+from database import Database
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class ThreadData:
+    id: str
+    title: str
+    author: str
+    start_date: str
+    last_post_date: str
+    link: str
+    views: str
+    replies: str
+
+
+@dataclass
+class PostData:
+    id: str
+    thread_id: str
+    author: str
+    author_link: str
+    post_date: int
+    content: str
+
+
+class F319FullCrawler:
+    """
+    Full crawler: Crawl TẤT CẢ pages danh sách threads và TẤT CẢ posts
+    - Selenium: Navigate từ trang chủ và pagination
+    - Requests: Crawl thread content (fast)
+    """
+
+    def __init__(self, db: Database, config: Optional[CrawlerConfig] = None):
+        self.db = db
+        self.config = config or CrawlerConfig()
+        self.driver: Optional[webdriver.Chrome] = None
+        self.session = requests.Session()
+        self.session.headers.update({
+            'User-Agent': self.config.user_agent
+        })
+
+    def _setup_driver(self) -> webdriver.Chrome:
+        """Setup Selenium driver"""
+        chrome_options = Options()
+
+        if self.config.headless:
+            chrome_options.add_argument("--headless")
+
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument(f"user-agent={self.config.user_agent}")
+
+        try:
+            service = Service(ChromeDriverManager().install())
+            driver = webdriver.Chrome(service=service, options=chrome_options)
+        except Exception as e:
+            logger.warning(f"webdriver-manager failed: {e}")
+            service = Service(self.config.chromedriver_path)
+            driver = webdriver.Chrome(service=service, options=chrome_options)
+
+        driver.set_page_load_timeout(self.config.page_load_timeout)
+        driver.implicitly_wait(self.config.implicit_wait)
+
+        return driver
+
+    def start(self):
+        if not self.driver:
+            self.driver = self._setup_driver()
+            logger.info("Selenium driver started")
+
+    def stop(self):
+        if self.driver:
+            self.driver.quit()
+            self.driver = None
+            logger.info("Selenium driver stopped")
+
+    def _random_delay(self):
+        delay = random.uniform(
+            self.config.min_random_delay,
+            self.config.max_random_delay
+        )
+        time.sleep(delay)
+
+    def _normalize_url(self, href: str) -> str:
+        if not href or href == "NA":
+            return "NA"
+        if href.startswith("http"):
+            return href
+        if href.startswith("/"):
+            return f"https://f319.com{href}"
+        return f"https://f319.com/{href}"
+
+    def _extract_thread_id(self, url: str) -> str:
+        match = re.search(r'\.(\d+)/?', url)
+        return match.group(1) if match else "unknown_thread_id"
+
+    def _parse_date(self, date_str: str) -> int:
+        try:
+            dt = datetime.strptime(date_str.strip(), "%d/%m/%Y, %H:%M")
+            return int(dt.timestamp())
+        except ValueError:
+            return int(datetime.now().timestamp())
+
+    def _extract_thread_data_selenium(self, item) -> Optional[ThreadData]:
+        """Extract thread data từ Selenium element"""
+        try:
+            thread_id = item.get_attribute('id') or 'Unknown_ID'
+
+            title_elem = item.find_element(By.CLASS_NAME, 'title')
+            title = title_elem.text if title_elem else "NA"
+
+            author = item.get_attribute('data-author') or 'Unknown'
+
+            datetime_elem = item.find_element(By.CLASS_NAME, 'DateTime')
+            start_date = datetime_elem.text if datetime_elem else "NA"
+
+            try:
+                last_post_info = item.find_element(By.CLASS_NAME, 'lastPostInfo')
+                last_date_elem = last_post_info.find_element(By.CLASS_NAME, 'DateTime')
+                last_post_date = last_date_elem.text
+            except:
+                last_post_date = "NA"
+
+            link_elem = item.find_element(By.CLASS_NAME, 'PreviewTooltip')
+            href = link_elem.get_attribute('href')
+            link = self._normalize_url(href)
+
+            try:
+                views_elem = item.find_element(By.CLASS_NAME, 'minor')
+                views = views_elem.text
+            except:
+                views = "NA"
+
+            try:
+                replies_elem = item.find_element(By.CLASS_NAME, 'major')
+                replies = replies_elem.text
+            except:
+                replies = "NA"
+
+            return ThreadData(
+                id=thread_id,
+                title=title,
+                author=author,
+                start_date=start_date,
+                last_post_date=last_post_date,
+                link=link,
+                views=views,
+                replies=replies
+            )
+
+        except Exception as e:
+            logger.error(f"Error extracting thread data: {e}")
+            return None
+
+    def _fetch_page(self, url: str) -> Optional[BeautifulSoup]:
+        """Fetch page bằng Requests (nhanh hơn Selenium)"""
+        for attempt in range(self.config.max_retries):
+            try:
+                response = self.session.get(url, timeout=self.config.page_load_timeout)
+                response.raise_for_status()
+                return BeautifulSoup(response.content, 'lxml')
+            except Exception as e:
+                logger.warning(f"Attempt {attempt + 1}/{self.config.max_retries} failed for {url}: {e}")
+                if attempt < self.config.max_retries - 1:
+                    time.sleep(self.config.retry_delay)
+
+        logger.error(f"Failed to fetch {url} after {self.config.max_retries} attempts")
+        return None
+
+    def _get_total_pages(self, soup: BeautifulSoup) -> int:
+        try:
+            page_nav = soup.select_one('.pageNavLinkGroup')
+            if page_nav:
+                page_header = page_nav.select_one('.pageNavHeader')
+                if page_header:
+                    text = page_header.get_text(strip=True)
+                    match = re.search(r'/\s*(\d+)', text)
+                    if match:
+                        return int(match.group(1))
+            return 1
+        except Exception:
+            return 1
+
+    def _get_total_pages_selenium(self) -> int:
+        """Lấy tổng số pages của danh sách threads bằng Selenium"""
+        try:
+            page_nav = self.driver.find_element(By.CLASS_NAME, "PageNav")
+            # Tìm element chứa text dạng "Trang 1 / 50"
+            page_header = page_nav.find_element(By.CSS_SELECTOR, ".pageNavHeader")
+            text = page_header.text
+            match = re.search(r'/\s*(\d+)', text)
+            if match:
+                total_pages = int(match.group(1))
+                logger.info(f"Phát hiện tổng số {total_pages} trang danh sách threads")
+                return total_pages
+            return 1
+        except NoSuchElementException:
+            logger.warning("Không tìm thấy pagination, chỉ có 1 trang")
+            return 1
+        except Exception as e:
+            logger.error(f"Lỗi khi detect số pages: {e}")
+            return 1
+
+    def _extract_post_data(self, post_elem, thread_id: str) -> Optional[PostData]:
+        try:
+            post_id = post_elem.get('id')
+            if not post_id:
+                return None
+
+            author = post_elem.get('data-author', 'Unknown')
+
+            username_elem = post_elem.select_one('.username')
+            author_link = self._normalize_url(
+                username_elem.get('href', '') if username_elem else "NA"
+            )
+
+            content_elem = post_elem.select_one('.messageContent')
+            if not content_elem:
+                return None
+
+            for quote in content_elem.select('.bbCodeBlock-expandContent'):
+                quote.decompose()
+            for attr in content_elem.select('.attribution.type'):
+                attr.decompose()
+
+            content = content_elem.get_text(strip=True)
+
+            date_elem = post_elem.select_one('.datePermalink')
+            date_str = date_elem.get_text(strip=True) if date_elem else ""
+            post_date = self._parse_date(date_str)
+
+            return PostData(
+                id=post_id,
+                thread_id=thread_id,
+                author=author,
+                author_link=author_link,
+                post_date=post_date,
+                content=content
+            )
+
+        except Exception as e:
+            logger.error(f"Error extracting post data: {e}")
+            return None
+
+    def _collect_posts_from_page(self, soup: BeautifulSoup, thread_id: str) -> int:
+        collected = 0
+
+        try:
+            main_content = soup.select_one('.mainContent')
+            if not main_content:
+                return 0
+
+            message_list = main_content.select_one('.messageList')
+            if not message_list:
+                return 0
+
+            posts = message_list.select('.message')
+
+            for post in posts:
+                try:
+                    post_data = self._extract_post_data(post, thread_id)
+
+                    if post_data and post_data.content.strip():
+                        if self.db.post_exists(post_data.id):
+                            logger.debug(f"Post {post_data.id} already exists, skipping")
+                            continue
+
+                        self.db.insert_f319_post({
+                            "id": post_data.id,
+                            "thread_id": post_data.thread_id,
+                            "author": post_data.author,
+                            "author_link": post_data.author_link,
+                            "post_date": post_data.post_date,
+                            "content": post_data.content
+                        })
+                        collected += 1
+
+                except Exception as e:
+                    logger.error(f"Error processing post: {e}")
+                    continue
+
+        except Exception as e:
+            logger.error(f"Error collecting posts: {e}")
+
+        return collected
+
+    def collect_thread_posts(self, url: str) -> int:
+        """Crawl TẤT CẢ posts trong thread bằng Requests"""
+        total_collected = 0
+        thread_id = self._extract_thread_id(url)
+
+        soup = self._fetch_page(url)
+        if not soup:
+            return 0
+
+        time.sleep(self.config.delay_between_requests)
+
+        total_pages = self._get_total_pages(soup)
+        logger.info(f"Thread {thread_id} has {total_pages} pages")
+
+        posts_collected = self._collect_posts_from_page(soup, thread_id)
+        total_collected += posts_collected
+
+        if total_pages > 1:
+            for page in range(2, total_pages + 1):
+                next_url = f"{url}page-{page}"
+
+                soup = self._fetch_page(next_url)
+                if not soup:
+                    continue
+
+                time.sleep(self.config.delay_between_requests)
+
+                posts_collected = self._collect_posts_from_page(soup, thread_id)
+                total_collected += posts_collected
+
+        logger.info(f"Collected {total_collected} posts from thread {thread_id}")
+        return total_collected
+
+    def click_hom_nay_co_gi(self) -> bool:
+        """Truy cập trang 'Hôm nay có gì?'"""
+        try:
+            logger.info("Đang truy cập 'Hôm nay có gì?'...")
+            # Truy cập trực tiếp (tránh timeout khi mở trang chủ)
+            self.driver.get("https://f319.com/find-new/threads")
+            time.sleep(2)
+            logger.info("✓ Đã truy cập 'Hôm nay có gì?' thành công")
+            return True
+
+        except Exception as e:
+            logger.error(f"Lỗi khi truy cập 'Hôm nay có gì?': {e}")
+            return False
+
+    def crawl_all_today_threads(self) -> int:
+        """
+        Crawl TẤT CẢ:
+        1. Mở trang chủ và click "Hôm nay có gì?"
+        2. Crawl TẤT CẢ pages danh sách threads (detect tự động)
+        3. Mỗi thread crawl TẤT CẢ posts
+        """
+        self.start()
+        total_collected = 0
+
+        try:
+            # BƯỚC 1: Mở trang chủ và click "Hôm nay có gì?"
+            if not self.click_hom_nay_co_gi():
+                logger.error("Không thể truy cập 'Hôm nay có gì?'")
+                return 0
+
+            # BƯỚC 2: Detect tổng số pages danh sách threads
+            total_list_pages = self._get_total_pages_selenium()
+            logger.info(f"🎯 Sẽ crawl TẤT CẢ {total_list_pages} trang danh sách threads")
+
+            # BƯỚC 3: Crawl từng trang danh sách threads
+            for page in range(1, total_list_pages + 1):
+                logger.info(f"📄 Đang xử lý trang {page}/{total_list_pages}")
+
+                # Navigate đến trang tiếp theo (nếu không phải page 1)
+                if page > 1:
+                    try:
+                        # Lấy href từ nút "Tiếp >" và navigate trực tiếp (tránh timeout)
+                        next_btn = self.driver.find_element(By.XPATH, "//a[@class='text' and contains(text(), 'Tiếp')]")
+                        next_url = next_btn.get_attribute('href')
+
+                        if next_url:
+                            self.driver.get(next_url)
+                            time.sleep(2)
+                        else:
+                            logger.warning(f"Không lấy được URL trang {page}")
+                            break
+                    except NoSuchElementException:
+                        logger.warning(f"Không tìm thấy nút next tại trang {page}")
+                        break
+                    except TimeoutException:
+                        logger.error(f"Timeout khi navigate trang {page}")
+                        break
+
+                time.sleep(self.config.delay_between_requests)
+
+                # Lấy danh sách threads
+                try:
+                    posts_list = self.driver.find_elements(By.CSS_SELECTOR, '.discussionListItem')
+                except NoSuchElementException:
+                    logger.warning(f"Không tìm thấy threads trên trang {page}")
+                    continue
+
+                if not posts_list:
+                    logger.info(f"Không còn threads trên trang {page}")
+                    break
+
+                logger.info(f"Tìm thấy {len(posts_list)} threads trên trang {page}")
+
+                # Thu thập thông tin threads
+                threads_to_crawl = []
+                for item in posts_list:
+                    try:
+                        thread_data = self._extract_thread_data_selenium(item)
+
+                        if thread_data and thread_data.link != "NA":
+                            threads_to_crawl.append({
+                                "data": thread_data,
+                                "link": thread_data.link
+                            })
+
+                    except Exception as e:
+                        logger.error(f"Lỗi extract thread data: {e}")
+                        continue
+
+                logger.info(f"Đã thu thập thông tin {len(threads_to_crawl)} threads, bắt đầu crawl posts...")
+
+                # Crawl posts từng thread
+                for idx, thread_info in enumerate(threads_to_crawl, 1):
+                    try:
+                        thread_data = thread_info["data"]
+                        link = thread_info["link"]
+
+                        # Lưu thread vào database
+                        self.db.insert_f319_list({
+                            "id": thread_data.id,
+                            "title": thread_data.title,
+                            "author": thread_data.author,
+                            "start_date": thread_data.start_date,
+                            "last_post_date": thread_data.last_post_date,
+                            "link": thread_data.link,
+                            "views": thread_data.views,
+                            "replies": thread_data.replies
+                        })
+
+                        logger.info(f"[{idx}/{len(threads_to_crawl)}] Crawl thread: {thread_data.title[:50]}...")
+
+                        # Crawl TẤT CẢ posts trong thread bằng Requests
+                        try:
+                            posts_count = self.collect_thread_posts(link)
+                            total_collected += posts_count
+                            logger.info(f"✓ Thu thập được {posts_count} posts từ thread")
+                        except Exception as thread_error:
+                            logger.error(f"✗ Lỗi crawl thread: {thread_error}")
+                            continue
+
+                    except Exception as e:
+                        logger.error(f"Lỗi xử lý thread: {e}")
+                        continue
+
+                logger.info(f"✓ Hoàn thành trang {page}/{total_list_pages}, tổng posts: {total_collected}")
+
+                self._random_delay()
+
+        finally:
+            self.stop()
+
+        logger.info(f"🎉 HOÀN TẤT! Tổng cộng thu thập: {total_collected} posts")
+        return total_collected
