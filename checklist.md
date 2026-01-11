@@ -1,2 +1,3 @@
-Clean code @f319_full: 
-Kiểm tra hàm hybrid
+- Refactor code:
+- Update Readme
+- Understanding source

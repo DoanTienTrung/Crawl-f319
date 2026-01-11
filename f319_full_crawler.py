@@ -8,6 +8,7 @@ from typing import Optional, List
 from datetime import datetime
 from dataclasses import dataclass
 from bs4 import BeautifulSoup
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -268,17 +269,18 @@ class F319FullCrawler:
             logger.error(f"Error extracting post data: {e}")
             return None
 
-    def _collect_posts_from_page(self, soup: BeautifulSoup, thread_id: str) -> int:
-        collected = 0
+    def _collect_posts_from_page(self, soup: BeautifulSoup, thread_id: str) -> List[dict]:
+        """Collect posts từ page, trả về list posts"""
+        posts_list = []
 
         try:
             main_content = soup.select_one('.mainContent')
             if not main_content:
-                return 0
+                return posts_list
 
             message_list = main_content.select_one('.messageList')
             if not message_list:
-                return 0
+                return posts_list
 
             posts = message_list.select('.message')
 
@@ -291,7 +293,7 @@ class F319FullCrawler:
                             logger.debug(f"Post {post_data.id} already exists, skipping")
                             continue
 
-                        self.db.insert_f319_post({
+                        posts_list.append({
                             "id": post_data.id,
                             "thread_id": post_data.thread_id,
                             "author": post_data.author,
@@ -299,7 +301,6 @@ class F319FullCrawler:
                             "post_date": post_data.post_date,
                             "content": post_data.content
                         })
-                        collected += 1
 
                 except Exception as e:
                     logger.error(f"Error processing post: {e}")
@@ -308,10 +309,11 @@ class F319FullCrawler:
         except Exception as e:
             logger.error(f"Error collecting posts: {e}")
 
-        return collected
+        return posts_list
 
     def collect_thread_posts(self, url: str) -> int:
-        """Crawl TẤT CẢ posts trong thread bằng Requests"""
+        """Crawl TẤT CẢ posts trong thread bằng Requests với batch insert"""
+        start_time = time.time()
         total_collected = 0
         thread_id = self._extract_thread_id(url)
 
@@ -324,24 +326,86 @@ class F319FullCrawler:
         total_pages = self._get_total_pages(soup)
         logger.info(f"Thread {thread_id} has {total_pages} pages")
 
-        posts_collected = self._collect_posts_from_page(soup, thread_id)
-        total_collected += posts_collected
+        # Buffer để batch insert
+        posts_buffer = []
+        last_crawled_post_id = None
 
-        if total_pages > 1:
-            for page in range(2, total_pages + 1):
-                next_url = f"{url}page-{page}"
+        # Crawl XUÔI từ page 1 → cuối
+        for page in range(1, total_pages + 1):
+            page_url = f"{url}page-{page}" if page > 1 else url
 
-                soup = self._fetch_page(next_url)
-                if not soup:
-                    continue
+            soup = self._fetch_page(page_url)
+            if not soup:
+                continue
 
-                time.sleep(self.config.delay_between_requests)
+            time.sleep(self.config.delay_between_requests)
 
-                posts_collected = self._collect_posts_from_page(soup, thread_id)
-                total_collected += posts_collected
+            # Collect posts từ page
+            posts_list = self._collect_posts_from_page(soup, thread_id)
 
-        logger.info(f"Collected {total_collected} posts from thread {thread_id}")
+            # Lưu last_crawled_post_id (post cuối cùng crawl được)
+            if posts_list:
+                last_crawled_post_id = posts_list[-1]['id']
+
+            # Thêm vào buffer
+            posts_buffer.extend(posts_list)
+
+            # Batch insert khi buffer đầy
+            if len(posts_buffer) >= self.config.batch_size:
+                inserted = self.db.batch_insert_posts(posts_buffer[:self.config.batch_size])
+                total_collected += inserted
+                logger.info(f"[Thread {thread_id}] Batch inserted {inserted}/{self.config.batch_size} posts at page {page}")
+                posts_buffer = posts_buffer[self.config.batch_size:]
+
+                # Update last_post_id sau mỗi batch
+                if last_crawled_post_id:
+                    self.db.update_last_post_id(thread_id, last_crawled_post_id)
+
+        # Insert posts còn lại trong buffer
+        if posts_buffer:
+            inserted = self.db.batch_insert_posts(posts_buffer)
+            total_collected += inserted
+            logger.info(f"[Thread {thread_id}] Final batch inserted {inserted}/{len(posts_buffer)} posts")
+
+            # Update last_post_id sau final batch
+            if last_crawled_post_id:
+                self.db.update_last_post_id(thread_id, last_crawled_post_id)
+
+        elapsed = time.time() - start_time
+        logger.info(f"[Thread {thread_id}] Collected {total_collected} posts in {elapsed:.1f}s")
         return total_collected
+
+    def _crawl_single_thread(self, thread_info: dict, index: int, total: int) -> int:
+        """Crawl 1 thread (dùng cho parallel crawling)"""
+        try:
+            thread_data = thread_info["data"]
+            link = thread_info["link"]
+
+            # Chuẩn hóa thread_id: xóa prefix "thread-" nếu có
+            normalized_thread_id = thread_data.id.replace("thread-", "")
+
+            # Insert thread info vào database
+            self.db.insert_f319_list({
+                "id": normalized_thread_id,
+                "title": thread_data.title,
+                "author": thread_data.author,
+                "start_date": thread_data.start_date,
+                "last_post_date": thread_data.last_post_date,
+                "link": thread_data.link,
+                "views": thread_data.views,
+                "replies": thread_data.replies
+            })
+
+            logger.info(f"[{index}/{total}] Crawl thread: {thread_data.title[:50]}...")
+
+            # Crawl posts
+            posts_count = self.collect_thread_posts(link)
+            logger.info(f"✓ Thu thập được {posts_count} posts từ thread")
+            return posts_count
+
+        except Exception as e:
+            logger.error(f"Lỗi crawl thread: {e}")
+            return 0
 
     def click_hom_nay_co_gi(self) -> bool:
         """Truy cập trang 'Hôm nay có gì?'"""
@@ -434,38 +498,24 @@ class F319FullCrawler:
 
                 logger.info(f"Đã thu thập thông tin {len(threads_to_crawl)} threads, bắt đầu crawl posts...")
 
-                # Crawl posts từng thread
-                for idx, thread_info in enumerate(threads_to_crawl, 1):
-                    try:
-                        thread_data = thread_info["data"]
-                        link = thread_info["link"]
+                # Crawl nhiều threads CÙNG LÚC (parallel crawling)
+                total_threads = len(threads_to_crawl)
 
-                        # Lưu thread vào database
-                        self.db.insert_f319_list({
-                            "id": thread_data.id,
-                            "title": thread_data.title,
-                            "author": thread_data.author,
-                            "start_date": thread_data.start_date,
-                            "last_post_date": thread_data.last_post_date,
-                            "link": thread_data.link,
-                            "views": thread_data.views,
-                            "replies": thread_data.replies
-                        })
+                with ThreadPoolExecutor(max_workers=self.config.max_thread_workers) as executor:
+                    # Submit tất cả thread crawl tasks
+                    future_to_thread = {
+                        executor.submit(self._crawl_single_thread, thread_info, idx, total_threads): idx
+                        for idx, thread_info in enumerate(threads_to_crawl, 1)
+                    }
 
-                        logger.info(f"[{idx}/{len(threads_to_crawl)}] Crawl thread: {thread_data.title[:50]}...")
-
-                        # Crawl TẤT CẢ posts trong thread bằng Requests
+                    # Collect results khi hoàn thành
+                    for future in as_completed(future_to_thread):
+                        thread_idx = future_to_thread[future]
                         try:
-                            posts_count = self.collect_thread_posts(link)
+                            posts_count = future.result()
                             total_collected += posts_count
-                            logger.info(f"✓ Thu thập được {posts_count} posts từ thread")
-                        except Exception as thread_error:
-                            logger.error(f"✗ Lỗi crawl thread: {thread_error}")
-                            continue
-
-                    except Exception as e:
-                        logger.error(f"Lỗi xử lý thread: {e}")
-                        continue
+                        except Exception as e:
+                            logger.error(f"Thread {thread_idx} crawl failed: {e}")
 
                 logger.info(f"✓ Hoàn thành trang {page}/{total_list_pages}, tổng posts: {total_collected}")
 
