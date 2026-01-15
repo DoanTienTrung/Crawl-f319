@@ -47,13 +47,13 @@ class CrawlerConfig:
 @dataclass
 class SchedulerConfig:
     # Full crawler - chạy hàng ngày lúc 2h sáng
-    full_crawler_enabled: bool = False
+    full_crawler_enabled: bool = True
     full_crawler_hour: int = 2
     full_crawler_minute: int = 0
     
-    # Hybrid crawler - chạy mỗi 6 tiếng
+    # Hybrid crawler - chạy mỗi 1 tiếng
     hybrid_crawler_enabled: bool = True
-    hybrid_crawler_interval_hours: int = 4
+    hybrid_crawler_interval_hours: int = 1
     
     # Chung
     timezone: str = "Asia/Ho_Chi_Minh"

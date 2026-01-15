@@ -11,18 +11,37 @@ Tool crawl dữ liệu mới nhất từ diễn đàn F319.com với hai chế �
 - ✅ **Parallel Threads**: Crawl 2-3 threads cùng lúc → Tăng tốc 2x
 - ✅ **Hybrid Mode**: Selenium (navigation) + Requests (content) → Tốc độ tối ưu
 - ✅ **Resume Support**: Dừng/chạy lại bất cứ lúc nào
+- ✅ **Auto Scheduler**: Lập lịch chạy tự động với APScheduler
+
+## Công nghệ sử dụng
+
+| Công nghệ | Phiên bản | Mục đích |
+|-----------|-----------|----------|
+| Python | 3.8+ | Ngôn ngữ chính |
+| Selenium | 4.15+ | Browser automation, navigation |
+| Requests | 2.31+ | HTTP requests (nhanh hơn Selenium) |
+| BeautifulSoup4 | 4.12+ | HTML parsing |
+| PostgreSQL | - | Database lưu trữ |
+| psycopg2 | 2.9+ | PostgreSQL adapter |
+| APScheduler | 3.10+ | Job scheduling |
+| webdriver-manager | 4.0+ | Tự động download ChromeDriver |
+| python-dotenv | 1.0+ | Quản lý environment variables |
 
 ## Cấu trúc thư mục
 
 ```
 Crawl/
-├── config.py                # Cấu hình crawler, database, selectors
+├── config.py                # Cấu hình crawler, database, scheduler
 ├── database.py              # PostgreSQL operations với batch insert
 ├── f319_hybrid_crawler.py   # Hybrid: Selenium + Requests (NHANH)
 ├── f319_full_crawler.py     # Full: Crawl toàn bộ từ homepage
 ├── main.py                  # CLI entry point
+├── scheduler.py             # Lập lịch chạy tự động (APScheduler)
 ├── requirements.txt         # Dependencies
-├── .env.example             # Template biến môi trường
+├── .env                     # Biến môi trường (tạo từ .env.example)
+├── logs/                    # Thư mục chứa log files
+│   ├── crawl_*.log          # Log từ crawler
+│   └── scheduler_*.log      # Log từ scheduler
 └── README.md                # Documentation
 ```
 
@@ -107,6 +126,36 @@ python main.py full
 
 # Headless mode
 python main.py full --headless
+```
+
+### ⏰ Scheduler Mode
+
+Chạy crawler tự động theo lịch:
+
+```bash
+# Khởi động scheduler (chạy nền)
+python scheduler.py
+
+# Test cả 2 crawlers
+python scheduler.py test
+```
+
+**Lịch mặc định** (config trong [config.py](config.py)):
+
+| Crawler | Lịch | Trạng thái |
+|---------|------|------------|
+| Hybrid | Mỗi 4 giờ | ✅ Enabled |
+| Full | 2:00 AM hàng ngày | ❌ Disabled |
+
+**Tùy chỉnh scheduler:**
+```python
+# config.py - SchedulerConfig
+hybrid_interval_hours: int = 4      # Chạy hybrid mỗi 4 giờ
+full_cron_hour: int = 2             # Chạy full lúc 2:00 AM
+full_cron_minute: int = 0
+timezone: str = "Asia/Ho_Chi_Minh"
+enable_full_scheduler: bool = False # Bật/tắt full scheduler
+enable_hybrid_scheduler: bool = True
 ```
 
 ## Cách hoạt động

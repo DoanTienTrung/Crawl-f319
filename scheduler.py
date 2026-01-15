@@ -2,6 +2,7 @@ import logging
 import signal
 import sys
 import time
+import os
 from datetime import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
@@ -12,11 +13,23 @@ from database import Database
 from f319_full_crawler import F319FullCrawler
 from f319_hybrid_crawler import F319HybridCrawler
 
+# Tạo thư mục logs nếu chưa có
+if not os.path.exists('logs'):
+    os.makedirs('logs')
+
+log_filename = f"logs/scheduler_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
+
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler(log_filename, encoding='utf-8')
+    ],
+    force=True
 )
 logger = logging.getLogger(__name__)
+logger.info(f"Log file created: {log_filename}")
 
 
 class CrawlerScheduler:
