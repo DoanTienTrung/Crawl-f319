@@ -22,8 +22,6 @@ class CrawlerConfig:
         r"D:\Chat\chromedriver-win64\chromedriver-win64\chromedriver.exe"
     )
 
-    base_url: str = "https://f319.com"
-    find_new_posts_url: str = "https://f319.com/find-new/posts"
 
     page_load_timeout: int = 60
     implicit_wait: int = 10
@@ -33,9 +31,9 @@ class CrawlerConfig:
 
     max_retries: int = 3
     retry_delay: int = 3
-    max_thread_workers: int = 2  # Số threads (khác nhau) crawl song song
+    max_thread_workers: int = 2  # Số threads crawl song song
 
-    early_stop_threshold: int = 20  # Số posts cũ liên tiếp để dừng crawl
+    
     batch_size: int = 100  # Số posts insert cùng lúc
 
     headless: bool = False
@@ -46,33 +44,18 @@ class CrawlerConfig:
     )
 
 
-SKIP_LINKS: List[str] = [
-    "https://f319.com/threads/quy-dinh-dien-dan-f319-com-topic-giai-quyet-thac-mac-va-yeu-cau.1804467/",
-    "https://f319.com/threads/admin-gioi-thieu-phan-mem-tu-van-dau-tu-an-tuong-nhat-tu-truoc-toi-nay.1857301/",
-    "https://f319.com/threads/phan-tich-ky-thuat-ta-chi-chia-se-kien-thuc-ko-spam.13691/",
-    "https://f319.com/threads/canh-bao-bao-mat-nghiem-trong-voi-dien-thoai-chay-he-dieu-hanh-android.1859185/"
-]
+@dataclass
+class SchedulerConfig:
+    # Full crawler - chạy hàng ngày lúc 2h sáng
+    full_crawler_enabled: bool = False
+    full_crawler_hour: int = 2
+    full_crawler_minute: int = 0
+    
+    # Hybrid crawler - chạy mỗi 6 tiếng
+    hybrid_crawler_enabled: bool = True
+    hybrid_crawler_interval_hours: int = 4
+    
+    # Chung
+    timezone: str = "Asia/Ho_Chi_Minh"
 
 
-class F319Selectors:
-    DISCUSSION_LIST_ITEMS = "discussionListItems"
-    DISCUSSION_LIST_ITEM = "discussionListItem"
-    TITLE = "title"
-    DATETIME = "DateTime"
-    LAST_POST_INFO = "lastPostInfo"
-    PREVIEW_TOOLTIP = "PreviewTooltip"
-    MINOR = "minor"
-    MAJOR = "major"
-
-    MAIN_CONTENT = "mainContent"
-    MESSAGE_LIST = "messageList"
-    MESSAGE = "message"
-    MESSAGE_CONTENT = "messageContent"
-    USERNAME = "username"
-    DATE_PERMALINK = "datePermalink"
-    QUOTE = "quote"
-    ATTRIBUTION_TYPE = "attribution type"
-    PAGE_NAV_GROUP = "pageNavLinkGroup"
-    PAGE_NAV_HEADER = "pageNavHeader"
-
-    NEW_POSTS_LIST = "discussionListItems"
