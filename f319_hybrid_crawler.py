@@ -245,6 +245,46 @@ class F319HybridCrawler:
             logger.error(f"Error extracting post data: {e}")
             return None
 
+    def _parse_thread_date(self, date_str: str) -> Optional[datetime]:
+        """Parse ngày tạo thread từ string"""
+        try:
+            formats = [
+                "%d/%m/%Y, %H:%M",  # 15/01/2025, 14:30
+                "%d/%m/%Y",         # 15/01/2025
+                "%d-%m-%Y, %H:%M",  # 15-01-2025, 14:30
+                "%d-%m-%Y",         # 15-01-2025
+            ]
+            
+            for fmt in formats:
+                try:
+                    return datetime.strptime(date_str.strip(), fmt)
+                except ValueError:
+                    continue
+                    
+            return None
+        
+        except Exception:
+            return None
+
+
+    def _is_thread_after_start_date(self, thread_start_date: str) -> bool:
+        """Kiểm tra thread có được tạo sau ngày bắt đầu không"""
+        if not self.config.enable_thread_date_filter:
+            return True
+            
+        try:
+            thread_dt = self._parse_thread_date(thread_start_date)
+            if not thread_dt:
+                return True  # Accept nếu không parse được
+                
+            start_dt = datetime.strptime(self.config.thread_start_date, "%d/%m/%Y")
+            return thread_dt >= start_dt
+            
+        except Exception:
+            return True  # Accept nếu có lỗi
+
+
+
     def _collect_posts_from_page(self, soup: BeautifulSoup, thread_id: str, last_post_id: Optional[str] = None) -> tuple:
         posts_list = []
         old_posts_count = 0
@@ -333,7 +373,7 @@ class F319HybridCrawler:
                 posts_list, _, _ = self._collect_posts_from_page(soup, thread_id, None)
 
                 if posts_list:
-                    last_crawled_post_id = posts_list[-1]['id']
+                    last_crawled_post_id = posts_list[0]['id']
 
                 posts_buffer.extend(posts_list)
 
@@ -456,6 +496,12 @@ class F319HybridCrawler:
         thread_stats = []
 
         try:
+            # Log filter info
+            if self.config.enable_thread_date_filter:
+                logger.info(f"📅 Thread filter: Only threads from {self.config.thread_start_date} onwards")
+            else:
+                logger.info("📅 Thread filter disabled: Processing all threads")
+
             logger.info("Đang load trang (New posts)...")
 
             possible_urls = [
@@ -540,19 +586,40 @@ class F319HybridCrawler:
                 logger.info(f"Tìm thấy {len(posts_list)} threads trên trang {page}")
 
                 threads_to_crawl = []
+                filtered_count = 0  # Đếm threads bị lọc
+                
                 for item in posts_list:
                     try:
                         thread_data = self._extract_thread_data_selenium(item)
 
                         if thread_data and thread_data.link != "NA":
+                            # Kiểm tra ngày tạo thread
+                            if not self._is_thread_after_start_date(thread_data.start_date):
+                                filtered_count += 1
+                                logger.info(f"🚫 FILTERED: '{thread_data.title[:50]}' (Created: {thread_data.start_date})")
+                                continue
+                                
                             threads_to_crawl.append({
                                 "data": thread_data,
                                 "link": thread_data.link
                             })
+                            logger.info(f"✅ ACCEPTED: '{thread_data.title[:50]}' (Created: {thread_data.start_date})")
 
                     except Exception as e:
                         logger.error(f"Lỗi extract thread data: {e}")
                         continue
+
+                # Log kết quả filter
+                logger.info(f"📊 Page {page}: {len(threads_to_crawl)} threads accepted, {filtered_count} filtered out")
+                
+                if filtered_count > 0:
+                    logger.info(f"🗓️  Filtered {filtered_count} threads older than {self.config.thread_start_date}")
+                if len(threads_to_crawl) > 0:
+                    logger.info(f"🎯 Processing {len(threads_to_crawl)} threads from {self.config.thread_start_date} onwards")
+                
+                if not threads_to_crawl:
+                    logger.info(f"No threads to crawl on page {page} after date filtering")
+                    continue
 
                 logger.info(f"Đã thu thập thông tin {len(threads_to_crawl)} threads, bắt đầu crawl posts...")
 
@@ -576,6 +643,17 @@ class F319HybridCrawler:
                 logger.info(f"Hoàn thành trang {page}, tổng posts: {total_collected}")
 
                 self._random_delay()
+
+            # Tổng kết cuối crawler
+            total_threads_processed = len(thread_stats)
+            
+            logger.info("="*60)
+            logger.info("📋 THREAD FILTERING SUMMARY")
+            logger.info("="*60)
+            logger.info(f"📅 Filter date: {self.config.thread_start_date}")
+            logger.info(f"✅ Threads processed: {total_threads_processed}")
+            logger.info(f"📝 Total posts collected: {total_collected}")
+            logger.info("="*60)
 
         finally:
             self.stop()

@@ -42,6 +42,10 @@ class CrawlerConfig:
         "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/120.0.0.0 Safari/537.36"
     )
+    
+    # Thread date filtering
+    thread_start_date: str = "01/01/2025"  
+    enable_thread_date_filter: bool = True
 
 
 @dataclass

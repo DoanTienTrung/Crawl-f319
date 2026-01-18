@@ -1,0 +1,543 @@
+2026-01-18 20:33:57,269 - INFO - Log file created: logs/crawl_2026-01-18_20-33-57.log
+2026-01-18 20:33:57,270 - INFO - Initializing database connection...
+2026-01-18 20:33:57,311 - INFO - Connected to PostgreSQL: f319_data
+2026-01-18 20:33:57,327 - INFO - Tables created/verified successfully
+2026-01-18 20:33:57,327 - INFO - Starting hybrid crawl for 5 pages
+2026-01-18 20:33:57,327 - INFO - ====== WebDriver manager ======
+2026-01-18 20:33:58,229 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-18 20:33:59,289 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-18 20:34:00,043 - INFO - Driver [C:\Users\admin\.wdm\drivers\chromedriver\win64\143.0.7499.192\chromedriver-win32/chromedriver.exe] found in cache
+2026-01-18 20:34:01,775 - INFO - Selenium driver started
+2026-01-18 20:34:01,775 - INFO - 📅 Thread filter: Only threads from 01/01/2025 onwards
+2026-01-18 20:34:01,776 - INFO - Đang load trang (New posts)...
+2026-01-18 20:34:13,031 - INFO - ✓ URL có pagination: https://f319.com/find-new/posts
+2026-01-18 20:34:13,032 - INFO - Sử dụng URL: https://f319.com/find-new/posts
+2026-01-18 20:34:13,032 - INFO - Đang xử lý trang 1
+2026-01-18 20:34:15,079 - INFO - Tìm thấy 20 threads trên trang 1
+2026-01-18 20:34:15,568 - INFO - ✅ ACCEPTED: 'Ngôi nhà nhỏ trên Thảo Nguyên - P86' (Created: 01/01/2026)
+2026-01-18 20:34:15,952 - INFO - ✅ ACCEPTED: 'Nỗi ám ảnh mang tên mua nhà Hà Nội' (Created: 01/10/2025)
+2026-01-18 20:34:16,347 - INFO - ✅ ACCEPTED: 'Tản mạn về CPI và TTCK (53)' (Created: 03/01/2026)
+2026-01-18 20:34:16,633 - INFO - ✅ ACCEPTED: 'DXG sao rẻ thế' (Created: Thứ sáu lúc 14:19)
+2026-01-18 20:34:17,028 - INFO - ✅ ACCEPTED: 'DIG khủng long đất Sạch 10.000 ha vươn mình thức g' (Created: Hôm nay lúc 17:40)
+2026-01-18 20:34:17,449 - INFO - 🚫 FILTERED: 'Lạm bàn về Cảng Đà Nẵng - CDN' (Created: 15/08/2024)
+2026-01-18 20:34:17,706 - INFO - ✅ ACCEPTED: 'VIC, VPL, VHM, VRE vẫn sẽ mang lại ấm no trong năm' (Created: 04/01/2026)
+2026-01-18 20:34:18,041 - INFO - ✅ ACCEPTED: 'Thị trường phân kỳ-Rủi ro hiện hữu' (Created: Hôm nay lúc 05:35)
+2026-01-18 20:34:18,420 - INFO - ✅ ACCEPTED: 'Đầu tư giá trị_Công ty nhỏ nhưng tăng trưởng lớn' (Created: 26/11/2025)
+2026-01-18 20:34:18,888 - INFO - ✅ ACCEPTED: 'HAG khi niềm tin trở lại' (Created: 25/03/2025)
+2026-01-18 20:34:19,336 - INFO - ✅ ACCEPTED: 'SKG- Đón sóng APEC' (Created: 27/02/2025)
+2026-01-18 20:34:19,774 - INFO - ✅ ACCEPTED: 'VND hạnh phúc của tôi !' (Created: Hôm nay lúc 14:09)
+2026-01-18 20:34:20,089 - INFO - 🚫 FILTERED: '" HNG " VỚI TẦM NHÌN "Trở thành Tập đoàn nông nghi' (Created: 08/05/2024)
+2026-01-18 20:34:20,444 - INFO - ✅ ACCEPTED: 'HTI - 3 năm tích lũy, đến lúc nở hoa?' (Created: 12/02/2025)
+2026-01-18 20:34:20,683 - INFO - ✅ ACCEPTED: 'Tọa sơn, thưởng trà….Luận phong thủy cho năm Bính ' (Created: 03/01/2026)
+2026-01-18 20:34:20,880 - INFO - ✅ ACCEPTED: 'Dòng P đang chân sóng lớn $$$$$' (Created: 29/10/2025)
+2026-01-18 20:34:21,132 - INFO - ✅ ACCEPTED: 'Nhóm công nghệ và viễn thông- 2 đại diện VGI và FP' (Created: Hôm nay lúc 11:06)
+2026-01-18 20:34:21,417 - INFO - 🚫 FILTERED: 'SZL-có xứng đáng để đầu tư?' (Created: 27/04/2019)
+2026-01-18 20:34:21,687 - INFO - ✅ ACCEPTED: 'Sóng chủ đạo 2026 là cổ phiếu nhà nước và nâng hạn' (Created: 08/01/2026)
+2026-01-18 20:34:21,920 - INFO - ✅ ACCEPTED: 'LLM - Tổng thầu EPC số 1 VN khởi động thoái vốn NN' (Created: Hôm nay lúc 16:54)
+2026-01-18 20:34:21,921 - INFO - 📊 Page 1: 17 threads accepted, 3 filtered out
+2026-01-18 20:34:21,922 - INFO - 🗓️  Filtered 3 threads older than 01/01/2025
+2026-01-18 20:34:21,922 - INFO - 🎯 Processing 17 threads from 01/01/2025 onwards
+2026-01-18 20:34:21,922 - INFO - Đã thu thập thông tin 17 threads, bắt đầu crawl posts...
+2026-01-18 20:34:21,932 - INFO - [1/17] Crawl thread: Ngôi nhà nhỏ trên Thảo Nguyên - P86...
+2026-01-18 20:34:21,933 - INFO - [2/17] Crawl thread: Nỗi ám ảnh mang tên mua nhà Hà Nội...
+2026-01-18 20:34:25,802 - INFO - [Thread 1932307] New thread, crawling forward 1→13...
+2026-01-18 20:34:25,880 - INFO - [Thread 1942185] New thread, crawling forward 1→613...
+2026-01-18 20:34:52,674 - INFO - [Thread 1932307] Batch inserted 100/100 posts at page 11
+2026-01-18 20:34:56,236 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 11
+2026-01-18 20:34:57,592 - INFO - [Thread 1932307] Final batch inserted 25/25 posts
+2026-01-18 20:34:57,593 - INFO - [Thread 1932307] Collected 125 posts in 35.7s
+2026-01-18 20:34:57,594 - INFO - Thu thập được 125 posts từ thread
+2026-01-18 20:34:57,595 - INFO - [3/17] Crawl thread: Tản mạn về CPI và TTCK (53)...
+2026-01-18 20:34:59,936 - INFO - [Thread 1942249] New thread, crawling forward 1→55...
+2026-01-18 20:35:23,536 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 21
+2026-01-18 20:35:23,986 - INFO - [Thread 1942249] Batch inserted 100/100 posts at page 10
+2026-01-18 20:35:49,314 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 31
+2026-01-18 20:35:49,325 - INFO - [Thread 1942249] Batch inserted 100/100 posts at page 20
+2026-01-18 20:36:15,342 - INFO - [Thread 1942249] Batch inserted 100/100 posts at page 30
+2026-01-18 20:36:15,588 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 41
+2026-01-18 20:36:42,146 - INFO - [Thread 1942249] Batch inserted 100/100 posts at page 40
+2026-01-18 20:36:45,170 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 51
+2026-01-18 20:37:10,129 - INFO - [Thread 1942249] Batch inserted 100/100 posts at page 50
+2026-01-18 20:37:13,553 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 61
+2026-01-18 20:37:22,674 - INFO - [Thread 1942249] Final batch inserted 49/49 posts
+2026-01-18 20:37:22,675 - INFO - [Thread 1942249] Collected 549 posts in 145.1s
+2026-01-18 20:37:22,675 - INFO - Thu thập được 549 posts từ thread
+2026-01-18 20:37:22,677 - INFO - [4/17] Crawl thread: DXG sao rẻ thế...
+2026-01-18 20:37:25,006 - INFO - [Thread 1944013] New thread, crawling forward 1→6...
+2026-01-18 20:37:37,846 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 71
+2026-01-18 20:37:39,425 - INFO - [Thread 1944013] Final batch inserted 60/60 posts
+2026-01-18 20:37:39,426 - INFO - [Thread 1944013] Collected 60 posts in 16.7s
+2026-01-18 20:37:39,428 - INFO - Thu thập được 60 posts từ thread
+2026-01-18 20:37:39,430 - INFO - [5/17] Crawl thread: DIG khủng long đất Sạch 10.000 ha vươn mình thức g...
+2026-01-18 20:37:41,924 - INFO - [Thread 1944141] New thread, crawling forward 1→2...
+2026-01-18 20:37:47,274 - INFO - [Thread 1944141] Final batch inserted 16/16 posts
+2026-01-18 20:37:47,276 - INFO - [Thread 1944141] Collected 16 posts in 7.8s
+2026-01-18 20:37:47,276 - INFO - Thu thập được 16 posts từ thread
+2026-01-18 20:37:47,278 - INFO - [6/17] Crawl thread: VIC, VPL, VHM, VRE vẫn sẽ mang lại ấm no trong năm...
+2026-01-18 20:37:49,636 - INFO - [Thread 1942275] New thread, crawling forward 1→4...
+2026-01-18 20:37:58,804 - INFO - [Thread 1942275] Final batch inserted 31/31 posts
+2026-01-18 20:37:58,806 - INFO - [Thread 1942275] Collected 31 posts in 11.5s
+2026-01-18 20:37:58,806 - INFO - Thu thập được 31 posts từ thread
+2026-01-18 20:37:58,809 - INFO - [7/17] Crawl thread: Thị trường phân kỳ-Rủi ro hiện hữu...
+2026-01-18 20:38:01,151 - INFO - [Thread 1944101] New thread, crawling forward 1→2...
+2026-01-18 20:38:01,661 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 81
+2026-01-18 20:38:05,838 - INFO - [Thread 1944101] Final batch inserted 13/13 posts
+2026-01-18 20:38:05,839 - INFO - [Thread 1944101] Collected 13 posts in 7.0s
+2026-01-18 20:38:05,839 - INFO - Thu thập được 13 posts từ thread
+2026-01-18 20:38:05,841 - INFO - [8/17] Crawl thread: Đầu tư giá trị_Công ty nhỏ nhưng tăng trưởng lớn...
+2026-01-18 20:38:08,229 - INFO - [Thread 1938717] New thread, crawling forward 1→5...
+2026-01-18 20:38:19,906 - INFO - [Thread 1938717] Final batch inserted 45/45 posts
+2026-01-18 20:38:19,907 - INFO - [Thread 1938717] Collected 45 posts in 14.1s
+2026-01-18 20:38:19,908 - INFO - Thu thập được 45 posts từ thread
+2026-01-18 20:38:19,910 - INFO - [9/17] Crawl thread: HAG khi niềm tin trở lại...
+2026-01-18 20:38:22,268 - INFO - [Thread 1907993] New thread, crawling forward 1→5...
+2026-01-18 20:38:25,739 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 91
+2026-01-18 20:38:34,872 - INFO - [Thread 1907993] Final batch inserted 43/43 posts
+2026-01-18 20:38:34,874 - INFO - [Thread 1907993] Collected 43 posts in 15.0s
+2026-01-18 20:38:34,875 - INFO - Thu thập được 43 posts từ thread
+2026-01-18 20:38:34,876 - INFO - [10/17] Crawl thread: SKG- Đón sóng APEC...
+2026-01-18 20:38:37,315 - INFO - [Thread 1904901] New thread, crawling forward 1→26...
+2026-01-18 20:38:46,468 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 99
+2026-01-18 20:38:59,648 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 104
+2026-01-18 20:39:01,948 - INFO - [Thread 1904901] Batch inserted 100/100 posts at page 10
+2026-01-18 20:39:14,586 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 110
+2026-01-18 20:39:26,690 - INFO - [Thread 1904901] Batch inserted 100/100 posts at page 20
+2026-01-18 20:39:27,441 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 115
+2026-01-18 20:39:44,569 - INFO - [Thread 1904901] Final batch inserted 61/61 posts
+2026-01-18 20:39:44,571 - INFO - [Thread 1904901] Collected 261 posts in 69.7s
+2026-01-18 20:39:44,571 - INFO - Thu thập được 261 posts từ thread
+2026-01-18 20:39:44,574 - INFO - [11/17] Crawl thread: VND hạnh phúc của tôi !...
+2026-01-18 20:39:47,176 - INFO - [Thread 1944125] New thread, crawling forward 1→1...
+2026-01-18 20:39:47,223 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 122
+2026-01-18 20:39:50,082 - INFO - [Thread 1944125] Final batch inserted 6/6 posts
+2026-01-18 20:39:50,082 - INFO - [Thread 1944125] Collected 6 posts in 5.5s
+2026-01-18 20:39:50,083 - INFO - Thu thập được 6 posts từ thread
+2026-01-18 20:39:50,086 - INFO - [12/17] Crawl thread: HTI - 3 năm tích lũy, đến lúc nở hoa?...
+2026-01-18 20:39:53,022 - INFO - [Thread 1903297] New thread, crawling forward 1→178...
+2026-01-18 20:40:08,191 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 130
+2026-01-18 20:40:19,112 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 10
+2026-01-18 20:40:24,722 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 136
+2026-01-18 20:40:42,867 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 142
+2026-01-18 20:40:49,566 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 20
+2026-01-18 20:40:54,494 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 146
+2026-01-18 20:41:09,731 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 152
+2026-01-18 20:41:13,770 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 30
+2026-01-18 20:41:29,674 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 160
+2026-01-18 20:41:37,436 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 40
+2026-01-18 20:41:41,667 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 165
+2026-01-18 20:42:04,422 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 172
+2026-01-18 20:42:10,203 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 50
+2026-01-18 20:42:15,020 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 176
+2026-01-18 20:42:25,123 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 180
+2026-01-18 20:42:39,229 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 60
+2026-01-18 20:42:55,106 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 188
+2026-01-18 20:43:12,335 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 70
+2026-01-18 20:43:20,160 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 196
+2026-01-18 20:43:38,605 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 80
+2026-01-18 20:43:40,899 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 203
+2026-01-18 20:44:01,136 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 211
+2026-01-18 20:44:03,518 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 90
+2026-01-18 20:44:29,415 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 221
+2026-01-18 20:44:39,103 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 100
+2026-01-18 20:45:12,384 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 231
+2026-01-18 20:45:39,105 - WARNING - Attempt 1/3 failed for https://f319.com/threads/hti-3-nam-tich-luy-den-luc-no-hoa.1903297/page-101: HTTPSConnectionPool(host='f319.com', port=443): Read timed out. (read timeout=60)
+2026-01-18 20:45:39,654 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 241
+2026-01-18 20:46:04,251 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 251
+2026-01-18 20:46:06,189 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 110
+2026-01-18 20:46:28,959 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 261
+2026-01-18 20:46:31,004 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 120
+2026-01-18 20:46:52,387 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 271
+2026-01-18 20:46:54,530 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 130
+2026-01-18 20:47:16,524 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 281
+2026-01-18 20:47:18,510 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 140
+2026-01-18 20:47:40,814 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 291
+2026-01-18 20:47:43,812 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 150
+2026-01-18 20:48:04,499 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 301
+2026-01-18 20:48:08,068 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 160
+2026-01-18 20:48:27,893 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 311
+2026-01-18 20:48:34,139 - INFO - [Thread 1903297] Batch inserted 100/100 posts at page 171
+2026-01-18 20:48:51,081 - INFO - [Thread 1903297] Final batch inserted 79/79 posts
+2026-01-18 20:48:51,082 - INFO - [Thread 1903297] Collected 1779 posts in 541.0s
+2026-01-18 20:48:51,082 - INFO - Thu thập được 1779 posts từ thread
+2026-01-18 20:48:51,083 - INFO - [13/17] Crawl thread: Tọa sơn, thưởng trà….Luận phong thủy cho năm Bính ...
+2026-01-18 20:48:51,911 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 321
+2026-01-18 20:48:53,431 - INFO - [Thread 1942255] New thread, crawling forward 1→166...
+2026-01-18 20:49:15,463 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 331
+2026-01-18 20:49:19,403 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 11
+2026-01-18 20:49:39,256 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 341
+2026-01-18 20:49:43,327 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 21
+2026-01-18 20:50:00,008 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 28
+2026-01-18 20:50:04,067 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 351
+2026-01-18 20:50:14,590 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 34
+2026-01-18 20:50:28,176 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 361
+2026-01-18 20:50:33,673 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 42
+2026-01-18 20:50:48,078 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 48
+2026-01-18 20:50:53,089 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 371
+2026-01-18 20:51:07,386 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 56
+2026-01-18 20:51:18,268 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 381
+2026-01-18 20:51:22,007 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 62
+2026-01-18 20:51:38,501 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 69
+2026-01-18 20:51:41,806 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 391
+2026-01-18 20:51:57,379 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 77
+2026-01-18 20:52:05,700 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 401
+2026-01-18 20:52:20,843 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 87
+2026-01-18 20:52:29,348 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 411
+2026-01-18 20:52:44,260 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 97
+2026-01-18 20:52:53,203 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 421
+2026-01-18 20:53:07,961 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 107
+2026-01-18 20:53:16,595 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 431
+2026-01-18 20:53:31,441 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 117
+2026-01-18 20:53:40,580 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 441
+2026-01-18 20:53:55,075 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 127
+2026-01-18 20:54:04,158 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 451
+2026-01-18 20:54:19,406 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 137
+2026-01-18 20:54:30,354 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 461
+2026-01-18 20:54:49,520 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 148
+2026-01-18 20:54:57,209 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 471
+2026-01-18 20:55:14,688 - INFO - [Thread 1942255] Batch inserted 100/100 posts at page 158
+2026-01-18 20:55:21,946 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 481
+2026-01-18 20:55:37,176 - INFO - [Thread 1942255] Final batch inserted 86/86 posts
+2026-01-18 20:55:37,178 - INFO - [Thread 1942255] Collected 1886 posts in 406.1s
+2026-01-18 20:55:37,179 - INFO - Thu thập được 1886 posts từ thread
+2026-01-18 20:55:37,183 - INFO - [14/17] Crawl thread: Dòng P đang chân sóng lớn $$$$$...
+2026-01-18 20:55:39,636 - INFO - [Thread 1935633] New thread, crawling forward 1→45...
+2026-01-18 20:55:49,793 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 491
+2026-01-18 20:56:10,553 - INFO - [Thread 1935633] Batch inserted 100/100 posts at page 10
+2026-01-18 20:56:18,052 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 501
+2026-01-18 20:56:35,310 - INFO - [Thread 1935633] Batch inserted 100/100 posts at page 20
+2026-01-18 20:56:43,161 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 511
+2026-01-18 20:57:04,274 - INFO - [Thread 1935633] Batch inserted 100/100 posts at page 31
+2026-01-18 20:57:08,600 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 521
+2026-01-18 20:57:29,845 - INFO - [Thread 1935633] Batch inserted 100/100 posts at page 41
+2026-01-18 20:57:33,396 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 531
+2026-01-18 20:57:39,406 - INFO - [Thread 1935633] Final batch inserted 35/35 posts
+2026-01-18 20:57:39,408 - INFO - [Thread 1935633] Collected 435 posts in 122.2s
+2026-01-18 20:57:39,408 - INFO - Thu thập được 435 posts từ thread
+2026-01-18 20:57:39,410 - INFO - [15/17] Crawl thread: Nhóm công nghệ và viễn thông- 2 đại diện VGI và FP...
+2026-01-18 20:57:41,789 - INFO - [Thread 1944115] New thread, crawling forward 1→1...
+2026-01-18 20:57:44,108 - INFO - [Thread 1944115] Final batch inserted 5/5 posts
+2026-01-18 20:57:44,108 - INFO - [Thread 1944115] Collected 5 posts in 4.7s
+2026-01-18 20:57:44,109 - INFO - Thu thập được 5 posts từ thread
+2026-01-18 20:57:44,110 - INFO - [16/17] Crawl thread: Sóng chủ đạo 2026 là cổ phiếu nhà nước và nâng hạn...
+2026-01-18 20:57:46,437 - INFO - [Thread 1943041] New thread, crawling forward 1→2...
+2026-01-18 20:57:51,161 - INFO - [Thread 1943041] Final batch inserted 17/17 posts
+2026-01-18 20:57:51,163 - INFO - [Thread 1943041] Collected 17 posts in 7.1s
+2026-01-18 20:57:51,163 - INFO - Thu thập được 17 posts từ thread
+2026-01-18 20:57:51,164 - INFO - [17/17] Crawl thread: LLM - Tổng thầu EPC số 1 VN khởi động thoái vốn NN...
+2026-01-18 20:57:53,529 - INFO - [Thread 1944139] New thread, crawling forward 1→1...
+2026-01-18 20:57:55,909 - INFO - [Thread 1944139] Final batch inserted 8/8 posts
+2026-01-18 20:57:55,910 - INFO - [Thread 1944139] Collected 8 posts in 4.7s
+2026-01-18 20:57:55,910 - INFO - Thu thập được 8 posts từ thread
+2026-01-18 20:57:57,227 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 541
+2026-01-18 20:58:25,780 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 551
+2026-01-18 20:58:54,053 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 561
+2026-01-18 20:59:20,280 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 571
+2026-01-18 20:59:45,466 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 581
+2026-01-18 21:00:12,822 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 591
+2026-01-18 21:00:38,641 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 601
+2026-01-18 21:01:03,058 - INFO - [Thread 1942185] Batch inserted 100/100 posts at page 611
+2026-01-18 21:01:08,170 - INFO - [Thread 1942185] Final batch inserted 25/25 posts
+2026-01-18 21:01:08,171 - INFO - [Thread 1942185] Collected 6825 posts in 1606.2s
+2026-01-18 21:01:08,172 - INFO - Thu thập được 6825 posts từ thread
+2026-01-18 21:01:08,174 - INFO - Hoàn thành trang 1, tổng posts: 12104
+2026-01-18 21:01:16,407 - INFO - Đang xử lý trang 2
+2026-01-18 21:01:25,639 - INFO - Tìm thấy 20 threads trên trang 2
+2026-01-18 21:01:26,080 - INFO - ✅ ACCEPTED: 'HID sẽ lại X5 từ vùng giá 4.x ???' (Created: Thứ hai lúc 09:05)
+2026-01-18 21:01:26,291 - INFO - ✅ ACCEPTED: 'DGC con hào kinh tế' (Created: Thứ hai lúc 08:47)
+2026-01-18 21:01:26,547 - INFO - ✅ ACCEPTED: 'HDB- Tiếp tục hành trình chinh phục những đỉnh cao' (Created: Thứ năm lúc 14:37)
+2026-01-18 21:01:26,805 - INFO - ✅ ACCEPTED: 'MBB đã về vùng giá mơ ước' (Created: 04/11/2025)
+2026-01-18 21:01:27,054 - INFO - ✅ ACCEPTED: 'Doanh nghiệp xăng dầu sắp được tự quyết giá' (Created: Hôm qua, lúc 16:05)
+2026-01-18 21:01:27,308 - INFO - ✅ ACCEPTED: 'HAG - sắp sang trang mới cổ phiếu vươn mình tăng t' (Created: 30/10/2025)
+2026-01-18 21:01:27,541 - INFO - ✅ ACCEPTED: 'Làm gì có sóng cổ phiếu ngân hàng lúc này…' (Created: Thứ tư lúc 21:15)
+2026-01-18 21:01:27,826 - INFO - 🚫 FILTERED: 'SCL - Hành trình 3 chữ số (P1)' (Created: 01/05/2024)
+2026-01-18 21:01:28,148 - INFO - 🚫 FILTERED: 'CMN - Hai con tôm - ký ức ùa về!' (Created: 13/03/2018)
+2026-01-18 21:01:28,387 - INFO - ✅ ACCEPTED: 'VHC bước vào chu kỳ tăng trưởng' (Created: 14/09/2025)
+2026-01-18 21:01:28,657 - INFO - ✅ ACCEPTED: 'PAN bán BBC theo kịch bản nào?' (Created: Hôm qua, lúc 14:19)
+2026-01-18 21:01:28,968 - INFO - ✅ ACCEPTED: '2026: Dự Đỉnh 1960- Đáy 1340. Cơ hội nào cho NĐT' (Created: 05/01/2026)
+2026-01-18 21:01:29,317 - INFO - ✅ ACCEPTED: 'Ngành Cao su - Kỳ vọng neo giá cao khi nguồn cung ' (Created: Hôm qua, lúc 11:49)
+2026-01-18 21:01:29,626 - INFO - ✅ ACCEPTED: 'Cuối năm 2025, thoát xu hướng tích luỹ' (Created: 02/11/2025)
+2026-01-18 21:01:29,815 - INFO - ✅ ACCEPTED: 'U23 hướng tới mục tiêu cao chào đón ĐH Đảng' (Created: Hôm qua, lúc 09:22)
+2026-01-18 21:01:30,042 - INFO - ✅ ACCEPTED: '2026_Ai đảm nhiệm trọng trách LON (lớn) ?' (Created: Thứ sáu lúc 16:39)
+2026-01-18 21:01:30,289 - INFO - ✅ ACCEPTED: 'Game mới SHB. Múc mạnh để mua nhà mua xe' (Created: 06/01/2025)
+2026-01-18 21:01:30,493 - INFO - ✅ ACCEPTED: 'BCM - Vươn mình cùng giai đoạn mới' (Created: 11/08/2025)
+2026-01-18 21:01:30,723 - INFO - ✅ ACCEPTED: 'Săn lùng cổ phiếu PENNY đột biến 2026!' (Created: Thứ tư lúc 16:07)
+2026-01-18 21:01:30,962 - INFO - ✅ ACCEPTED: 'ACV- Hình trình vượt 100k/cp bắt đầu từ đây' (Created: 15/12/2025)
+2026-01-18 21:01:30,964 - INFO - 📊 Page 2: 18 threads accepted, 2 filtered out
+2026-01-18 21:01:30,964 - INFO - 🗓️  Filtered 2 threads older than 01/01/2025
+2026-01-18 21:01:30,965 - INFO - 🎯 Processing 18 threads from 01/01/2025 onwards
+2026-01-18 21:01:30,965 - INFO - Đã thu thập thông tin 18 threads, bắt đầu crawl posts...
+2026-01-18 21:01:30,973 - INFO - [1/18] Crawl thread: HID sẽ lại X5 từ vùng giá 4.x ???...
+2026-01-18 21:01:30,973 - INFO - [2/18] Crawl thread: DGC con hào kinh tế...
+2026-01-18 21:01:33,326 - INFO - [Thread 1943407] New thread, crawling forward 1→26...
+2026-01-18 21:01:34,236 - INFO - [Thread 1943403] New thread, crawling forward 1→6...
+2026-01-18 21:01:50,727 - INFO - [Thread 1943403] Final batch inserted 58/58 posts
+2026-01-18 21:01:50,732 - INFO - [Thread 1943403] Collected 58 posts in 19.8s
+2026-01-18 21:01:50,739 - INFO - Thu thập được 58 posts từ thread
+2026-01-18 21:01:50,741 - INFO - [3/18] Crawl thread: HDB- Tiếp tục hành trình chinh phục những đỉnh cao...
+2026-01-18 21:01:53,668 - INFO - [Thread 1943915] New thread, crawling forward 1→5...
+2026-01-18 21:02:01,974 - INFO - [Thread 1943407] Batch inserted 100/100 posts at page 10
+2026-01-18 21:02:14,347 - INFO - [Thread 1943915] Final batch inserted 49/49 posts
+2026-01-18 21:02:14,349 - INFO - [Thread 1943915] Collected 49 posts in 23.6s
+2026-01-18 21:02:14,350 - INFO - Thu thập được 49 posts từ thread
+2026-01-18 21:02:14,352 - INFO - [4/18] Crawl thread: MBB đã về vùng giá mơ ước...
+2026-01-18 21:02:16,727 - INFO - [Thread 1936289] New thread, crawling forward 1→25...
+2026-01-18 21:02:36,384 - INFO - [Thread 1943407] Batch inserted 100/100 posts at page 21
+2026-01-18 21:02:42,711 - INFO - [Thread 1936289] Batch inserted 100/100 posts at page 10
+2026-01-18 21:02:51,060 - INFO - [Thread 1943407] Final batch inserted 57/57 posts
+2026-01-18 21:02:51,061 - INFO - [Thread 1943407] Collected 257 posts in 80.1s
+2026-01-18 21:02:51,062 - INFO - Thu thập được 257 posts từ thread
+2026-01-18 21:02:51,064 - INFO - [5/18] Crawl thread: Doanh nghiệp xăng dầu sắp được tự quyết giá...
+2026-01-18 21:02:55,208 - INFO - [Thread 1944079] New thread, crawling forward 1→3...
+2026-01-18 21:03:03,260 - INFO - [Thread 1944079] Final batch inserted 24/24 posts
+2026-01-18 21:03:03,262 - INFO - [Thread 1944079] Collected 24 posts in 12.2s
+2026-01-18 21:03:03,262 - INFO - Thu thập được 24 posts từ thread
+2026-01-18 21:03:03,265 - INFO - [6/18] Crawl thread: HAG - sắp sang trang mới cổ phiếu vươn mình tăng t...
+2026-01-18 21:03:06,014 - INFO - [Thread 1935815] New thread, crawling forward 1→107...
+2026-01-18 21:03:13,748 - INFO - [Thread 1936289] Batch inserted 100/100 posts at page 21
+2026-01-18 21:03:23,241 - INFO - [Thread 1936289] Final batch inserted 44/44 posts
+2026-01-18 21:03:23,241 - INFO - [Thread 1936289] Collected 244 posts in 68.9s
+2026-01-18 21:03:23,241 - INFO - Thu thập được 244 posts từ thread
+2026-01-18 21:03:23,243 - INFO - [7/18] Crawl thread: Làm gì có sóng cổ phiếu ngân hàng lúc này…...
+2026-01-18 21:03:25,642 - INFO - [Thread 1943823] New thread, crawling forward 1→9...
+2026-01-18 21:03:33,233 - INFO - [Thread 1935815] Batch inserted 100/100 posts at page 11
+2026-01-18 21:03:50,803 - INFO - [Thread 1943823] Final batch inserted 89/89 posts
+2026-01-18 21:03:50,804 - INFO - [Thread 1943823] Collected 89 posts in 27.6s
+2026-01-18 21:03:50,804 - INFO - Thu thập được 89 posts từ thread
+2026-01-18 21:03:50,805 - INFO - [8/18] Crawl thread: VHC bước vào chu kỳ tăng trưởng...
+2026-01-18 21:03:53,395 - INFO - [Thread 1930571] New thread, crawling forward 1→31...
+2026-01-18 21:04:01,305 - INFO - [Thread 1935815] Batch inserted 100/100 posts at page 21
+2026-01-18 21:04:21,110 - INFO - [Thread 1930571] Batch inserted 100/100 posts at page 10
+2026-01-18 21:04:30,159 - INFO - [Thread 1935815] Batch inserted 100/100 posts at page 31
+2026-01-18 21:04:52,027 - INFO - [Thread 1930571] Batch inserted 100/100 posts at page 21
+2026-01-18 21:05:00,433 - INFO - [Thread 1935815] Batch inserted 100/100 posts at page 41
+2026-01-18 21:05:20,162 - INFO - [Thread 1930571] Batch inserted 100/100 posts at page 31
+2026-01-18 21:05:20,164 - INFO - [Thread 1930571] Final batch inserted 2/2 posts
+2026-01-18 21:05:20,165 - INFO - [Thread 1930571] Collected 302 posts in 89.4s
+2026-01-18 21:05:20,166 - INFO - Thu thập được 302 posts từ thread
+2026-01-18 21:05:20,168 - INFO - [9/18] Crawl thread: PAN bán BBC theo kịch bản nào?...
+2026-01-18 21:05:24,087 - INFO - [Thread 1944073] New thread, crawling forward 1→1...
+2026-01-18 21:05:26,659 - INFO - [Thread 1944073] Final batch inserted 7/7 posts
+2026-01-18 21:05:26,660 - INFO - [Thread 1944073] Collected 7 posts in 6.5s
+2026-01-18 21:05:26,661 - INFO - Thu thập được 7 posts từ thread
+2026-01-18 21:05:26,665 - INFO - [10/18] Crawl thread: 2026: Dự Đỉnh 1960- Đáy 1340. Cơ hội nào cho NĐT...
+2026-01-18 21:05:29,355 - INFO - [Thread 1935815] Batch inserted 100/100 posts at page 51
+2026-01-18 21:05:30,274 - INFO - [Thread 1942323] New thread, crawling forward 1→33...
+2026-01-18 21:05:57,006 - INFO - [Thread 1942323] Batch inserted 100/100 posts at page 9
+2026-01-18 21:06:00,661 - INFO - [Thread 1935815] Batch inserted 100/100 posts at page 62
+2026-01-18 21:06:24,087 - INFO - [Thread 1942323] Batch inserted 100/100 posts at page 18
+2026-01-18 21:06:29,606 - INFO - [Thread 1935815] Batch inserted 100/100 posts at page 72
+2026-01-18 21:06:56,055 - INFO - [Thread 1942323] Batch inserted 100/100 posts at page 28
+2026-01-18 21:07:00,608 - INFO - [Thread 1935815] Batch inserted 100/100 posts at page 82
+2026-01-18 21:07:11,678 - INFO - [Thread 1942323] Final batch inserted 45/45 posts
+2026-01-18 21:07:11,680 - INFO - [Thread 1942323] Collected 345 posts in 105.0s
+2026-01-18 21:07:11,681 - INFO - Thu thập được 345 posts từ thread
+2026-01-18 21:07:11,684 - INFO - [11/18] Crawl thread: Ngành Cao su - Kỳ vọng neo giá cao khi nguồn cung ...
+2026-01-18 21:07:14,443 - INFO - [Thread 1944071] New thread, crawling forward 1→2...
+2026-01-18 21:07:19,744 - INFO - [Thread 1944071] Final batch inserted 11/11 posts
+2026-01-18 21:07:19,748 - INFO - [Thread 1944071] Collected 11 posts in 8.1s
+2026-01-18 21:07:19,748 - INFO - Thu thập được 11 posts từ thread
+2026-01-18 21:07:19,749 - INFO - [12/18] Crawl thread: Cuối năm 2025, thoát xu hướng tích luỹ...
+2026-01-18 21:07:22,140 - INFO - [Thread 1936049] New thread, crawling forward 1→8...
+2026-01-18 21:07:31,125 - INFO - [Thread 1935815] Batch inserted 100/100 posts at page 92
+2026-01-18 21:07:44,874 - INFO - [Thread 1936049] Final batch inserted 74/74 posts
+2026-01-18 21:07:44,876 - INFO - [Thread 1936049] Collected 74 posts in 25.1s
+2026-01-18 21:07:44,877 - INFO - Thu thập được 74 posts từ thread
+2026-01-18 21:07:44,879 - INFO - [13/18] Crawl thread: U23 hướng tới mục tiêu cao chào đón ĐH Đảng...
+2026-01-18 21:07:47,771 - INFO - [Thread 1944061] New thread, crawling forward 1→1...
+2026-01-18 21:07:51,417 - INFO - [Thread 1944061] Final batch inserted 3/3 posts
+2026-01-18 21:07:51,418 - INFO - [Thread 1944061] Collected 3 posts in 6.5s
+2026-01-18 21:07:51,418 - INFO - Thu thập được 3 posts từ thread
+2026-01-18 21:07:51,420 - INFO - [14/18] Crawl thread: 2026_Ai đảm nhiệm trọng trách LON (lớn) ?...
+2026-01-18 21:07:54,197 - INFO - [Thread 1944029] New thread, crawling forward 1→10...
+2026-01-18 21:08:03,533 - INFO - [Thread 1935815] Batch inserted 100/100 posts at page 102
+2026-01-18 21:08:17,947 - INFO - [Thread 1935815] Final batch inserted 58/58 posts
+2026-01-18 21:08:17,950 - INFO - [Thread 1935815] Collected 1058 posts in 314.7s
+2026-01-18 21:08:17,952 - INFO - Thu thập được 1058 posts từ thread
+2026-01-18 21:08:17,962 - INFO - [15/18] Crawl thread: Game mới SHB. Múc mạnh để mua nhà mua xe...
+2026-01-18 21:08:21,141 - INFO - [Thread 1900397] New thread, crawling forward 1→537...
+2026-01-18 21:08:24,481 - INFO - [Thread 1944029] Final batch inserted 96/96 posts
+2026-01-18 21:08:24,483 - INFO - [Thread 1944029] Collected 96 posts in 33.1s
+2026-01-18 21:08:24,484 - INFO - Thu thập được 96 posts từ thread
+2026-01-18 21:08:24,486 - INFO - [16/18] Crawl thread: BCM - Vươn mình cùng giai đoạn mới...
+2026-01-18 21:08:27,945 - INFO - [Thread 1926399] New thread, crawling forward 1→8...
+2026-01-18 21:08:48,219 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 10
+2026-01-18 21:08:51,970 - INFO - [Thread 1926399] Final batch inserted 71/71 posts
+2026-01-18 21:08:51,973 - INFO - [Thread 1926399] Collected 71 posts in 27.5s
+2026-01-18 21:08:51,974 - INFO - Thu thập được 71 posts từ thread
+2026-01-18 21:08:51,987 - INFO - [17/18] Crawl thread: Săn lùng cổ phiếu PENNY đột biến 2026!...
+2026-01-18 21:08:57,901 - INFO - [Thread 1943779] New thread, crawling forward 1→13...
+2026-01-18 21:09:28,299 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 20
+2026-01-18 21:09:37,297 - INFO - [Thread 1943779] Batch inserted 100/100 posts at page 11
+2026-01-18 21:09:42,845 - INFO - [Thread 1943779] Final batch inserted 23/23 posts
+2026-01-18 21:09:42,848 - INFO - [Thread 1943779] Collected 123 posts in 50.9s
+2026-01-18 21:09:42,850 - INFO - Thu thập được 123 posts từ thread
+2026-01-18 21:09:42,856 - INFO - [18/18] Crawl thread: ACV- Hình trình vượt 100k/cp bắt đầu từ đây...
+2026-01-18 21:09:45,175 - INFO - [Thread 1940601] New thread, crawling forward 1→12...
+2026-01-18 21:09:53,648 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 30
+2026-01-18 21:10:04,241 - WARNING - Attempt 1/3 failed for https://f319.com/threads/acv-hinh-trinh-vuot-100k-cp-bat-dau-tu-day.1940601/page-9: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-01-18 21:10:11,967 - INFO - [Thread 1940601] Batch inserted 100/100 posts at page 10
+2026-01-18 21:10:16,737 - INFO - [Thread 1940601] Final batch inserted 16/16 posts
+2026-01-18 21:10:16,738 - INFO - [Thread 1940601] Collected 116 posts in 33.9s
+2026-01-18 21:10:16,739 - INFO - Thu thập được 116 posts từ thread
+2026-01-18 21:10:18,938 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 40
+2026-01-18 21:10:43,261 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 50
+2026-01-18 21:11:08,514 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 60
+2026-01-18 21:11:35,287 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 70
+2026-01-18 21:12:00,982 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 80
+2026-01-18 21:12:27,141 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 90
+2026-01-18 21:13:08,949 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 100
+2026-01-18 21:13:37,601 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 110
+2026-01-18 21:14:03,580 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 120
+2026-01-18 21:14:28,973 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 130
+2026-01-18 21:14:55,170 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 140
+2026-01-18 21:15:23,334 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 151
+2026-01-18 21:15:49,307 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 161
+2026-01-18 21:16:13,764 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 171
+2026-01-18 21:16:38,220 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 181
+2026-01-18 21:17:02,920 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 191
+2026-01-18 21:17:27,126 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 201
+2026-01-18 21:17:51,147 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 211
+2026-01-18 21:18:17,031 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 221
+2026-01-18 21:18:47,552 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 231
+2026-01-18 21:19:11,521 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 241
+2026-01-18 21:19:35,876 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 251
+2026-01-18 21:19:59,380 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 261
+2026-01-18 21:20:23,359 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 271
+2026-01-18 21:20:47,097 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 281
+2026-01-18 21:21:13,066 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 291
+2026-01-18 21:21:36,667 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 301
+2026-01-18 21:22:00,031 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 311
+2026-01-18 21:22:23,511 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 321
+2026-01-18 21:22:47,350 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 331
+2026-01-18 21:23:10,865 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 341
+2026-01-18 21:23:34,953 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 351
+2026-01-18 21:23:58,517 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 361
+2026-01-18 21:24:22,058 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 371
+2026-01-18 21:24:45,607 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 381
+2026-01-18 21:25:09,476 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 391
+2026-01-18 21:25:32,854 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 401
+2026-01-18 21:25:56,515 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 411
+2026-01-18 21:26:20,624 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 421
+2026-01-18 21:26:44,295 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 431
+2026-01-18 21:27:07,910 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 441
+2026-01-18 21:27:31,755 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 451
+2026-01-18 21:28:00,980 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 462
+2026-01-18 21:28:24,455 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 472
+2026-01-18 21:28:48,146 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 482
+2026-01-18 21:29:11,885 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 492
+2026-01-18 21:29:36,156 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 502
+2026-01-18 21:29:59,717 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 512
+2026-01-18 21:30:24,244 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 522
+2026-01-18 21:30:48,138 - INFO - [Thread 1900397] Batch inserted 100/100 posts at page 532
+2026-01-18 21:30:59,909 - INFO - [Thread 1900397] Final batch inserted 59/59 posts
+2026-01-18 21:30:59,910 - INFO - [Thread 1900397] Collected 5359 posts in 1361.9s
+2026-01-18 21:30:59,910 - INFO - Thu thập được 5359 posts từ thread
+2026-01-18 21:30:59,911 - INFO - Hoàn thành trang 2, tổng posts: 20390
+2026-01-18 21:31:12,401 - INFO - Đang xử lý trang 3
+2026-01-18 21:31:18,697 - INFO - Tìm thấy 20 threads trên trang 3
+2026-01-18 21:31:19,025 - INFO - ✅ ACCEPTED: 'NNC - Siêu cổ phiếu ngành đá tăng trưởng rất mạnh ' (Created: 14/08/2025)
+2026-01-18 21:31:19,270 - INFO - ✅ ACCEPTED: 'Mua quyền mua abb' (Created: Hôm nay lúc 15:56)
+2026-01-18 21:31:19,522 - INFO - ✅ ACCEPTED: 'PHR - Sắp nhận đền bù 2-3k tỷ từ Thaco' (Created: 11/06/2025)
+2026-01-18 21:31:19,795 - INFO - ✅ ACCEPTED: 'HPG- Sự trở lại của nhà Vua' (Created: 01/08/2025)
+2026-01-18 21:31:20,111 - INFO - 🚫 FILTERED: 'Qcg: Ngày không xa!' (Created: 07/06/2023)
+2026-01-18 21:31:20,446 - INFO - ✅ ACCEPTED: 'Quý I - Đầu quý tích lũy để cuối quý bùng nổ' (Created: 04/01/2026)
+2026-01-18 21:31:20,764 - INFO - ✅ ACCEPTED: 'Sau siêu phẩm BID > Tiếp đến HPG đạt điều kiện XAN' (Created: Thứ tư lúc 21:43)
+2026-01-18 21:31:21,091 - INFO - ✅ ACCEPTED: 'ADS : Công Ty Dệt May Cổ Tức Hàng Năm Đều Như Vắt ' (Created: 13/11/2025)
+2026-01-18 21:31:21,410 - INFO - ✅ ACCEPTED: 'THG-Những nốt thăng trầm' (Created: 26/07/2025)
+2026-01-18 21:31:21,716 - INFO - 🚫 FILTERED: 'TCO trần 6 phiên khiếp quá, Giật mình với nhóm ngà' (Created: 21/09/2023)
+2026-01-18 21:31:21,995 - INFO - ✅ ACCEPTED: 'Quí 1/2026 " Xu hướng trong 8 tuần và 20 tuần tới ' (Created: Hôm nay lúc 14:21)
+2026-01-18 21:31:22,281 - INFO - ✅ ACCEPTED: 'Vnindex 2026-2030, hành trình vượt đỉnh.' (Created: 10/01/2026)
+2026-01-18 21:31:22,578 - INFO - ✅ ACCEPTED: 'TCO- Kỷ nguyên vươn mình-Nội Ngoại giao duyên!' (Created: Hôm qua, lúc 05:24)
+2026-01-18 21:31:22,867 - INFO - 🚫 FILTERED: 'PVT - Hành trình ra biển lớn' (Created: 03/08/2023)
+2026-01-18 21:31:23,177 - INFO - ✅ ACCEPTED: 'Game định giá lại tài sản quốc gia -------- Cá mập' (Created: 02/11/2025)
+2026-01-18 21:31:23,451 - INFO - ✅ ACCEPTED: 'Phân tích tiềm năng cổ phiếu AAA.' (Created: 28/02/2025)
+2026-01-18 21:31:23,697 - INFO - ✅ ACCEPTED: 'LDG, OGC vào thế đẹp quá, Múc đúng đáy 2 em này li' (Created: 29/10/2025)
+2026-01-18 21:31:23,985 - INFO - ✅ ACCEPTED: 'GCF- Siêu cổ phiếu cho chu kỳ 5-10 năm tới' (Created: Hôm nay lúc 11:43)
+2026-01-18 21:31:24,256 - INFO - ✅ ACCEPTED: 'ACV....' (Created: 24/12/2025)
+2026-01-18 21:31:24,497 - INFO - ✅ ACCEPTED: 'Tất cả các dòng sông đều chảy - P2' (Created: 17/10/2025)
+2026-01-18 21:31:24,499 - INFO - 📊 Page 3: 17 threads accepted, 3 filtered out
+2026-01-18 21:31:24,499 - INFO - 🗓️  Filtered 3 threads older than 01/01/2025
+2026-01-18 21:31:24,508 - INFO - 🎯 Processing 17 threads from 01/01/2025 onwards
+2026-01-18 21:31:24,509 - INFO - Đã thu thập thông tin 17 threads, bắt đầu crawl posts...
+2026-01-18 21:31:24,523 - INFO - [1/17] Crawl thread: NNC - Siêu cổ phiếu ngành đá tăng trưởng rất mạnh ...
+2026-01-18 21:31:24,528 - INFO - [2/17] Crawl thread: Mua quyền mua abb...
+2026-01-18 21:31:26,979 - INFO - [Thread 1927077] New thread, crawling forward 1→33...
+2026-01-18 21:31:27,786 - INFO - [Thread 1944133] New thread, crawling forward 1→1...
+2026-01-18 21:31:31,867 - INFO - [Thread 1944133] Final batch inserted 1/1 posts
+2026-01-18 21:31:31,869 - INFO - [Thread 1944133] Collected 1 posts in 7.3s
+2026-01-18 21:31:31,869 - INFO - Thu thập được 1 posts từ thread
+2026-01-18 21:31:31,872 - INFO - [3/17] Crawl thread: PHR - Sắp nhận đền bù 2-3k tỷ từ Thaco...
+2026-01-18 21:31:34,729 - INFO - [Thread 1918203] New thread, crawling forward 1→242...
+2026-01-18 21:31:54,308 - INFO - [Thread 1927077] Batch inserted 100/100 posts at page 10
+2026-01-18 21:32:04,618 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 10
+2026-01-18 21:32:25,790 - INFO - [Thread 1927077] Batch inserted 100/100 posts at page 20
+2026-01-18 21:32:36,479 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 21
+2026-01-18 21:32:51,303 - INFO - [Thread 1927077] Batch inserted 100/100 posts at page 30
+2026-01-18 21:33:00,404 - INFO - [Thread 1927077] Final batch inserted 26/26 posts
+2026-01-18 21:33:00,410 - INFO - [Thread 1927077] Collected 326 posts in 95.9s
+2026-01-18 21:33:00,413 - INFO - Thu thập được 326 posts từ thread
+2026-01-18 21:33:00,419 - INFO - [4/17] Crawl thread: HPG- Sự trở lại của nhà Vua...
+2026-01-18 21:33:02,950 - INFO - [Thread 1925045] New thread, crawling forward 1→274...
+2026-01-18 21:33:03,258 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 31
+2026-01-18 21:33:31,812 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 41
+2026-01-18 21:33:35,139 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 11
+2026-01-18 21:33:58,829 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 51
+2026-01-18 21:34:01,492 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 21
+2026-01-18 21:34:23,871 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 61
+2026-01-18 21:34:28,145 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 31
+2026-01-18 21:34:50,452 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 71
+2026-01-18 21:34:54,720 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 41
+2026-01-18 21:35:16,916 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 81
+2026-01-18 21:35:21,094 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 51
+2026-01-18 21:35:45,291 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 91
+2026-01-18 21:35:54,422 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 61
+2026-01-18 21:36:15,562 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 101
+2026-01-18 21:36:24,597 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 71
+2026-01-18 21:36:47,552 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 111
+2026-01-18 21:36:54,413 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 81
+2026-01-18 21:37:12,740 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 121
+2026-01-18 21:37:20,212 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 91
+2026-01-18 21:37:38,520 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 131
+2026-01-18 21:37:46,101 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 101
+2026-01-18 21:38:07,533 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 141
+2026-01-18 21:38:15,850 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 111
+2026-01-18 21:38:36,886 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 151
+2026-01-18 21:38:44,495 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 121
+2026-01-18 21:39:03,733 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 161
+2026-01-18 21:39:12,127 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 131
+2026-01-18 21:39:31,808 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 171
+2026-01-18 21:39:39,414 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 141
+2026-01-18 21:40:01,990 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 181
+2026-01-18 21:40:08,747 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 151
+2026-01-18 21:40:31,197 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 192
+2026-01-18 21:40:38,152 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 161
+2026-01-18 21:40:57,745 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 202
+2026-01-18 21:41:02,834 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 171
+2026-01-18 21:41:24,252 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 212
+2026-01-18 21:41:29,803 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 181
+2026-01-18 21:41:53,628 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 222
+2026-01-18 21:41:55,960 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 191
+2026-01-18 21:42:30,352 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 232
+2026-01-18 21:42:33,116 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 201
+2026-01-18 21:43:01,119 - INFO - [Thread 1918203] Batch inserted 100/100 posts at page 242
+2026-01-18 21:43:01,121 - INFO - [Thread 1918203] Final batch inserted 3/3 posts
+2026-01-18 21:43:01,122 - INFO - [Thread 1918203] Collected 2403 posts in 689.3s
+2026-01-18 21:43:01,123 - INFO - Thu thập được 2403 posts từ thread
+2026-01-18 21:43:01,126 - INFO - [5/17] Crawl thread: Quý I - Đầu quý tích lũy để cuối quý bùng nổ...
+2026-01-18 21:43:03,504 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 212
+2026-01-18 21:43:03,542 - INFO - [Thread 1942287] New thread, crawling forward 1→8...
+2026-01-18 21:43:25,448 - INFO - [Thread 1942287] Final batch inserted 82/82 posts
+2026-01-18 21:43:25,449 - INFO - [Thread 1942287] Collected 82 posts in 24.3s
+2026-01-18 21:43:25,449 - INFO - Thu thập được 82 posts từ thread
+2026-01-18 21:43:25,451 - INFO - [6/17] Crawl thread: Sau siêu phẩm BID > Tiếp đến HPG đạt điều kiện XAN...
+2026-01-18 21:43:27,827 - INFO - [Thread 1943825] New thread, crawling forward 1→2...
+2026-01-18 21:43:30,992 - INFO - [Thread 1925045] Batch inserted 100/100 posts at page 222
+2026-01-18 21:43:33,419 - INFO - [Thread 1943825] Final batch inserted 16/16 posts
+2026-01-18 21:43:33,421 - INFO - [Thread 1943825] Collected 16 posts in 8.0s
+2026-01-18 21:43:33,421 - INFO - Thu thập được 16 posts từ thread
+2026-01-18 21:43:33,423 - INFO - [7/17] Crawl thread: ADS : Công Ty Dệt May Cổ Tức Hàng Năm Đều Như Vắt ...
+2026-01-18 21:43:36,037 - INFO - [Thread 1937579] New thread, crawling forward 1→3...
+2026-01-18 21:43:43,589 - INFO - [Thread 1937579] Final batch inserted 19/19 posts
+2026-01-18 21:43:43,591 - INFO - [Thread 1937579] Collected 19 posts in 10.2s
+2026-01-18 21:43:43,591 - INFO - Thu thập được 19 posts từ thread
+2026-01-18 21:43:43,593 - INFO - [8/17] Crawl thread: THG-Những nốt thăng trầm...

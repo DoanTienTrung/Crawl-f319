@@ -1,0 +1,13 @@
+2026-01-18 19:32:54,822 - INFO - Log file created: logs/crawl_2026-01-18_19-32-54.log
+2026-01-18 19:32:54,823 - INFO - Initializing database connection...
+2026-01-18 19:32:54,860 - INFO - Connected to PostgreSQL: f319_data
+2026-01-18 19:32:54,871 - INFO - Tables created/verified successfully
+2026-01-18 19:32:54,871 - INFO - Starting hybrid crawl for 5 pages
+2026-01-18 19:32:54,871 - INFO - ====== WebDriver manager ======
+2026-01-18 19:32:55,677 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-18 19:32:56,199 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-18 19:32:56,905 - INFO - Driver [C:\Users\admin\.wdm\drivers\chromedriver\win64\143.0.7499.192\chromedriver-win32/chromedriver.exe] found in cache
+2026-01-18 19:32:57,962 - INFO - Selenium driver started
+2026-01-18 19:33:00,197 - INFO - Selenium driver stopped
+2026-01-18 19:33:00,199 - INFO - Disconnected from PostgreSQL
+2026-01-18 19:33:00,202 - INFO - Database connection closed
