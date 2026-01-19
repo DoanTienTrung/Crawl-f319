@@ -89,38 +89,85 @@ class CrawlerScheduler:
         except Exception as e:
             logger.error(f"❌ Hybrid Crawler failed: {e}")
 
+    def run_sequential_crawlers(self):
+        """Chạy hybrid trước, sau đó full crawler tuần tự"""
+        try:
+            logger.info("🚀 Starting Sequential Crawlers (Hybrid → Full)...")
+            start_time = time.time()
+            
+            # 1. Chạy Hybrid Crawler trước
+            logger.info("📱 Phase 1: Running Hybrid Crawler...")
+            hybrid_start = time.time()
+            self.run_hybrid_crawler()
+            hybrid_elapsed = time.time() - hybrid_start
+            logger.info(f"✅ Hybrid completed in {hybrid_elapsed:.1f}s")
+            
+            # 2. Nghỉ giữa 2 crawlers
+            delay = self.scheduler_config.delay_between_crawlers
+            logger.info(f"⏳ Waiting {delay}s before Full Crawler...")
+            time.sleep(delay)
+            
+            # 3. Chạy Full Crawler sau
+            logger.info("🔄 Phase 2: Running Full Crawler...")
+            full_start = time.time()
+            self.run_full_crawler()
+            full_elapsed = time.time() - full_start
+            logger.info(f"✅ Full completed in {full_elapsed:.1f}s")
+            
+            # 4. Tổng kết
+            total_elapsed = time.time() - start_time
+            logger.info(f"🎯 Sequential crawling completed in {total_elapsed:.1f}s")
+            
+        except Exception as e:
+            logger.error(f"❌ Sequential crawlers failed: {e}")
+
     def setup_jobs(self):
         """Setup scheduled jobs"""
         
-        # Full crawler - daily at specified time
-        if self.scheduler_config.full_crawler_enabled:
+        if self.scheduler_config.enable_sequential_crawling:
+            # Sequential mode: Hybrid → Full mỗi X giờ
             self.scheduler.add_job(
-                func=self.run_full_crawler,
-                trigger=CronTrigger(
-                    hour=self.scheduler_config.full_crawler_hour,
-                    minute=self.scheduler_config.full_crawler_minute,
-                    timezone=self.scheduler_config.timezone
-                ),
-                id='full_crawler_job',
-                name='Full Crawler Daily Job',
-                replace_existing=True
-            )
-            logger.info(f"📅 Full Crawler scheduled daily at {self.scheduler_config.full_crawler_hour:02d}:{self.scheduler_config.full_crawler_minute:02d}")
-
-        # Hybrid crawler - interval
-        if self.scheduler_config.hybrid_crawler_enabled:
-            self.scheduler.add_job(
-                func=self.run_hybrid_crawler,
+                func=self.run_sequential_crawlers,
                 trigger=IntervalTrigger(
-                    hours=self.scheduler_config.hybrid_crawler_interval_hours,
+                    hours=self.scheduler_config.sequential_interval_hours,
                     start_date=datetime.now(),
                     timezone=self.scheduler_config.timezone
                 ),
-                id='hybrid_crawler_job',
-                name='Hybrid Crawler Interval Job',
+                id='sequential_crawlers_job',
+                name='Sequential Crawlers (Hybrid → Full)',
                 replace_existing=True
             )
-            logger.info(f"⏰ Hybrid Crawler scheduled every {self.scheduler_config.hybrid_crawler_interval_hours} hours")
+            logger.info(f"📅 Sequential crawlers scheduled every {self.scheduler_config.sequential_interval_hours} hours")
+            
+        else:
+            # Individual mode: Separate schedules
+            if self.scheduler_config.full_crawler_enabled:
+                self.scheduler.add_job(
+                    func=self.run_full_crawler,
+                    trigger=CronTrigger(
+                        hour=self.scheduler_config.full_crawler_hour,
+                        minute=self.scheduler_config.full_crawler_minute,
+                        timezone=self.scheduler_config.timezone
+                    ),
+                    id='full_crawler_job',
+                    name='Full Crawler Daily Job',
+                    replace_existing=True
+                )
+                logger.info(f"📅 Full Crawler scheduled daily at {self.scheduler_config.full_crawler_hour:02d}:{self.scheduler_config.full_crawler_minute:02d}")
+
+            if self.scheduler_config.hybrid_crawler_enabled:
+                self.scheduler.add_job(
+                    func=self.run_hybrid_crawler,
+                    trigger=IntervalTrigger(
+                        hours=self.scheduler_config.hybrid_crawler_interval_hours,
+                        start_date=datetime.now(),
+                        timezone=self.scheduler_config.timezone
+                    ),
+                    id='hybrid_crawler_job',
+                    name='Hybrid Crawler Interval Job',
+                    replace_existing=True
+                )
+                logger.info(f"⏰ Hybrid Crawler scheduled every {self.scheduler_config.hybrid_crawler_interval_hours} hours")
 
     def start(self):
         """Start the scheduler"""
@@ -134,8 +181,11 @@ class CrawlerScheduler:
                 next_run = job.next_run_time
                 logger.info(f"📋 {job.name}: next run at {next_run}")
             
-            # Run hybrid crawler immediately on first start
-            if self.scheduler_config.hybrid_crawler_enabled:
+            # Run initial crawlers
+            if self.scheduler_config.enable_sequential_crawling:
+                logger.info("🚀 Running initial sequential crawlers...")
+                self.run_sequential_crawlers()
+            elif self.scheduler_config.hybrid_crawler_enabled:
                 logger.info("🚀 Running initial hybrid crawler...")
                 self.run_hybrid_crawler()
                 

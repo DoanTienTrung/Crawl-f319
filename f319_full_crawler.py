@@ -14,7 +14,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, InvalidSessionIdException
 from webdriver_manager.chrome import ChromeDriverManager
 
 from config import CrawlerConfig
@@ -50,6 +50,11 @@ class PostData:
 
 
 class F319FullCrawler:
+    """
+    Full crawler với logic giống Hybrid: Incremental crawling + Parallel processing
+    Crawl từ "Hôm nay có gì?" - threads mới nhất, không cần date filter
+    """
+
     def __init__(self, db: Database, config: Optional[CrawlerConfig] = None):
         self.db = db
         self.config = config or CrawlerConfig()
@@ -258,28 +263,39 @@ class F319FullCrawler:
             logger.error(f"Error extracting post data: {e}")
             return None
 
-    def _collect_posts_from_page(self, soup: BeautifulSoup, thread_id: str) -> List[dict]:
+    def _collect_posts_from_page(self, soup: BeautifulSoup, thread_id: str, last_post_id: Optional[str] = None) -> tuple:
         posts_list = []
+        old_posts_count = 0
+        found_last_post = False
 
         try:
             main_content = soup.select_one('.mainContent')
             if not main_content:
-                return posts_list
+                return (posts_list, old_posts_count, found_last_post)
 
             message_list = main_content.select_one('.messageList')
             if not message_list:
-                return posts_list
+                return (posts_list, old_posts_count, found_last_post)
 
             posts = message_list.select('.message')
+            posts = list(reversed(posts))
 
             for post in posts:
                 try:
                     post_data = self._extract_post_data(post, thread_id)
 
                     if post_data and post_data.content.strip():
+                        if last_post_id and post_data.id == last_post_id:
+                            found_last_post = True
+                            logger.debug(f"Found last_post_id {last_post_id}, stopping")
+                            break
+
                         if self.db.post_exists(post_data.id):
-                            logger.debug(f"Post {post_data.id} already exists, skipping")
+                            old_posts_count += 1
+                            logger.debug(f"Post {post_data.id} exists, old count: {old_posts_count}")
                             continue
+                        else:
+                            old_posts_count = 0
 
                         posts_list.append({
                             "id": post_data.id,
@@ -297,12 +313,17 @@ class F319FullCrawler:
         except Exception as e:
             logger.error(f"Error collecting posts: {e}")
 
-        return posts_list
+        return (posts_list, old_posts_count, found_last_post)
 
-    def collect_thread_posts(self, url: str) -> int:
+    def collect_thread_posts(self, url: str, is_new_thread: bool = None) -> int:
         start_time = time.time()
         total_collected = 0
         thread_id = self._extract_thread_id(url)
+
+        if is_new_thread is None:
+            thread_exists = self.db.thread_exists_by_link(url)
+        else:
+            thread_exists = not is_new_thread
 
         soup = self._fetch_page(url)
         if not soup:
@@ -311,43 +332,84 @@ class F319FullCrawler:
         time.sleep(self.config.delay_between_requests)
 
         total_pages = self._get_total_pages(soup)
-        logger.info(f"Thread {thread_id} has {total_pages} pages")
-
         posts_buffer = []
+        newest_post_id = None
         last_crawled_post_id = None
 
-        for page in range(1, total_pages + 1):
-            page_url = f"{url}page-{page}" if page > 1 else url
+        if not thread_exists:
+            logger.info(f"[Thread {thread_id}] New thread, crawling forward 1→{total_pages}...")
 
-            soup = self._fetch_page(page_url)
-            if not soup:
-                continue
+            for page in range(1, total_pages + 1):
+                page_url = f"{url}page-{page}" if page > 1 else url
 
-            time.sleep(self.config.delay_between_requests)
+                soup = self._fetch_page(page_url)
+                if not soup:
+                    continue
 
-            posts_list = self._collect_posts_from_page(soup, thread_id)
+                time.sleep(self.config.delay_between_requests)
 
-            if posts_list:
-                last_crawled_post_id = posts_list[-1]['id']
+                posts_list, _, _ = self._collect_posts_from_page(soup, thread_id, None)
 
-            posts_buffer.extend(posts_list)
+                if posts_list:
+                    last_crawled_post_id = posts_list[0]['id']
 
-            if len(posts_buffer) >= self.config.batch_size:
-                inserted = self.db.batch_insert_posts(posts_buffer[:self.config.batch_size])
-                total_collected += inserted
-                logger.info(f"[Thread {thread_id}] Batch inserted {inserted}/{self.config.batch_size} posts at page {page}")
-                posts_buffer = posts_buffer[self.config.batch_size:]
+                posts_buffer.extend(posts_list)
 
-                if last_crawled_post_id:
-                    self.db.update_last_post_id(thread_id, last_crawled_post_id)
+                if len(posts_buffer) >= self.config.batch_size:
+                    inserted = self.db.batch_insert_posts(posts_buffer[:self.config.batch_size])
+                    total_collected += inserted
+                    logger.info(f"[Thread {thread_id}] Batch inserted {inserted}/{self.config.batch_size} posts at page {page}")
+                    posts_buffer = posts_buffer[self.config.batch_size:]
+
+                    if last_crawled_post_id:
+                        self.db.update_last_post_id(thread_id, last_crawled_post_id)
+
+        else:
+            last_post_id = self.db.get_last_post_id(thread_id)
+            logger.info(f"[Thread {thread_id}] Existing thread, crawling reverse {total_pages}→1 until last_post_id: {last_post_id}")
+
+            should_stop = False
+            for page in range(total_pages, 0, -1):
+                if should_stop:
+                    break
+
+                page_url = f"{url}page-{page}" if page > 1 else url
+
+                soup = self._fetch_page(page_url)
+                if not soup:
+                    continue
+
+                time.sleep(self.config.delay_between_requests)
+
+                posts_list, _, found_last = self._collect_posts_from_page(soup, thread_id, last_post_id)
+
+                if not newest_post_id and posts_list:
+                    newest_post_id = posts_list[0]['id']
+
+                posts_buffer.extend(posts_list)
+
+                if found_last:
+                    logger.info(f"[Thread {thread_id}] Found last_post_id at page {page}, stopping...")
+                    should_stop = True
+                    break
+
+                if len(posts_buffer) >= self.config.batch_size:
+                    inserted = self.db.batch_insert_posts(posts_buffer[:self.config.batch_size])
+                    total_collected += inserted
+                    logger.info(f"[Thread {thread_id}] Batch inserted {inserted}/{self.config.batch_size} posts at page {page}")
+                    posts_buffer = posts_buffer[self.config.batch_size:]
+
+                    if newest_post_id:
+                        self.db.update_last_post_id(thread_id, newest_post_id)
 
         if posts_buffer:
             inserted = self.db.batch_insert_posts(posts_buffer)
             total_collected += inserted
             logger.info(f"[Thread {thread_id}] Final batch inserted {inserted}/{len(posts_buffer)} posts")
 
-            if last_crawled_post_id:
-                self.db.update_last_post_id(thread_id, last_crawled_post_id)
+            final_post_id = newest_post_id if thread_exists else last_crawled_post_id
+            if final_post_id:
+                self.db.update_last_post_id(thread_id, final_post_id)
 
         elapsed = time.time() - start_time
         logger.info(f"[Thread {thread_id}] Collected {total_collected} posts in {elapsed:.1f}s")
@@ -358,8 +420,8 @@ class F319FullCrawler:
             thread_data = thread_info["data"]
             link = thread_info["link"]
 
-            normalized_thread_id = thread_data.id.replace("thread-", "")
             is_new_thread = not self.db.thread_exists_by_link(link)
+            normalized_thread_id = thread_data.id.replace("thread-", "")
 
             self.db.insert_f319_list({
                 "id": normalized_thread_id,
@@ -378,10 +440,10 @@ class F319FullCrawler:
             old_last_post_id = self.db.get_last_post_id(normalized_thread_id) if not is_new_thread else None
 
             thread_start = time.time()
-            posts_count = self.collect_thread_posts(link)
+            posts_count = self.collect_thread_posts(link, is_new_thread=is_new_thread)
             thread_elapsed = time.time() - thread_start
 
-            logger.info(f"✓ Thu thập được {posts_count} posts từ thread")
+            logger.info(f"Thu thập được {posts_count} posts từ thread")
 
             # Lấy last_post_id mới sau khi crawl
             new_last_post_id = self.db.get_last_post_id(normalized_thread_id)
@@ -406,27 +468,17 @@ class F319FullCrawler:
                 "new_last_post_id": "N/A"
             }
 
-    def click_hom_nay_co_gi(self) -> bool:
-        try:
-            logger.info("Đang truy cập 'Hôm nay có gì?'...")
-            self.driver.get("https://f319.com/find-new/threads")
-            time.sleep(2)
-            logger.info("✓ Đã truy cập 'Hôm nay có gì?' thành công")
-            return True
-
-        except Exception as e:
-            logger.error(f"Lỗi khi truy cập 'Hôm nay có gì?': {e}")
-            return False
-
     def crawl_all_today_threads(self) -> tuple:
         self.start()
         total_collected = 0
         thread_stats = []
 
         try:
-            if not self.click_hom_nay_co_gi():
-                logger.error("Không thể truy cập 'Hôm nay có gì?'")
-                return (0, [])
+            logger.info("📋 Full Crawler: Processing latest threads from 'Hôm nay có gì?'")
+            logger.info("Đang truy cập 'Hôm nay có gì?'...")
+            self.driver.get("https://f319.com/find-new/threads")
+            time.sleep(3)
+            logger.info("✓ Đã truy cập 'Hôm nay có gì?' thành công")
 
             total_list_pages = self._get_total_pages_selenium()
             logger.info(f"🎯 Sẽ crawl TẤT CẢ {total_list_pages} trang danh sách threads")
@@ -444,6 +496,23 @@ class F319FullCrawler:
                             time.sleep(2)
                         else:
                             logger.warning(f"Không lấy được URL trang {page}")
+                            break
+                    except InvalidSessionIdException:
+                        logger.warning(f"Driver crashed at page {page}, restarting...")
+                        self.stop()
+                        self.start()
+                        try:
+                            self.driver.get("https://f319.com/find-new/threads")
+                            time.sleep(3)
+                            for p in range(2, page + 1):
+                                next_btn = self.driver.find_element(By.XPATH, "//a[@class='text' and contains(text(), 'Tiếp')]")
+                                next_url = next_btn.get_attribute('href')
+                                if next_url:
+                                    self.driver.get(next_url)
+                                    time.sleep(2)
+                            logger.info(f"Driver restarted, resumed at page {page}")
+                        except Exception as retry_error:
+                            logger.error(f"Failed to restart driver: {retry_error}")
                             break
                     except NoSuchElementException:
                         logger.warning(f"Không tìm thấy nút next tại trang {page}")
@@ -467,6 +536,7 @@ class F319FullCrawler:
                 logger.info(f"Tìm thấy {len(posts_list)} threads trên trang {page}")
 
                 threads_to_crawl = []
+                
                 for item in posts_list:
                     try:
                         thread_data = self._extract_thread_data_selenium(item)
@@ -476,10 +546,18 @@ class F319FullCrawler:
                                 "data": thread_data,
                                 "link": thread_data.link
                             })
+                            logger.info(f"✅ PROCESSING: '{thread_data.title[:50]}' (Created: {thread_data.start_date})")
 
                     except Exception as e:
                         logger.error(f"Lỗi extract thread data: {e}")
                         continue
+
+                # Log kết quả
+                logger.info(f"📊 Page {page}: {len(threads_to_crawl)} threads to process")
+                
+                if not threads_to_crawl:
+                    logger.info(f"No threads to crawl on page {page}")
+                    continue
 
                 logger.info(f"Đã thu thập thông tin {len(threads_to_crawl)} threads, bắt đầu crawl posts...")
 
@@ -503,6 +581,17 @@ class F319FullCrawler:
                 logger.info(f"✓ Hoàn thành trang {page}/{total_list_pages}, tổng posts: {total_collected}")
 
                 self._random_delay()
+
+            # Tổng kết cuối crawler
+            total_threads_processed = len(thread_stats)
+            
+            logger.info("="*60)
+            logger.info("📋 FULL CRAWLER SUMMARY")
+            logger.info("="*60)
+            logger.info(f"📄 Pages processed: {total_list_pages}")
+            logger.info(f"✅ Threads processed: {total_threads_processed}")
+            logger.info(f"📝 Total posts collected: {total_collected}")
+            logger.info("="*60)
 
         finally:
             self.stop()

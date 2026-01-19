@@ -50,16 +50,19 @@ class CrawlerConfig:
 
 @dataclass
 class SchedulerConfig:
-    # Full crawler - chạy hàng ngày lúc 2h sáng
-    full_crawler_enabled: bool = True
+    
+    # Sequential crawling - chạy hybrid trước, sau đó full
+    enable_sequential_crawling: bool = True
+    sequential_interval_hours: int = 1
+    delay_between_crawlers: int = 60  # giây nghỉ giữa hybrid và full
+    
+    # Individual crawler settings (dùng khi sequential = False)
+    full_crawler_enabled: bool = False
     full_crawler_hour: int = 2
     full_crawler_minute: int = 0
     
-    # Hybrid crawler - chạy mỗi 1 tiếng
-    hybrid_crawler_enabled: bool = True
+    hybrid_crawler_enabled: bool = False
     hybrid_crawler_interval_hours: int = 1
     
     # Chung
     timezone: str = "Asia/Ho_Chi_Minh"
-
-

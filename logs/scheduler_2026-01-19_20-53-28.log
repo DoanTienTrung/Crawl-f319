@@ -1,0 +1,958 @@
+2026-01-19 20:53:28,193 - INFO - Log file created: logs/scheduler_2026-01-19_20-53-28.log
+2026-01-19 20:53:28,381 - INFO - Connected to PostgreSQL: f319_data
+2026-01-19 20:53:28,416 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-01-19 20:53:28,416 - INFO - 📅 Sequential crawlers scheduled every 1 hours
+2026-01-19 20:53:28,417 - INFO - Added job "Sequential Crawlers (Hybrid → Full)" to job store "default"
+2026-01-19 20:53:28,417 - INFO - Scheduler started
+2026-01-19 20:53:28,418 - INFO - 🎯 Scheduler started successfully
+2026-01-19 20:53:28,455 - INFO - 📋 Sequential Crawlers (Hybrid → Full): next run at 2026-01-19 21:53:28.415886+07:00
+2026-01-19 20:53:28,455 - INFO - 🚀 Running initial sequential crawlers...
+2026-01-19 20:53:28,456 - INFO - 🚀 Starting Sequential Crawlers (Hybrid → Full)...
+2026-01-19 20:53:28,457 - INFO - 📱 Phase 1: Running Hybrid Crawler...
+2026-01-19 20:53:28,457 - INFO - 🚀 Starting Hybrid Crawler job...
+2026-01-19 20:53:28,458 - INFO - ====== WebDriver manager ======
+2026-01-19 20:53:29,703 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-19 20:53:30,552 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-19 20:53:31,286 - INFO - Driver [C:\Users\admin\.wdm\drivers\chromedriver\win64\143.0.7499.192\chromedriver-win32/chromedriver.exe] found in cache
+2026-01-19 20:53:32,486 - INFO - Selenium driver started
+2026-01-19 20:53:32,486 - INFO - 📅 Thread filter: Only threads from 01/01/2025 onwards
+2026-01-19 20:53:32,486 - INFO - Đang load trang (New posts)...
+2026-01-19 20:53:40,819 - INFO - ✓ URL có pagination: https://f319.com/find-new/posts
+2026-01-19 20:53:40,819 - INFO - Sử dụng URL: https://f319.com/find-new/posts
+2026-01-19 20:53:40,820 - INFO - Đang xử lý trang 1
+2026-01-19 20:53:42,847 - INFO - Tìm thấy 20 threads trên trang 1
+2026-01-19 20:53:43,105 - INFO - ✅ ACCEPTED: 'Ngôi nhà nhỏ trên Thảo Nguyên - P86' (Created: 01/01/2026)
+2026-01-19 20:53:43,253 - INFO - ✅ ACCEPTED: 'Phân tích tiềm năng cổ phiếu AAA.' (Created: 28/02/2025)
+2026-01-19 20:53:43,454 - INFO - ✅ ACCEPTED: 'Làm gì có sóng cổ phiếu ngân hàng lúc này…' (Created: Thứ tư lúc 21:15)
+2026-01-19 20:53:43,671 - INFO - ✅ ACCEPTED: 'Góc nhìn phân tích kỹ thuật cổ phiếu ngành Xây dựn' (Created: Hôm nay lúc 19:34)
+2026-01-19 20:53:43,866 - INFO - ✅ ACCEPTED: 'Gấp - Viên kim cương thô còn sót lại !!!' (Created: Hôm nay lúc 12:31)
+2026-01-19 20:53:44,019 - INFO - ✅ ACCEPTED: 'BID - Big Game thoái vốn như GAS GVR' (Created: 06/01/2026)
+2026-01-19 20:53:44,128 - INFO - ✅ ACCEPTED: 'Vàng thật không sợ thử lửa - Khởi đầu mới !' (Created: 08/01/2026)
+2026-01-19 20:53:44,257 - INFO - ✅ ACCEPTED: 'STB - Cổ phiếu kịch hay đang đến hồi cao trào(' (Created: 14/09/2025)
+2026-01-19 20:53:44,402 - INFO - ✅ ACCEPTED: 'Săn lùng cổ phiếu PENNY đột biến 2026!' (Created: Thứ tư lúc 16:07)
+2026-01-19 20:53:44,540 - INFO - ✅ ACCEPTED: 'PNJ viên kim cương sót lại mở đầu chu kỳ tăng trưở' (Created: 15/12/2025)
+2026-01-19 20:53:44,683 - INFO - ✅ ACCEPTED: 'PHR - Sắp nhận đền bù 2-3k tỷ từ Thaco' (Created: 11/06/2025)
+2026-01-19 20:53:44,889 - INFO - ✅ ACCEPTED: 'Tản mạn về CPI và TTCK (53)' (Created: 03/01/2026)
+2026-01-19 20:53:45,131 - INFO - ✅ ACCEPTED: 'VNI - vươn mình 1954 or 1975' (Created: 08/11/2025)
+2026-01-19 20:53:45,349 - INFO - ✅ ACCEPTED: 'KLB siêu cổ phiếu hiếm hoi còn dư địa tăng giá mạn' (Created: 20/10/2025)
+2026-01-19 20:53:45,521 - INFO - ✅ ACCEPTED: 'Trung Quốc sau mục tiêu GDP 5%: Xuất khẩu cứu tăng' (Created: Hôm nay lúc 11:43)
+2026-01-19 20:53:45,686 - INFO - ✅ ACCEPTED: 'LLM - Tổng thầu EPC số 1 VN khởi động thoái vốn NN' (Created: Hôm qua, lúc 16:54)
+2026-01-19 20:53:45,805 - INFO - 🚫 FILTERED: 'VNI - 8668 - Hai năm !' (Created: 19/10/2024)
+2026-01-19 20:53:45,950 - INFO - ✅ ACCEPTED: 'IDC trần 10% rồi. Ai chung tàu không nào.' (Created: Hôm nay lúc 10:24)
+2026-01-19 20:53:46,097 - INFO - ✅ ACCEPTED: 'Vừa bán hết hôm nay giờ nhìn DJF giảm hết hồn' (Created: Hôm nay lúc 18:20)
+2026-01-19 20:53:46,247 - INFO - ✅ ACCEPTED: 'MSN siêu cổ 2026 lộ diện' (Created: Hôm qua, lúc 09:41)
+2026-01-19 20:53:46,247 - INFO - 📊 Page 1: 19 threads accepted, 1 filtered out
+2026-01-19 20:53:46,247 - INFO - 🗓️  Filtered 1 threads older than 01/01/2025
+2026-01-19 20:53:46,248 - INFO - 🎯 Processing 19 threads from 01/01/2025 onwards
+2026-01-19 20:53:46,248 - INFO - Đã thu thập thông tin 19 threads, bắt đầu crawl posts...
+2026-01-19 20:53:46,253 - INFO - [1/19] Crawl thread: Ngôi nhà nhỏ trên Thảo Nguyên - P86...
+2026-01-19 20:53:46,253 - INFO - [2/19] Crawl thread: Phân tích tiềm năng cổ phiếu AAA....
+2026-01-19 20:53:49,381 - INFO - [Thread 1904965] Existing thread, crawling reverse 13→1 until last_post_id: post-47889379
+2026-01-19 20:53:49,381 - INFO - [Thread 1942185] Existing thread, crawling reverse 653→1 until last_post_id: post-47889451
+2026-01-19 20:53:51,934 - INFO - [Thread 1904965] Found last_post_id at page 13, stopping...
+2026-01-19 20:53:51,951 - INFO - [Thread 1904965] Final batch inserted 1/1 posts
+2026-01-19 20:53:51,954 - INFO - [Thread 1904965] Collected 1 posts in 5.7s
+2026-01-19 20:53:51,954 - INFO - Thu thập được 1 posts từ thread
+2026-01-19 20:53:51,958 - INFO - [3/19] Crawl thread: Làm gì có sóng cổ phiếu ngân hàng lúc này…...
+2026-01-19 20:53:52,051 - INFO - [Thread 1942185] Found last_post_id at page 653, stopping...
+2026-01-19 20:53:52,058 - INFO - [Thread 1942185] Final batch inserted 7/7 posts
+2026-01-19 20:53:52,059 - INFO - [Thread 1942185] Collected 7 posts in 5.8s
+2026-01-19 20:53:52,060 - INFO - Thu thập được 7 posts từ thread
+2026-01-19 20:53:52,062 - INFO - [4/19] Crawl thread: Góc nhìn phân tích kỹ thuật cổ phiếu ngành Xây dựn...
+2026-01-19 20:53:54,356 - INFO - [Thread 1943823] Existing thread, crawling reverse 11→1 until last_post_id: post-47889447
+2026-01-19 20:53:54,416 - INFO - [Thread 1944277] Existing thread, crawling reverse 1→1 until last_post_id: post-47889385
+2026-01-19 20:53:57,144 - INFO - [Thread 1944277] Found last_post_id at page 1, stopping...
+2026-01-19 20:53:57,182 - INFO - [Thread 1944277] Final batch inserted 1/1 posts
+2026-01-19 20:53:57,184 - INFO - [Thread 1944277] Collected 1 posts in 5.1s
+2026-01-19 20:53:57,185 - INFO - Thu thập được 1 posts từ thread
+2026-01-19 20:53:57,189 - INFO - [5/19] Crawl thread: Gấp - Viên kim cương thô còn sót lại !!!...
+2026-01-19 20:53:57,667 - INFO - [Thread 1943823] Found last_post_id at page 11, stopping...
+2026-01-19 20:53:57,697 - INFO - [Thread 1943823] Final batch inserted 3/3 posts
+2026-01-19 20:53:57,699 - INFO - [Thread 1943823] Collected 3 posts in 5.7s
+2026-01-19 20:53:57,700 - INFO - Thu thập được 3 posts từ thread
+2026-01-19 20:53:57,704 - INFO - [6/19] Crawl thread: BID - Big Game thoái vốn như GAS GVR...
+2026-01-19 20:53:59,546 - INFO - [Thread 1944225] Existing thread, crawling reverse 2→1 until last_post_id: post-47889349
+2026-01-19 20:54:00,200 - INFO - [Thread 1942605] New thread, crawling forward 1→4...
+2026-01-19 20:54:02,370 - INFO - [Thread 1944225] Found last_post_id at page 2, stopping...
+2026-01-19 20:54:02,371 - INFO - [Thread 1944225] Collected 0 posts in 5.2s
+2026-01-19 20:54:02,372 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 20:54:02,374 - INFO - [7/19] Crawl thread: Vàng thật không sợ thử lửa - Khởi đầu mới !...
+2026-01-19 20:54:04,870 - INFO - [Thread 1942923] Existing thread, crawling reverse 5→1 until last_post_id: post-47889413
+2026-01-19 20:54:07,818 - INFO - [Thread 1942923] Found last_post_id at page 5, stopping...
+2026-01-19 20:54:07,819 - INFO - [Thread 1942923] Collected 0 posts in 5.4s
+2026-01-19 20:54:07,820 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 20:54:07,823 - INFO - [8/19] Crawl thread: STB - Cổ phiếu kịch hay đang đến hồi cao trào(...
+2026-01-19 20:54:10,517 - INFO - [Thread 1942605] Final batch inserted 34/34 posts
+2026-01-19 20:54:10,520 - INFO - [Thread 1942605] Collected 34 posts in 12.8s
+2026-01-19 20:54:10,521 - INFO - Thu thập được 34 posts từ thread
+2026-01-19 20:54:10,523 - INFO - [9/19] Crawl thread: Săn lùng cổ phiếu PENNY đột biến 2026!...
+2026-01-19 20:54:10,563 - INFO - [Thread 1930607] Existing thread, crawling reverse 140→1 until last_post_id: post-47889395
+2026-01-19 20:54:14,329 - INFO - [Thread 1943779] Existing thread, crawling reverse 15→1 until last_post_id: post-47889401
+2026-01-19 20:54:14,332 - INFO - [Thread 1930607] Found last_post_id at page 140, stopping...
+2026-01-19 20:54:14,370 - INFO - [Thread 1930607] Final batch inserted 3/3 posts
+2026-01-19 20:54:14,372 - INFO - [Thread 1930607] Collected 3 posts in 6.5s
+2026-01-19 20:54:14,373 - INFO - Thu thập được 3 posts từ thread
+2026-01-19 20:54:14,376 - INFO - [10/19] Crawl thread: PNJ viên kim cương sót lại mở đầu chu kỳ tăng trưở...
+2026-01-19 20:54:17,090 - INFO - [Thread 1943779] Found last_post_id at page 15, stopping...
+2026-01-19 20:54:17,127 - INFO - [Thread 1943779] Final batch inserted 1/1 posts
+2026-01-19 20:54:17,131 - INFO - [Thread 1943779] Collected 1 posts in 6.6s
+2026-01-19 20:54:17,131 - INFO - Thu thập được 1 posts từ thread
+2026-01-19 20:54:17,134 - INFO - [11/19] Crawl thread: PHR - Sắp nhận đền bù 2-3k tỷ từ Thaco...
+2026-01-19 20:54:17,498 - INFO - [Thread 1940615] Existing thread, crawling reverse 22→1 until last_post_id: post-47888867
+2026-01-19 20:54:19,563 - INFO - [Thread 1918203] Existing thread, crawling reverse 243→1 until last_post_id: post-47889407
+2026-01-19 20:54:19,789 - INFO - [Thread 1940615] Found last_post_id at page 22, stopping...
+2026-01-19 20:54:19,793 - INFO - [Thread 1940615] Final batch inserted 1/1 posts
+2026-01-19 20:54:19,796 - INFO - [Thread 1940615] Collected 1 posts in 5.4s
+2026-01-19 20:54:19,796 - INFO - Thu thập được 1 posts từ thread
+2026-01-19 20:54:19,799 - INFO - [12/19] Crawl thread: Tản mạn về CPI và TTCK (53)...
+2026-01-19 20:54:22,743 - INFO - [Thread 1918203] Found last_post_id at page 243, stopping...
+2026-01-19 20:54:22,780 - INFO - [Thread 1918203] Final batch inserted 1/1 posts
+2026-01-19 20:54:22,783 - INFO - [Thread 1918203] Collected 1 posts in 5.6s
+2026-01-19 20:54:22,783 - INFO - [Thread 1942249] Existing thread, crawling reverse 59→1 until last_post_id: post-47889459
+2026-01-19 20:54:22,784 - INFO - Thu thập được 1 posts từ thread
+2026-01-19 20:54:22,788 - INFO - [13/19] Crawl thread: VNI - vươn mình 1954 or 1975...
+2026-01-19 20:54:25,164 - INFO - [Thread 1936901] New thread, crawling forward 1→268...
+2026-01-19 20:54:25,204 - INFO - [Thread 1942249] Found last_post_id at page 59, stopping...
+2026-01-19 20:54:25,241 - INFO - [Thread 1942249] Final batch inserted 2/2 posts
+2026-01-19 20:54:25,244 - INFO - [Thread 1942249] Collected 2 posts in 5.4s
+2026-01-19 20:54:25,244 - INFO - Thu thập được 2 posts từ thread
+2026-01-19 20:54:25,247 - INFO - [14/19] Crawl thread: KLB siêu cổ phiếu hiếm hoi còn dư địa tăng giá mạn...
+2026-01-19 20:54:27,803 - INFO - [Thread 1934553] Existing thread, crawling reverse 6→1 until last_post_id: post-47888601
+2026-01-19 20:54:30,424 - INFO - [Thread 1934553] Found last_post_id at page 6, stopping...
+2026-01-19 20:54:30,462 - INFO - [Thread 1934553] Final batch inserted 1/1 posts
+2026-01-19 20:54:30,467 - INFO - [Thread 1934553] Collected 1 posts in 5.2s
+2026-01-19 20:54:30,471 - INFO - Thu thập được 1 posts từ thread
+2026-01-19 20:54:30,482 - INFO - [15/19] Crawl thread: Trung Quốc sau mục tiêu GDP 5%: Xuất khẩu cứu tăng...
+2026-01-19 20:54:33,545 - INFO - [Thread 1944219] Existing thread, crawling reverse 1→1 until last_post_id: post-47889469
+2026-01-19 20:54:35,846 - INFO - [Thread 1944219] Found last_post_id at page 1, stopping...
+2026-01-19 20:54:35,847 - INFO - [Thread 1944219] Collected 0 posts in 5.4s
+2026-01-19 20:54:35,847 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 20:54:35,850 - INFO - [16/19] Crawl thread: LLM - Tổng thầu EPC số 1 VN khởi động thoái vốn NN...
+2026-01-19 20:54:40,349 - INFO - [Thread 1944139] Existing thread, crawling reverse 3→1 until last_post_id: post-47889467
+2026-01-19 20:54:44,838 - INFO - [Thread 1944139] Found last_post_id at page 3, stopping...
+2026-01-19 20:54:44,839 - INFO - [Thread 1944139] Collected 0 posts in 9.0s
+2026-01-19 20:54:44,839 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 20:54:44,842 - INFO - [17/19] Crawl thread: IDC trần 10% rồi. Ai chung tàu không nào....
+2026-01-19 20:54:47,250 - INFO - [Thread 1944195] Existing thread, crawling reverse 1→1 until last_post_id: post-47889463
+2026-01-19 20:54:49,490 - INFO - [Thread 1944195] Found last_post_id at page 1, stopping...
+2026-01-19 20:54:49,490 - INFO - [Thread 1944195] Collected 0 posts in 4.6s
+2026-01-19 20:54:49,491 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 20:54:49,493 - INFO - [18/19] Crawl thread: Vừa bán hết hôm nay giờ nhìn DJF giảm hết hồn...
+2026-01-19 20:54:52,690 - INFO - [Thread 1944269] Existing thread, crawling reverse 3→1 until last_post_id: post-47889461
+2026-01-19 20:54:55,445 - INFO - [Thread 1944269] Found last_post_id at page 3, stopping...
+2026-01-19 20:54:55,446 - INFO - [Thread 1944269] Collected 0 posts in 6.0s
+2026-01-19 20:54:55,446 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 20:54:55,449 - INFO - [19/19] Crawl thread: MSN siêu cổ 2026 lộ diện...
+2026-01-19 20:54:55,753 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 10
+2026-01-19 20:54:58,068 - INFO - [Thread 1944109] Existing thread, crawling reverse 2→1 until last_post_id: post-47889455
+2026-01-19 20:55:00,343 - INFO - [Thread 1944109] Found last_post_id at page 2, stopping...
+2026-01-19 20:55:00,344 - INFO - [Thread 1944109] Collected 0 posts in 4.9s
+2026-01-19 20:55:00,344 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 20:55:20,066 - WARNING - Attempt 1/3 failed for https://f319.com/threads/vni-vuon-minh-1954-or-1975.1936901/page-17: ("Connection broken: ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)", ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-01-19 20:55:39,219 - WARNING - Attempt 1/3 failed for https://f319.com/threads/vni-vuon-minh-1954-or-1975.1936901/page-20: ("Connection broken: ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)", ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-01-19 20:55:45,807 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 20
+2026-01-19 20:56:17,070 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 31
+2026-01-19 20:56:42,155 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 41
+2026-01-19 21:03:20,637 - WARNING - Attempt 1/3 failed for https://f319.com/threads/vni-vuon-minh-1954-or-1975.1936901/page-50: HTTPSConnectionPool(host='f319.com', port=443): Max retries exceeded with url: /threads/vni-vuon-minh-1954-or-1975.1936901/page-50 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000238B3ABAE90>: Failed to resolve 'f319.com' ([Errno 11001] getaddrinfo failed)"))
+2026-01-19 21:03:29,236 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 51
+2026-01-19 21:04:00,996 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 61
+2026-01-19 21:04:32,437 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 71
+2026-01-19 21:04:53,784 - WARNING - Attempt 1/3 failed for https://f319.com/threads/vni-vuon-minh-1954-or-1975.1936901/page-77: ("Connection broken: ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)", ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-01-19 21:05:11,992 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 81
+2026-01-19 21:05:40,311 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 91
+2026-01-19 21:06:12,415 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 101
+2026-01-19 21:06:46,055 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 111
+2026-01-19 21:07:23,841 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 121
+2026-01-19 21:07:56,650 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 131
+2026-01-19 21:08:22,185 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 141
+2026-01-19 21:08:41,454 - WARNING - Attempt 1/3 failed for https://f319.com/threads/vni-vuon-minh-1954-or-1975.1936901/page-148: ("Connection broken: ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)", ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-01-19 21:08:55,188 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 151
+2026-01-19 21:09:26,202 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 161
+2026-01-19 21:09:58,749 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 171
+2026-01-19 21:10:32,652 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 181
+2026-01-19 21:10:57,946 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 191
+2026-01-19 21:11:26,036 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 201
+2026-01-19 21:11:56,635 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 211
+2026-01-19 21:12:25,454 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 221
+2026-01-19 21:12:48,912 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 230
+2026-01-19 21:13:27,594 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 240
+2026-01-19 21:13:53,227 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 250
+2026-01-19 21:14:26,251 - INFO - [Thread 1936901] Batch inserted 100/100 posts at page 260
+2026-01-19 21:14:49,731 - INFO - [Thread 1936901] Final batch inserted 74/74 posts
+2026-01-19 21:14:49,734 - INFO - [Thread 1936901] Collected 2674 posts in 1226.9s
+2026-01-19 21:14:49,735 - INFO - Thu thập được 2674 posts từ thread
+2026-01-19 21:14:49,737 - INFO - Hoàn thành trang 1, tổng posts: 2729
+2026-01-19 21:15:04,166 - INFO - Đang xử lý trang 2
+2026-01-19 21:15:04,288 - WARNING - Driver crashed at page 2, restarting...
+2026-01-19 21:15:06,433 - INFO - Selenium driver stopped
+2026-01-19 21:15:06,434 - INFO - ====== WebDriver manager ======
+2026-01-19 21:15:07,643 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-19 21:15:08,269 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-19 21:15:08,869 - INFO - Driver [C:\Users\admin\.wdm\drivers\chromedriver\win64\143.0.7499.192\chromedriver-win32/chromedriver.exe] found in cache
+2026-01-19 21:15:09,992 - INFO - Selenium driver started
+2026-01-19 21:15:29,870 - INFO - Driver restarted, resumed at page 2
+2026-01-19 21:15:31,908 - INFO - Tìm thấy 20 threads trên trang 2
+2026-01-19 21:15:32,184 - INFO - ✅ ACCEPTED: 'PNJ viên kim cương sót lại mở đầu chu kỳ tăng trưở' (Created: 15/12/2025)
+2026-01-19 21:15:32,396 - INFO - ✅ ACCEPTED: 'PHR - Sắp nhận đền bù 2-3k tỷ từ Thaco' (Created: 11/06/2025)
+2026-01-19 21:15:32,648 - INFO - ✅ ACCEPTED: 'Tản mạn về CPI và TTCK (53)' (Created: 03/01/2026)
+2026-01-19 21:15:32,906 - INFO - ✅ ACCEPTED: 'VNI - vươn mình 1954 or 1975' (Created: 08/11/2025)
+2026-01-19 21:15:33,083 - INFO - ✅ ACCEPTED: 'KLB siêu cổ phiếu hiếm hoi còn dư địa tăng giá mạn' (Created: 20/10/2025)
+2026-01-19 21:15:33,228 - INFO - ✅ ACCEPTED: 'Trung Quốc sau mục tiêu GDP 5%: Xuất khẩu cứu tăng' (Created: Hôm nay lúc 11:43)
+2026-01-19 21:15:33,414 - INFO - ✅ ACCEPTED: 'LLM - Tổng thầu EPC số 1 VN khởi động thoái vốn NN' (Created: Hôm qua, lúc 16:54)
+2026-01-19 21:15:33,572 - INFO - 🚫 FILTERED: 'VNI - 8668 - Hai năm !' (Created: 19/10/2024)
+2026-01-19 21:15:33,721 - INFO - ✅ ACCEPTED: 'IDC trần 10% rồi. Ai chung tàu không nào.' (Created: Hôm nay lúc 10:24)
+2026-01-19 21:15:33,850 - INFO - ✅ ACCEPTED: 'MSN siêu cổ 2026 lộ diện' (Created: Hôm qua, lúc 09:41)
+2026-01-19 21:15:33,955 - INFO - 🚫 FILTERED: 'NTC – Chu kỳ tăng trưởng trở lại (NTC kỳ 8)' (Created: 06/10/2024)
+2026-01-19 21:15:34,067 - INFO - ✅ ACCEPTED: 'Kỷ nguyên mới, Kỷ nguyên Vươn mình của Việt Nam!' (Created: Hôm nay lúc 18:54)
+2026-01-19 21:15:34,206 - INFO - ✅ ACCEPTED: 'NGHỊ ĐỊNH 20/2026/NĐ-CP: khi chính sách "MỞ KHOÁ" ' (Created: Hôm nay lúc 13:25)
+2026-01-19 21:15:34,347 - INFO - ✅ ACCEPTED: 'NDN - Lợi nhuận tăng gấp 4, EPS 9 tháng đạt 2k' (Created: 27/10/2025)
+2026-01-19 21:15:34,484 - INFO - ✅ ACCEPTED: 'Dòng P đang chân sóng lớn $$$$$' (Created: 29/10/2025)
+2026-01-19 21:15:34,620 - INFO - ✅ ACCEPTED: 'Vnindex 2026-2030, hành trình vượt đỉnh.' (Created: 10/01/2026)
+2026-01-19 21:15:34,763 - INFO - ✅ ACCEPTED: 'Vĩnh Hoàn và KIDO cùng thông báo mua lại cổ phiếu ' (Created: Hôm nay lúc 19:07)
+2026-01-19 21:15:34,896 - INFO - 🚫 FILTERED: 'TTN - DN viễn thông vốn hoá 200 tỷ và hợp đồng gần' (Created: 28/05/2019)
+2026-01-19 21:15:35,018 - INFO - 🚫 FILTERED: 'VEA:Tổng CT Máy động lực và máy Nông nghiệp VN- CP' (Created: 18/08/2023)
+2026-01-19 21:15:35,143 - INFO - ✅ ACCEPTED: 'VNM Cơ hội đang rất rõ ràng !' (Created: 11/08/2025)
+2026-01-19 21:15:35,143 - INFO - 📊 Page 2: 16 threads accepted, 4 filtered out
+2026-01-19 21:15:35,143 - INFO - 🗓️  Filtered 4 threads older than 01/01/2025
+2026-01-19 21:15:35,143 - INFO - 🎯 Processing 16 threads from 01/01/2025 onwards
+2026-01-19 21:15:35,144 - INFO - Đã thu thập thông tin 16 threads, bắt đầu crawl posts...
+2026-01-19 21:15:35,146 - INFO - [1/16] Crawl thread: PNJ viên kim cương sót lại mở đầu chu kỳ tăng trưở...
+2026-01-19 21:15:35,147 - INFO - [2/16] Crawl thread: PHR - Sắp nhận đền bù 2-3k tỷ từ Thaco...
+2026-01-19 21:15:38,496 - INFO - [Thread 1940615] Existing thread, crawling reverse 22→1 until last_post_id: post-47889499
+2026-01-19 21:15:38,663 - INFO - [Thread 1918203] Existing thread, crawling reverse 243→1 until last_post_id: post-47889491
+2026-01-19 21:15:40,843 - INFO - [Thread 1940615] Found last_post_id at page 22, stopping...
+2026-01-19 21:15:40,844 - INFO - [Thread 1940615] Collected 0 posts in 5.7s
+2026-01-19 21:15:40,844 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:15:40,846 - INFO - [3/16] Crawl thread: Tản mạn về CPI và TTCK (53)...
+2026-01-19 21:15:43,640 - INFO - [Thread 1918203] Found last_post_id at page 243, stopping...
+2026-01-19 21:15:43,641 - INFO - [Thread 1918203] Collected 0 posts in 8.5s
+2026-01-19 21:15:43,641 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:15:43,645 - INFO - [4/16] Crawl thread: VNI - vươn mình 1954 or 1975...
+2026-01-19 21:15:43,818 - INFO - [Thread 1942249] Existing thread, crawling reverse 59→1 until last_post_id: post-47889485
+2026-01-19 21:15:46,069 - INFO - [Thread 1936901] Existing thread, crawling reverse 268→1 until last_post_id: post-47889479
+2026-01-19 21:15:46,464 - INFO - [Thread 1942249] Found last_post_id at page 59, stopping...
+2026-01-19 21:15:46,464 - INFO - [Thread 1942249] Collected 0 posts in 5.6s
+2026-01-19 21:15:46,465 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:15:46,467 - INFO - [5/16] Crawl thread: KLB siêu cổ phiếu hiếm hoi còn dư địa tăng giá mạn...
+2026-01-19 21:15:48,437 - INFO - [Thread 1936901] Found last_post_id at page 268, stopping...
+2026-01-19 21:15:48,438 - INFO - [Thread 1936901] Collected 0 posts in 4.8s
+2026-01-19 21:15:48,439 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:15:48,441 - INFO - [6/16] Crawl thread: Trung Quốc sau mục tiêu GDP 5%: Xuất khẩu cứu tăng...
+2026-01-19 21:15:49,139 - INFO - [Thread 1934553] Existing thread, crawling reverse 6→1 until last_post_id: post-47889475
+2026-01-19 21:15:55,146 - INFO - [Thread 1944219] Existing thread, crawling reverse 1→1 until last_post_id: post-47889469
+2026-01-19 21:15:55,166 - INFO - [Thread 1934553] Found last_post_id at page 6, stopping...
+2026-01-19 21:15:55,167 - INFO - [Thread 1934553] Collected 0 posts in 8.7s
+2026-01-19 21:15:55,167 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:15:55,170 - INFO - [7/16] Crawl thread: LLM - Tổng thầu EPC số 1 VN khởi động thoái vốn NN...
+2026-01-19 21:15:57,577 - INFO - [Thread 1944219] Found last_post_id at page 1, stopping...
+2026-01-19 21:15:57,577 - INFO - [Thread 1944219] Collected 0 posts in 9.1s
+2026-01-19 21:15:57,578 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:15:57,581 - INFO - [Thread 1944139] Existing thread, crawling reverse 3→1 until last_post_id: post-47889467
+2026-01-19 21:15:57,583 - INFO - [8/16] Crawl thread: IDC trần 10% rồi. Ai chung tàu không nào....
+2026-01-19 21:15:59,802 - INFO - [Thread 1944195] Existing thread, crawling reverse 1→1 until last_post_id: post-47889463
+2026-01-19 21:15:59,928 - INFO - [Thread 1944139] Found last_post_id at page 3, stopping...
+2026-01-19 21:15:59,929 - INFO - [Thread 1944139] Collected 0 posts in 4.8s
+2026-01-19 21:15:59,929 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:15:59,932 - INFO - [9/16] Crawl thread: MSN siêu cổ 2026 lộ diện...
+2026-01-19 21:16:02,056 - INFO - [Thread 1944195] Found last_post_id at page 1, stopping...
+2026-01-19 21:16:02,057 - INFO - [Thread 1944195] Collected 0 posts in 4.5s
+2026-01-19 21:16:02,057 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:02,060 - INFO - [10/16] Crawl thread: Kỷ nguyên mới, Kỷ nguyên Vươn mình của Việt Nam!...
+2026-01-19 21:16:02,223 - INFO - [Thread 1944109] Existing thread, crawling reverse 2→1 until last_post_id: post-47889455
+2026-01-19 21:16:04,543 - INFO - [Thread 1944109] Found last_post_id at page 2, stopping...
+2026-01-19 21:16:04,545 - INFO - [Thread 1944109] Collected 0 posts in 4.6s
+2026-01-19 21:16:04,546 - INFO - [Thread 1944273] Existing thread, crawling reverse 1→1 until last_post_id: post-47889445
+2026-01-19 21:16:04,546 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:04,550 - INFO - [11/16] Crawl thread: NGHỊ ĐỊNH 20/2026/NĐ-CP: khi chính sách "MỞ KHOÁ" ...
+2026-01-19 21:16:06,816 - INFO - [Thread 1944231] Existing thread, crawling reverse 1→1 until last_post_id: post-47889435
+2026-01-19 21:16:06,891 - INFO - [Thread 1944273] Found last_post_id at page 1, stopping...
+2026-01-19 21:16:06,892 - INFO - [Thread 1944273] Collected 0 posts in 4.8s
+2026-01-19 21:16:06,893 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:06,896 - INFO - [12/16] Crawl thread: NDN - Lợi nhuận tăng gấp 4, EPS 9 tháng đạt 2k...
+2026-01-19 21:16:09,119 - INFO - [Thread 1944231] Found last_post_id at page 1, stopping...
+2026-01-19 21:16:09,120 - INFO - [Thread 1944231] Collected 0 posts in 4.6s
+2026-01-19 21:16:09,121 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:09,123 - INFO - [13/16] Crawl thread: Dòng P đang chân sóng lớn $$$$$...
+2026-01-19 21:16:09,189 - INFO - [Thread 1935319] Existing thread, crawling reverse 1→1 until last_post_id: post-47889433
+2026-01-19 21:16:11,665 - INFO - [Thread 1935633] Existing thread, crawling reverse 45→1 until last_post_id: post-47889431
+2026-01-19 21:16:11,808 - INFO - [Thread 1935319] Found last_post_id at page 1, stopping...
+2026-01-19 21:16:11,809 - INFO - [Thread 1935319] Collected 0 posts in 4.9s
+2026-01-19 21:16:11,809 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:11,812 - INFO - [14/16] Crawl thread: Vnindex 2026-2030, hành trình vượt đỉnh....
+2026-01-19 21:16:14,515 - INFO - [Thread 1935633] Found last_post_id at page 45, stopping...
+2026-01-19 21:16:14,518 - INFO - [Thread 1935633] Collected 0 posts in 5.4s
+2026-01-19 21:16:14,518 - INFO - [Thread 1943323] Existing thread, crawling reverse 7→1 until last_post_id: post-47889429
+2026-01-19 21:16:14,518 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:14,522 - INFO - [15/16] Crawl thread: Vĩnh Hoàn và KIDO cùng thông báo mua lại cổ phiếu ...
+2026-01-19 21:16:17,060 - INFO - [Thread 1944275] Existing thread, crawling reverse 1→1 until last_post_id: post-47889425
+2026-01-19 21:16:17,065 - INFO - [Thread 1943323] Found last_post_id at page 7, stopping...
+2026-01-19 21:16:17,068 - INFO - [Thread 1943323] Collected 0 posts in 5.3s
+2026-01-19 21:16:17,069 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:17,072 - INFO - [16/16] Crawl thread: VNM Cơ hội đang rất rõ ràng !...
+2026-01-19 21:16:19,338 - INFO - [Thread 1944275] Found last_post_id at page 1, stopping...
+2026-01-19 21:16:19,338 - INFO - [Thread 1944275] Collected 0 posts in 4.8s
+2026-01-19 21:16:19,339 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:19,586 - INFO - [Thread 1926367] Existing thread, crawling reverse 175→1 until last_post_id: post-47889399
+2026-01-19 21:16:21,905 - INFO - [Thread 1926367] Found last_post_id at page 175, stopping...
+2026-01-19 21:16:21,907 - INFO - [Thread 1926367] Collected 0 posts in 4.8s
+2026-01-19 21:16:21,907 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:21,909 - INFO - Hoàn thành trang 2, tổng posts: 2729
+2026-01-19 21:16:25,221 - INFO - Đang xử lý trang 3
+2026-01-19 21:16:32,202 - INFO - Tìm thấy 20 threads trên trang 3
+2026-01-19 21:16:32,373 - INFO - ✅ ACCEPTED: 'Năm 2025 tăng trưởng thứ 2 thế giới, năm 2026 phải' (Created: Hôm nay lúc 20:08)
+2026-01-19 21:16:32,603 - INFO - ✅ ACCEPTED: 'HAG - sắp sang trang mới cổ phiếu vươn mình tăng t' (Created: 30/10/2025)
+2026-01-19 21:16:32,829 - INFO - 🚫 FILTERED: 'CST: Cty CP Than Cao Sơn- CP Đầu tư Cực chất' (Created: 20/04/2022)
+2026-01-19 21:16:33,070 - INFO - 🚫 FILTERED: 'La Nina: khúc ca tình yêu Thủy Điện' (Created: 08/06/2024)
+2026-01-19 21:16:33,251 - INFO - 🚫 FILTERED: 'Vinfast - Xe điện của người Việt (P3)' (Created: 07/08/2024)
+2026-01-19 21:16:33,434 - INFO - ✅ ACCEPTED: 'Quý I - Đầu quý tích lũy để cuối quý bùng nổ' (Created: 04/01/2026)
+2026-01-19 21:16:33,608 - INFO - ✅ ACCEPTED: 'VCI- Cô đã thương làm người thường cũng khó' (Created: 07/07/2025)
+2026-01-19 21:16:33,794 - INFO - ✅ ACCEPTED: 'DVM - Sản xuất thuốc -Blue HNX30 giá penny' (Created: 26/09/2025)
+2026-01-19 21:16:33,998 - INFO - ✅ ACCEPTED: 'Tọa sơn, thưởng trà….Luận phong thủy cho năm Bính ' (Created: 03/01/2026)
+2026-01-19 21:16:34,183 - INFO - ✅ ACCEPTED: 'DHA - cổ phiếu thường lợi nhuận phi thường' (Created: 08/12/2025)
+2026-01-19 21:16:34,354 - INFO - ✅ ACCEPTED: 'NNC - Siêu cổ phiếu ngành đá tăng trưởng rất mạnh ' (Created: 14/08/2025)
+2026-01-19 21:16:34,567 - INFO - ✅ ACCEPTED: 'SJS - SJ GROUP: Chu kỳ điểm rơi lợi nhuận 2025 - 2' (Created: 04/09/2025)
+2026-01-19 21:16:34,748 - INFO - ✅ ACCEPTED: 'uptrend quá tuyệt vời ! 2400 vẫy gọi ........... T' (Created: 06/11/2025)
+2026-01-19 21:16:34,957 - INFO - ✅ ACCEPTED: '6LON_banks(3/4 Big.Banks)Bơm máo,dùng hết ko Ae?' (Created: 10/01/2026)
+2026-01-19 21:16:35,181 - INFO - ✅ ACCEPTED: 'Thanh khoản' (Created: 12/01/2026)
+2026-01-19 21:16:35,377 - INFO - ✅ ACCEPTED: 'VCB ---> 2XX --- VNI 2xxx' (Created: 01/12/2025)
+2026-01-19 21:16:35,547 - INFO - ✅ ACCEPTED: 'Doanh thu tối thiểu quý 4 2025 SZC gấp 3 lần. Thời' (Created: 26/10/2025)
+2026-01-19 21:16:35,730 - INFO - 🚫 FILTERED: 'SZL-có xứng đáng để đầu tư?' (Created: 27/04/2019)
+2026-01-19 21:16:35,933 - INFO - ✅ ACCEPTED: 'Chiến lược giao dịch VIX dự kiến (Đầu năm 2026)' (Created: Hôm nay lúc 10:51)
+2026-01-19 21:16:36,126 - INFO - ✅ ACCEPTED: 'việc nên làm khi thị trường vào uptrend.' (Created: Hôm nay lúc 10:43)
+2026-01-19 21:16:36,127 - INFO - 📊 Page 3: 16 threads accepted, 4 filtered out
+2026-01-19 21:16:36,127 - INFO - 🗓️  Filtered 4 threads older than 01/01/2025
+2026-01-19 21:16:36,128 - INFO - 🎯 Processing 16 threads from 01/01/2025 onwards
+2026-01-19 21:16:36,128 - INFO - Đã thu thập thông tin 16 threads, bắt đầu crawl posts...
+2026-01-19 21:16:36,130 - INFO - [1/16] Crawl thread: Năm 2025 tăng trưởng thứ 2 thế giới, năm 2026 phải...
+2026-01-19 21:16:36,131 - INFO - [2/16] Crawl thread: HAG - sắp sang trang mới cổ phiếu vươn mình tăng t...
+2026-01-19 21:16:38,382 - INFO - [Thread 1944279] Existing thread, crawling reverse 1→1 until last_post_id: post-47889373
+2026-01-19 21:16:38,461 - INFO - [Thread 1935815] Existing thread, crawling reverse 110→1 until last_post_id: post-47889371
+2026-01-19 21:16:40,593 - INFO - [Thread 1944279] Found last_post_id at page 1, stopping...
+2026-01-19 21:16:40,593 - INFO - [Thread 1944279] Collected 0 posts in 4.5s
+2026-01-19 21:16:40,594 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:40,597 - INFO - [3/16] Crawl thread: Quý I - Đầu quý tích lũy để cuối quý bùng nổ...
+2026-01-19 21:16:40,831 - INFO - [Thread 1935815] Found last_post_id at page 110, stopping...
+2026-01-19 21:16:40,832 - INFO - [Thread 1935815] Collected 0 posts in 4.7s
+2026-01-19 21:16:40,833 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:40,836 - INFO - [4/16] Crawl thread: VCI- Cô đã thương làm người thường cũng khó...
+2026-01-19 21:16:43,260 - INFO - [Thread 1942287] Existing thread, crawling reverse 9→1 until last_post_id: post-47889359
+2026-01-19 21:16:43,506 - INFO - [Thread 1921057] Existing thread, crawling reverse 18→1 until last_post_id: post-47889357
+2026-01-19 21:16:45,588 - INFO - [Thread 1942287] Found last_post_id at page 9, stopping...
+2026-01-19 21:16:45,589 - INFO - [Thread 1942287] Collected 0 posts in 5.0s
+2026-01-19 21:16:45,589 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:45,592 - INFO - [5/16] Crawl thread: DVM - Sản xuất thuốc -Blue HNX30 giá penny...
+2026-01-19 21:16:45,862 - INFO - [Thread 1921057] Found last_post_id at page 18, stopping...
+2026-01-19 21:16:45,863 - INFO - [Thread 1921057] Collected 0 posts in 5.0s
+2026-01-19 21:16:45,863 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:45,866 - INFO - [6/16] Crawl thread: Tọa sơn, thưởng trà….Luận phong thủy cho năm Bính ...
+2026-01-19 21:16:47,996 - INFO - [Thread 1931887] Existing thread, crawling reverse 15→1 until last_post_id: post-47889353
+2026-01-19 21:16:48,234 - INFO - [Thread 1942255] Existing thread, crawling reverse 175→1 until last_post_id: post-47889323
+2026-01-19 21:16:50,322 - INFO - [Thread 1931887] Found last_post_id at page 15, stopping...
+2026-01-19 21:16:50,323 - INFO - [Thread 1931887] Collected 0 posts in 4.7s
+2026-01-19 21:16:50,323 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:50,327 - INFO - [7/16] Crawl thread: DHA - cổ phiếu thường lợi nhuận phi thường...
+2026-01-19 21:16:50,773 - INFO - [Thread 1942255] Found last_post_id at page 175, stopping...
+2026-01-19 21:16:50,774 - INFO - [Thread 1942255] Collected 0 posts in 4.9s
+2026-01-19 21:16:50,774 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:50,776 - INFO - [8/16] Crawl thread: NNC - Siêu cổ phiếu ngành đá tăng trưởng rất mạnh ...
+2026-01-19 21:16:54,856 - INFO - [Thread 1939921] Existing thread, crawling reverse 27→1 until last_post_id: post-47889319
+2026-01-19 21:16:54,863 - INFO - [Thread 1927077] Existing thread, crawling reverse 34→1 until last_post_id: post-47889315
+2026-01-19 21:16:57,242 - INFO - [Thread 1939921] Found last_post_id at page 27, stopping...
+2026-01-19 21:16:57,242 - INFO - [Thread 1939921] Collected 0 posts in 6.9s
+2026-01-19 21:16:57,243 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:57,245 - INFO - [9/16] Crawl thread: SJS - SJ GROUP: Chu kỳ điểm rơi lợi nhuận 2025 - 2...
+2026-01-19 21:16:57,255 - INFO - [Thread 1927077] Found last_post_id at page 34, stopping...
+2026-01-19 21:16:57,255 - INFO - [Thread 1927077] Collected 0 posts in 6.5s
+2026-01-19 21:16:57,256 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:16:57,258 - INFO - [10/16] Crawl thread: uptrend quá tuyệt vời ! 2400 vẫy gọi ........... T...
+2026-01-19 21:16:59,727 - INFO - [Thread 1929551] Existing thread, crawling reverse 13→1 until last_post_id: post-47889297
+2026-01-19 21:16:59,727 - INFO - [Thread 1936645] Existing thread, crawling reverse 20→1 until last_post_id: post-47889287
+2026-01-19 21:17:02,071 - INFO - [Thread 1936645] Found last_post_id at page 20, stopping...
+2026-01-19 21:17:02,071 - INFO - [Thread 1936645] Collected 0 posts in 4.8s
+2026-01-19 21:17:02,072 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:17:02,074 - INFO - [11/16] Crawl thread: 6LON_banks(3/4 Big.Banks)Bơm máo,dùng hết ko Ae?...
+2026-01-19 21:17:02,130 - INFO - [Thread 1929551] Found last_post_id at page 13, stopping...
+2026-01-19 21:17:02,131 - INFO - [Thread 1929551] Collected 0 posts in 4.9s
+2026-01-19 21:17:02,131 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:17:02,133 - INFO - [12/16] Crawl thread: Thanh khoản...
+2026-01-19 21:17:04,551 - INFO - [Thread 1943267] Existing thread, crawling reverse 48→1 until last_post_id: post-47889281
+2026-01-19 21:17:04,567 - INFO - [Thread 1943459] Existing thread, crawling reverse 8→1 until last_post_id: post-47889271
+2026-01-19 21:17:06,852 - INFO - [Thread 1943267] Found last_post_id at page 48, stopping...
+2026-01-19 21:17:06,853 - INFO - [Thread 1943267] Collected 0 posts in 4.8s
+2026-01-19 21:17:06,854 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:17:06,857 - INFO - [13/16] Crawl thread: VCB ---> 2XX --- VNI 2xxx...
+2026-01-19 21:17:06,904 - INFO - [Thread 1943459] Found last_post_id at page 8, stopping...
+2026-01-19 21:17:06,905 - INFO - [Thread 1943459] Collected 0 posts in 4.8s
+2026-01-19 21:17:06,906 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:17:06,909 - INFO - [14/16] Crawl thread: Doanh thu tối thiểu quý 4 2025 SZC gấp 3 lần. Thời...
+2026-01-19 21:17:09,838 - INFO - [Thread 1939215] Existing thread, crawling reverse 11→1 until last_post_id: post-47889263
+2026-01-19 21:17:09,842 - INFO - [Thread 1935243] Existing thread, crawling reverse 17→1 until last_post_id: post-47889249
+2026-01-19 21:17:13,965 - INFO - [Thread 1935243] Found last_post_id at page 17, stopping...
+2026-01-19 21:17:13,973 - INFO - [Thread 1939215] Found last_post_id at page 11, stopping...
+2026-01-19 21:17:13,973 - INFO - [Thread 1935243] Collected 0 posts in 7.1s
+2026-01-19 21:17:13,974 - INFO - [Thread 1939215] Collected 0 posts in 7.1s
+2026-01-19 21:17:13,974 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:17:13,974 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:17:13,978 - INFO - [15/16] Crawl thread: Chiến lược giao dịch VIX dự kiến (Đầu năm 2026)...
+2026-01-19 21:17:13,981 - INFO - [16/16] Crawl thread: việc nên làm khi thị trường vào uptrend....
+2026-01-19 21:17:20,093 - INFO - [Thread 1944205] Existing thread, crawling reverse 1→1 until last_post_id: post-47889241
+2026-01-19 21:17:20,120 - INFO - [Thread 1944201] Existing thread, crawling reverse 2→1 until last_post_id: post-47889235
+2026-01-19 21:17:22,524 - INFO - [Thread 1944201] Found last_post_id at page 2, stopping...
+2026-01-19 21:17:22,525 - INFO - [Thread 1944201] Collected 0 posts in 8.5s
+2026-01-19 21:17:22,525 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:17:22,684 - INFO - [Thread 1944205] Found last_post_id at page 1, stopping...
+2026-01-19 21:17:22,684 - INFO - [Thread 1944205] Collected 0 posts in 8.7s
+2026-01-19 21:17:22,685 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:17:22,690 - INFO - Hoàn thành trang 3, tổng posts: 2729
+2026-01-19 21:17:34,601 - INFO - Đang xử lý trang 4
+2026-01-19 21:17:41,144 - INFO - Tìm thấy 20 threads trên trang 4
+2026-01-19 21:17:41,408 - INFO - ✅ ACCEPTED: 'HDB- Tiếp tục hành trình chinh phục những đỉnh cao' (Created: Thứ năm lúc 14:37)
+2026-01-19 21:17:41,669 - INFO - ✅ ACCEPTED: 'VIX: quân bài tẩy họ nhà M' (Created: 13/02/2025)
+2026-01-19 21:17:41,926 - INFO - ✅ ACCEPTED: 'Đánh giá thị trường!' (Created: 20/12/2025)
+2026-01-19 21:17:42,174 - INFO - ✅ ACCEPTED: 'Tất cả các dòng sông đều chảy - P2' (Created: 17/10/2025)
+2026-01-19 21:17:42,422 - INFO - ✅ ACCEPTED: 'LCG-mua gom chờ bứt phá' (Created: Hôm nay lúc 17:43)
+2026-01-19 21:17:42,673 - INFO - ✅ ACCEPTED: 'HID siêu phẩm x3 mới xuất hiện ???' (Created: 03/11/2025)
+2026-01-19 21:17:42,925 - INFO - ✅ ACCEPTED: 'Thép-Đã đến lúc' (Created: Thứ tư lúc 14:09)
+2026-01-19 21:17:43,175 - INFO - ✅ ACCEPTED: 'Trong đầu tư chứng khoán, chúng ta thường: NHANH Q' (Created: Hôm nay lúc 12:19)
+2026-01-19 21:17:43,420 - INFO - ✅ ACCEPTED: 'PVB - Chờ đợi 1 thập kỷ để trở lại thời hoàng kim' (Created: 26/12/2025)
+2026-01-19 21:17:43,670 - INFO - ✅ ACCEPTED: 'POW tăng vốn khủng có lập đỉnh mới' (Created: 27/10/2025)
+2026-01-19 21:17:43,889 - INFO - ✅ ACCEPTED: 'LIX - Siêu CP !' (Created: 08/10/2025)
+2026-01-19 21:17:44,095 - INFO - ✅ ACCEPTED: 'DPR - Triển vọng tăng trưởng mạnh từ cao su tự nhi' (Created: 01/02/2025)
+2026-01-19 21:17:44,295 - INFO - ✅ ACCEPTED: 'TCO- Kỷ nguyên vươn mình-Nội Ngoại giao duyên!' (Created: Thứ bảy lúc 05:24)
+2026-01-19 21:17:44,514 - INFO - ✅ ACCEPTED: 'Năm 2026 VIX khả năng sẽ chinh phục 31, 33, 36, 40' (Created: 04/01/2026)
+2026-01-19 21:17:44,699 - INFO - ✅ ACCEPTED: 'Chào mừng ĐHĐ Thành công tốt đẹp ---- TT sẽ lên 20' (Created: 09/01/2026)
+2026-01-19 21:17:44,904 - INFO - ✅ ACCEPTED: 'DXG sao rẻ thế' (Created: Thứ sáu lúc 14:19)
+2026-01-19 21:17:45,110 - INFO - ✅ ACCEPTED: 'VGI - Mua lẹ đi' (Created: 31/10/2025)
+2026-01-19 21:17:45,293 - INFO - ✅ ACCEPTED: 'Gía mục tiêu cp ……..siêu sóng ….siêu sóng………..' (Created: Thứ tư lúc 13:16)
+2026-01-19 21:17:45,463 - INFO - ✅ ACCEPTED: 'V21 - Kỷ nguyên vươn mình, tăng vốn lên 556 tỷ.' (Created: 14/10/2025)
+2026-01-19 21:17:45,668 - INFO - ✅ ACCEPTED: 'DGC con hào kinh tế' (Created: 12/01/2026)
+2026-01-19 21:17:45,668 - INFO - 📊 Page 4: 20 threads accepted, 0 filtered out
+2026-01-19 21:17:45,668 - INFO - 🎯 Processing 20 threads from 01/01/2025 onwards
+2026-01-19 21:17:45,669 - INFO - Đã thu thập thông tin 20 threads, bắt đầu crawl posts...
+2026-01-19 21:17:45,671 - INFO - [1/20] Crawl thread: HDB- Tiếp tục hành trình chinh phục những đỉnh cao...
+2026-01-19 21:17:45,671 - INFO - [2/20] Crawl thread: VIX: quân bài tẩy họ nhà M...
+2026-01-19 21:17:48,134 - INFO - [Thread 1903403] Existing thread, crawling reverse 562→1 until last_post_id: post-47889209
+2026-01-19 21:17:48,136 - INFO - [Thread 1943915] Existing thread, crawling reverse 6→1 until last_post_id: post-47889219
+2026-01-19 21:17:50,489 - INFO - [Thread 1903403] Found last_post_id at page 562, stopping...
+2026-01-19 21:17:50,490 - INFO - [Thread 1903403] Collected 0 posts in 4.8s
+2026-01-19 21:17:50,490 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:17:50,492 - INFO - [3/20] Crawl thread: Đánh giá thị trường!...
+2026-01-19 21:17:50,518 - INFO - [Thread 1943915] Found last_post_id at page 6, stopping...
+2026-01-19 21:17:50,520 - INFO - [Thread 1943915] Collected 0 posts in 4.8s
+2026-01-19 21:17:50,521 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:17:50,524 - INFO - [4/20] Crawl thread: Tất cả các dòng sông đều chảy - P2...
+2026-01-19 21:17:52,849 - INFO - [Thread 1934311] Existing thread, crawling reverse 107→1 until last_post_id: post-47889195
+2026-01-19 21:17:52,895 - INFO - [Thread 1941133] Existing thread, crawling reverse 29→1 until last_post_id: post-47889203
+2026-01-19 21:17:55,607 - INFO - [Thread 1941133] Found last_post_id at page 29, stopping...
+2026-01-19 21:17:55,608 - INFO - [Thread 1941133] Collected 0 posts in 5.1s
+2026-01-19 21:17:55,608 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:17:55,611 - INFO - [5/20] Crawl thread: LCG-mua gom chờ bứt phá...
+2026-01-19 21:17:55,651 - INFO - [Thread 1934311] Found last_post_id at page 107, stopping...
+2026-01-19 21:17:55,652 - INFO - [Thread 1934311] Collected 0 posts in 5.1s
+2026-01-19 21:17:55,652 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:17:55,655 - INFO - [6/20] Crawl thread: HID siêu phẩm x3 mới xuất hiện ???...
+2026-01-19 21:18:00,603 - INFO - [Thread 1936155] Existing thread, crawling reverse 55→1 until last_post_id: post-47889191
+2026-01-19 21:18:00,713 - INFO - [Thread 1944267] Existing thread, crawling reverse 1→1 until last_post_id: post-47889193
+2026-01-19 21:18:05,198 - INFO - [Thread 1944267] Found last_post_id at page 1, stopping...
+2026-01-19 21:18:05,198 - INFO - [Thread 1944267] Collected 0 posts in 9.6s
+2026-01-19 21:18:05,199 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:05,202 - INFO - [7/20] Crawl thread: Thép-Đã đến lúc...
+2026-01-19 21:18:05,579 - INFO - [Thread 1936155] Found last_post_id at page 55, stopping...
+2026-01-19 21:18:05,580 - INFO - [Thread 1936155] Collected 0 posts in 9.9s
+2026-01-19 21:18:05,581 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:05,584 - INFO - [8/20] Crawl thread: Trong đầu tư chứng khoán, chúng ta thường: NHANH Q...
+2026-01-19 21:18:07,784 - INFO - [Thread 1943755] Existing thread, crawling reverse 9→1 until last_post_id: post-47889143
+2026-01-19 21:18:07,859 - INFO - [Thread 1944221] Existing thread, crawling reverse 1→1 until last_post_id: post-47889133
+2026-01-19 21:18:10,918 - INFO - [Thread 1943755] Found last_post_id at page 9, stopping...
+2026-01-19 21:18:10,919 - INFO - [Thread 1943755] Collected 0 posts in 5.7s
+2026-01-19 21:18:10,920 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:10,923 - INFO - [9/20] Crawl thread: PVB - Chờ đợi 1 thập kỷ để trở lại thời hoàng kim...
+2026-01-19 21:18:11,175 - INFO - [Thread 1944221] Found last_post_id at page 1, stopping...
+2026-01-19 21:18:11,176 - INFO - [Thread 1944221] Collected 0 posts in 5.6s
+2026-01-19 21:18:11,176 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:11,179 - INFO - [10/20] Crawl thread: POW tăng vốn khủng có lập đỉnh mới...
+2026-01-19 21:18:13,671 - INFO - [Thread 1935387] Existing thread, crawling reverse 13→1 until last_post_id: post-47889099
+2026-01-19 21:18:13,742 - INFO - [Thread 1941739] Existing thread, crawling reverse 13→1 until last_post_id: post-47889101
+2026-01-19 21:18:16,984 - INFO - [Thread 1935387] Found last_post_id at page 13, stopping...
+2026-01-19 21:18:16,984 - INFO - [Thread 1935387] Collected 0 posts in 5.8s
+2026-01-19 21:18:16,984 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:16,986 - INFO - [11/20] Crawl thread: LIX - Siêu CP !...
+2026-01-19 21:18:17,011 - INFO - [Thread 1941739] Found last_post_id at page 13, stopping...
+2026-01-19 21:18:17,012 - INFO - [Thread 1941739] Collected 0 posts in 6.1s
+2026-01-19 21:18:17,012 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:17,015 - INFO - [12/20] Crawl thread: DPR - Triển vọng tăng trưởng mạnh từ cao su tự nhi...
+2026-01-19 21:18:19,292 - INFO - [Thread 1933175] Existing thread, crawling reverse 10→1 until last_post_id: post-47889075
+2026-01-19 21:18:19,459 - INFO - [Thread 1902207] Existing thread, crawling reverse 241→1 until last_post_id: post-47889067
+2026-01-19 21:18:21,671 - INFO - [Thread 1933175] Found last_post_id at page 10, stopping...
+2026-01-19 21:18:21,672 - INFO - [Thread 1933175] Collected 0 posts in 4.7s
+2026-01-19 21:18:21,672 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:21,674 - INFO - [13/20] Crawl thread: TCO- Kỷ nguyên vươn mình-Nội Ngoại giao duyên!...
+2026-01-19 21:18:21,773 - INFO - [Thread 1902207] Found last_post_id at page 241, stopping...
+2026-01-19 21:18:21,773 - INFO - [Thread 1902207] Collected 0 posts in 4.8s
+2026-01-19 21:18:21,774 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:21,777 - INFO - [14/20] Crawl thread: Năm 2026 VIX khả năng sẽ chinh phục 31, 33, 36, 40...
+2026-01-19 21:18:24,024 - INFO - [Thread 1944057] Existing thread, crawling reverse 3→1 until last_post_id: post-47889059
+2026-01-19 21:18:24,377 - INFO - [Thread 1942281] Existing thread, crawling reverse 9→1 until last_post_id: post-47889043
+2026-01-19 21:18:27,370 - INFO - [Thread 1942281] Found last_post_id at page 9, stopping...
+2026-01-19 21:18:27,371 - INFO - [Thread 1942281] Collected 0 posts in 5.6s
+2026-01-19 21:18:27,371 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:27,374 - INFO - [15/20] Crawl thread: Chào mừng ĐHĐ Thành công tốt đẹp ---- TT sẽ lên 20...
+2026-01-19 21:18:27,502 - INFO - [Thread 1944057] Found last_post_id at page 3, stopping...
+2026-01-19 21:18:27,503 - INFO - [Thread 1944057] Collected 0 posts in 5.8s
+2026-01-19 21:18:27,503 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:27,507 - INFO - [16/20] Crawl thread: DXG sao rẻ thế...
+2026-01-19 21:18:34,168 - INFO - [Thread 1944013] Existing thread, crawling reverse 8→1 until last_post_id: post-47889037
+2026-01-19 21:18:35,185 - INFO - [Thread 1943085] Existing thread, crawling reverse 3→1 until last_post_id: post-47888907
+2026-01-19 21:18:36,705 - INFO - [Thread 1944013] Found last_post_id at page 8, stopping...
+2026-01-19 21:18:36,706 - INFO - [Thread 1944013] Collected 0 posts in 9.2s
+2026-01-19 21:18:36,707 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:36,710 - INFO - [17/20] Crawl thread: VGI - Mua lẹ đi...
+2026-01-19 21:18:39,959 - INFO - [Thread 1943085] Found last_post_id at page 3, stopping...
+2026-01-19 21:18:39,960 - INFO - [Thread 1943085] Collected 0 posts in 12.6s
+2026-01-19 21:18:39,960 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:39,963 - INFO - [18/20] Crawl thread: Gía mục tiêu cp ……..siêu sóng ….siêu sóng……….....
+2026-01-19 21:18:40,089 - INFO - [Thread 1935903] Existing thread, crawling reverse 7→1 until last_post_id: post-47889003
+2026-01-19 21:18:42,393 - INFO - [Thread 1943745] Existing thread, crawling reverse 3→1 until last_post_id: post-47888959
+2026-01-19 21:18:42,431 - INFO - [Thread 1935903] Found last_post_id at page 7, stopping...
+2026-01-19 21:18:42,432 - INFO - [Thread 1935903] Collected 0 posts in 5.7s
+2026-01-19 21:18:42,433 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:42,436 - INFO - [19/20] Crawl thread: V21 - Kỷ nguyên vươn mình, tăng vốn lên 556 tỷ....
+2026-01-19 21:18:44,721 - INFO - [Thread 1943745] Found last_post_id at page 3, stopping...
+2026-01-19 21:18:44,722 - INFO - [Thread 1943745] Collected 0 posts in 4.8s
+2026-01-19 21:18:44,722 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:44,725 - INFO - [20/20] Crawl thread: DGC con hào kinh tế...
+2026-01-19 21:18:48,178 - INFO - [Thread 1933827] Existing thread, crawling reverse 6→1 until last_post_id: post-47888951
+2026-01-19 21:18:48,183 - INFO - [Thread 1943403] Existing thread, crawling reverse 8→1 until last_post_id: post-47888949
+2026-01-19 21:18:50,584 - INFO - [Thread 1943403] Found last_post_id at page 8, stopping...
+2026-01-19 21:18:50,585 - INFO - [Thread 1943403] Collected 0 posts in 5.9s
+2026-01-19 21:18:50,586 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:50,597 - INFO - [Thread 1933827] Found last_post_id at page 6, stopping...
+2026-01-19 21:18:50,598 - INFO - [Thread 1933827] Collected 0 posts in 8.2s
+2026-01-19 21:18:50,598 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:18:50,600 - INFO - Hoàn thành trang 4, tổng posts: 2729
+2026-01-19 21:19:03,788 - INFO - Đang xử lý trang 5
+2026-01-19 21:19:09,656 - INFO - Tìm thấy 20 threads trên trang 5
+2026-01-19 21:19:09,891 - INFO - ✅ ACCEPTED: 'VCI target 41.5, 44.5, 47.5...hết sóng 52 - 58' (Created: Thứ năm lúc 08:25)
+2026-01-19 21:19:10,126 - INFO - ✅ ACCEPTED: 'KSV- nên mua giá nào nếu huỷ niêm yết?' (Created: 18/12/2025)
+2026-01-19 21:19:10,348 - INFO - ✅ ACCEPTED: 'FPT 2024, VIC 2025, 2026 sẽ là của ...GEX !' (Created: 06/01/2026)
+2026-01-19 21:19:10,539 - INFO - ✅ ACCEPTED: 'Cảm ơn A Long. Chốt 28 sau 3 tháng Mòn Mỏi' (Created: Hôm nay lúc 12:48)
+2026-01-19 21:19:10,706 - INFO - ✅ ACCEPTED: 'EVF mục tiêu 2x P2' (Created: Hôm nay lúc 16:30)
+2026-01-19 21:19:10,886 - INFO - 🚫 FILTERED: 'Tương lai rực sáng ngành cao su tự nhiên' (Created: 01/01/2024)
+2026-01-19 21:19:11,069 - INFO - ✅ ACCEPTED: 'Sau siêu phẩm BID > Tiếp đến HPG đạt điều kiện XAN' (Created: Thứ tư lúc 21:43)
+2026-01-19 21:19:11,255 - INFO - ✅ ACCEPTED: 'Phiên 19/1: Khối ngoại trở lại "gom" ròng gần 500 ' (Created: Hôm nay lúc 16:51)
+2026-01-19 21:19:11,374 - INFO - ✅ ACCEPTED: 'PAN - Có game, rẻ, có chiết khấu.' (Created: 05/12/2025)
+2026-01-19 21:19:11,494 - INFO - ✅ ACCEPTED: 'Ngành cao su (GVR, PHR,...) và NQ79' (Created: 10/01/2026)
+2026-01-19 21:19:11,675 - INFO - ✅ ACCEPTED: 'NT2 - Góc nhìn về giá trị!!!' (Created: 23/10/2025)
+2026-01-19 21:19:11,888 - INFO - ✅ ACCEPTED: 'MSN - Gã khổng lồ hàng tiêu dùng thức giấc' (Created: 09/08/2025)
+2026-01-19 21:19:12,042 - INFO - ✅ ACCEPTED: 'KSQ nhỏ nhưng hiệu quả.' (Created: Hôm nay lúc 15:41)
+2026-01-19 21:19:12,184 - INFO - ✅ ACCEPTED: 'MSN được khuyến nghị hấp dẫn vậy có nên mua không.' (Created: 17/12/2025)
+2026-01-19 21:19:12,336 - INFO - ✅ ACCEPTED: 'EIB mã duy nhất đi ngược thị trường hôm nay' (Created: Thứ năm lúc 10:46)
+2026-01-19 21:19:12,485 - INFO - ✅ ACCEPTED: 'Tranh mua doanh nghiệp thoái vốn...' (Created: 07/01/2026)
+2026-01-19 21:19:12,604 - INFO - 🚫 FILTERED: 'PGV - Khủng long ngành điện' (Created: 31/12/2020)
+2026-01-19 21:19:12,726 - INFO - ✅ ACCEPTED: 'VOS-vào sóng !' (Created: 31/12/2025)
+2026-01-19 21:19:12,871 - INFO - 🚫 FILTERED: 'KBC IDC VGC SZC - BĐS KCN, phân khúc chưa bao giờ ' (Created: 21/12/2023)
+2026-01-19 21:19:13,020 - INFO - ✅ ACCEPTED: '[Châm ngôn đầu tư] Nếu mỗi sáng thức dậy, mọi ngườ' (Created: Hôm nay lúc 16:17)
+2026-01-19 21:19:13,020 - INFO - 📊 Page 5: 17 threads accepted, 3 filtered out
+2026-01-19 21:19:13,021 - INFO - 🗓️  Filtered 3 threads older than 01/01/2025
+2026-01-19 21:19:13,021 - INFO - 🎯 Processing 17 threads from 01/01/2025 onwards
+2026-01-19 21:19:13,021 - INFO - Đã thu thập thông tin 17 threads, bắt đầu crawl posts...
+2026-01-19 21:19:13,022 - INFO - [1/17] Crawl thread: VCI target 41.5, 44.5, 47.5...hết sóng 52 - 58...
+2026-01-19 21:19:13,023 - INFO - [2/17] Crawl thread: KSV- nên mua giá nào nếu huỷ niêm yết?...
+2026-01-19 21:19:17,971 - INFO - [Thread 1943853] Existing thread, crawling reverse 5→1 until last_post_id: post-47888945
+2026-01-19 21:19:17,974 - INFO - [Thread 1940939] Existing thread, crawling reverse 7→1 until last_post_id: post-47888939
+2026-01-19 21:19:20,458 - INFO - [Thread 1943853] Found last_post_id at page 5, stopping...
+2026-01-19 21:19:20,458 - INFO - [Thread 1943853] Collected 0 posts in 7.4s
+2026-01-19 21:19:20,459 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:19:20,461 - INFO - [3/17] Crawl thread: FPT 2024, VIC 2025, 2026 sẽ là của ...GEX !...
+2026-01-19 21:19:20,478 - INFO - [Thread 1940939] Found last_post_id at page 7, stopping...
+2026-01-19 21:19:20,478 - INFO - [Thread 1940939] Collected 0 posts in 7.5s
+2026-01-19 21:19:20,479 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:19:20,482 - INFO - [4/17] Crawl thread: Cảm ơn A Long. Chốt 28 sau 3 tháng Mòn Mỏi...
+2026-01-19 21:19:23,789 - INFO - [Thread 1942505] Existing thread, crawling reverse 3→1 until last_post_id: post-47888929
+2026-01-19 21:19:23,872 - INFO - [Thread 1944227] Existing thread, crawling reverse 1→1 until last_post_id: post-47888899
+2026-01-19 21:19:26,245 - INFO - [Thread 1944227] Found last_post_id at page 1, stopping...
+2026-01-19 21:19:26,245 - INFO - [Thread 1944227] Collected 0 posts in 5.8s
+2026-01-19 21:19:26,246 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:19:26,248 - INFO - [5/17] Crawl thread: EVF mục tiêu 2x P2...
+2026-01-19 21:19:26,330 - INFO - [Thread 1942505] Found last_post_id at page 3, stopping...
+2026-01-19 21:19:26,331 - INFO - [Thread 1942505] Collected 0 posts in 5.9s
+2026-01-19 21:19:26,331 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:19:26,335 - INFO - [6/17] Crawl thread: Sau siêu phẩm BID > Tiếp đến HPG đạt điều kiện XAN...
+2026-01-19 21:19:28,877 - INFO - [Thread 1943825] Existing thread, crawling reverse 2→1 until last_post_id: post-47888869
+2026-01-19 21:19:28,958 - INFO - [Thread 1944259] Existing thread, crawling reverse 1→1 until last_post_id: post-47888893
+2026-01-19 21:19:31,232 - INFO - [Thread 1944259] Found last_post_id at page 1, stopping...
+2026-01-19 21:19:31,234 - INFO - [Thread 1944259] Collected 0 posts in 5.0s
+2026-01-19 21:19:31,234 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:19:31,236 - INFO - [7/17] Crawl thread: Phiên 19/1: Khối ngoại trở lại "gom" ròng gần 500 ...
+2026-01-19 21:19:31,301 - INFO - [Thread 1943825] Found last_post_id at page 2, stopping...
+2026-01-19 21:19:31,302 - INFO - [Thread 1943825] Collected 0 posts in 5.0s
+2026-01-19 21:19:31,302 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:19:31,306 - INFO - [8/17] Crawl thread: PAN - Có game, rẻ, có chiết khấu....
+2026-01-19 21:19:33,718 - INFO - [Thread 1944263] Existing thread, crawling reverse 1→1 until last_post_id: post-47888863
+2026-01-19 21:19:33,760 - INFO - [Thread 1939695] Existing thread, crawling reverse 22→1 until last_post_id: post-47888849
+2026-01-19 21:19:36,536 - INFO - [Thread 1944263] Found last_post_id at page 1, stopping...
+2026-01-19 21:19:36,538 - INFO - [Thread 1944263] Collected 0 posts in 5.3s
+2026-01-19 21:19:36,538 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:19:36,541 - INFO - [9/17] Crawl thread: Ngành cao su (GVR, PHR,...) và NQ79...
+2026-01-19 21:19:36,761 - INFO - [Thread 1939695] Found last_post_id at page 22, stopping...
+2026-01-19 21:19:36,762 - INFO - [Thread 1939695] Collected 0 posts in 5.5s
+2026-01-19 21:19:36,763 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:19:36,765 - INFO - [10/17] Crawl thread: NT2 - Góc nhìn về giá trị!!!...
+2026-01-19 21:19:39,043 - INFO - [Thread 1935045] Existing thread, crawling reverse 6→1 until last_post_id: post-47888833
+2026-01-19 21:19:39,098 - INFO - [Thread 1943285] Existing thread, crawling reverse 8→1 until last_post_id: post-47888837
+2026-01-19 21:19:45,637 - INFO - [Thread 1943285] Found last_post_id at page 8, stopping...
+2026-01-19 21:19:45,637 - INFO - [Thread 1943285] Collected 0 posts in 9.1s
+2026-01-19 21:19:45,638 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:19:45,640 - INFO - [11/17] Crawl thread: MSN - Gã khổng lồ hàng tiêu dùng thức giấc...
+2026-01-19 21:19:45,887 - INFO - [Thread 1935045] Found last_post_id at page 6, stopping...
+2026-01-19 21:19:45,888 - INFO - [Thread 1935045] Collected 0 posts in 9.1s
+2026-01-19 21:19:45,889 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:19:45,891 - INFO - [12/17] Crawl thread: KSQ nhỏ nhưng hiệu quả....
+2026-01-19 21:19:48,131 - INFO - [Thread 1926185] Existing thread, crawling reverse 33→1 until last_post_id: post-47888817
+2026-01-19 21:19:48,182 - INFO - [Thread 1944245] Existing thread, crawling reverse 1→1 until last_post_id: post-47888809
+2026-01-19 21:19:53,804 - INFO - [Thread 1944245] Found last_post_id at page 1, stopping...
+2026-01-19 21:19:53,805 - INFO - [Thread 1944245] Collected 0 posts in 7.9s
+2026-01-19 21:19:53,806 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:19:53,812 - INFO - [Thread 1926185] Found last_post_id at page 33, stopping...
+2026-01-19 21:19:53,813 - INFO - [Thread 1926185] Collected 0 posts in 8.2s
+2026-01-19 21:19:53,814 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:19:53,815 - INFO - [13/17] Crawl thread: MSN được khuyến nghị hấp dẫn vậy có nên mua không....
+2026-01-19 21:19:53,818 - INFO - [14/17] Crawl thread: EIB mã duy nhất đi ngược thị trường hôm nay...
+2026-01-19 21:19:57,632 - INFO - [Thread 1943887] Existing thread, crawling reverse 1→1 until last_post_id: post-47888789
+2026-01-19 21:19:58,294 - INFO - [Thread 1940877] Existing thread, crawling reverse 33→1 until last_post_id: post-47888803
+2026-01-19 21:19:59,919 - INFO - [Thread 1943887] Found last_post_id at page 1, stopping...
+2026-01-19 21:19:59,920 - INFO - [Thread 1943887] Collected 0 posts in 6.1s
+2026-01-19 21:19:59,920 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:19:59,925 - INFO - [15/17] Crawl thread: Tranh mua doanh nghiệp thoái vốn......
+2026-01-19 21:20:00,576 - INFO - [Thread 1940877] Found last_post_id at page 33, stopping...
+2026-01-19 21:20:00,577 - INFO - [Thread 1940877] Collected 0 posts in 6.8s
+2026-01-19 21:20:00,577 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:20:00,581 - INFO - [16/17] Crawl thread: VOS-vào sóng !...
+2026-01-19 21:20:02,290 - INFO - [Thread 1942869] Existing thread, crawling reverse 6→1 until last_post_id: post-47888787
+2026-01-19 21:20:02,954 - INFO - [Thread 1942127] Existing thread, crawling reverse 9→1 until last_post_id: post-47888771
+2026-01-19 21:20:04,754 - INFO - [Thread 1942869] Found last_post_id at page 6, stopping...
+2026-01-19 21:20:04,755 - INFO - [Thread 1942869] Collected 0 posts in 4.8s
+2026-01-19 21:20:04,756 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:20:04,759 - INFO - [17/17] Crawl thread: [Châm ngôn đầu tư] Nếu mỗi sáng thức dậy, mọi ngườ...
+2026-01-19 21:20:05,210 - INFO - [Thread 1942127] Found last_post_id at page 9, stopping...
+2026-01-19 21:20:05,211 - INFO - [Thread 1942127] Collected 0 posts in 4.6s
+2026-01-19 21:20:05,211 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:20:07,081 - INFO - [Thread 1944253] Existing thread, crawling reverse 1→1 until last_post_id: post-47888749
+2026-01-19 21:20:09,360 - INFO - [Thread 1944253] Found last_post_id at page 1, stopping...
+2026-01-19 21:20:09,361 - INFO - [Thread 1944253] Collected 0 posts in 4.6s
+2026-01-19 21:20:09,361 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:20:09,363 - INFO - Hoàn thành trang 5, tổng posts: 2729
+2026-01-19 21:20:14,061 - INFO - Đang xử lý trang 6
+2026-01-19 21:20:24,128 - WARNING - Không tìm thấy nút next tại trang 6
+2026-01-19 21:20:24,129 - INFO - ============================================================
+2026-01-19 21:20:24,129 - INFO - 📋 THREAD FILTERING SUMMARY
+2026-01-19 21:20:24,130 - INFO - ============================================================
+2026-01-19 21:20:24,130 - INFO - 📅 Filter date: 01/01/2025
+2026-01-19 21:20:24,131 - INFO - ✅ Threads processed: 88
+2026-01-19 21:20:24,131 - INFO - 📝 Total posts collected: 2729
+2026-01-19 21:20:24,132 - INFO - ============================================================
+2026-01-19 21:20:26,432 - INFO - Selenium driver stopped
+2026-01-19 21:20:26,433 - INFO - Hoàn tất! Tổng cộng thu thập: 2729 posts
+2026-01-19 21:20:26,434 - INFO - ✅ Hybrid Crawler completed: 2729 posts in 1618.0s
+2026-01-19 21:20:26,435 - INFO - 📊 Summary: 88 threads (2 new)
+2026-01-19 21:20:26,441 - INFO - ✅ Hybrid completed in 1618.0s
+2026-01-19 21:20:26,442 - INFO - ⏳ Waiting 60s before Full Crawler...
+2026-01-19 21:21:26,444 - INFO - 🔄 Phase 2: Running Full Crawler...
+2026-01-19 21:21:26,445 - INFO - 🚀 Starting Full Crawler job...
+2026-01-19 21:21:26,445 - INFO - ====== WebDriver manager ======
+2026-01-19 21:21:27,606 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-19 21:21:28,763 - INFO - Get LATEST chromedriver version for google-chrome
+2026-01-19 21:21:36,355 - INFO - Driver [C:\Users\admin\.wdm\drivers\chromedriver\win64\143.0.7499.192\chromedriver-win32/chromedriver.exe] found in cache
+2026-01-19 21:21:37,617 - INFO - Selenium driver started
+2026-01-19 21:21:37,617 - INFO - 📋 Full Crawler: Processing latest threads from 'Hôm nay có gì?'
+2026-01-19 21:21:37,618 - INFO - Đang truy cập 'Hôm nay có gì?'...
+2026-01-19 21:21:48,944 - INFO - ✓ Đã truy cập 'Hôm nay có gì?' thành công
+2026-01-19 21:21:49,028 - INFO - Phát hiện tổng số 3 trang danh sách threads
+2026-01-19 21:21:49,028 - INFO - 🎯 Sẽ crawl TẤT CẢ 3 trang danh sách threads
+2026-01-19 21:21:49,029 - INFO - 📄 Đang xử lý trang 1/3
+2026-01-19 21:21:51,057 - INFO - Tìm thấy 20 threads trên trang 1
+2026-01-19 21:21:51,373 - INFO - ✅ PROCESSING: 'Đầu cơ vs Đầu tư' (Created: 12 phút trước)
+2026-01-19 21:21:51,638 - INFO - ✅ PROCESSING: 'Năm 2025 tăng trưởng thứ 2 thế giới, năm 2026 phải' (Created: Hôm nay lúc 20:08)
+2026-01-19 21:21:51,940 - INFO - ✅ PROCESSING: 'Góc nhìn phân tích kỹ thuật cổ phiếu ngành Xây dựn' (Created: Hôm nay lúc 19:34)
+2026-01-19 21:21:52,218 - INFO - ✅ PROCESSING: 'Vĩnh Hoàn và KIDO cùng thông báo mua lại cổ phiếu ' (Created: Hôm nay lúc 19:07)
+2026-01-19 21:21:52,465 - INFO - ✅ PROCESSING: 'Kỷ nguyên mới, Kỷ nguyên Vươn mình của Việt Nam!' (Created: Hôm nay lúc 18:54)
+2026-01-19 21:21:52,700 - INFO - ✅ PROCESSING: 'Vừa bán hết hôm nay giờ nhìn DJF giảm hết hồn' (Created: Hôm nay lúc 18:20)
+2026-01-19 21:21:52,929 - INFO - ✅ PROCESSING: 'LCG-mua gom chờ bứt phá' (Created: Hôm nay lúc 17:43)
+2026-01-19 21:21:53,183 - INFO - ✅ PROCESSING: 'Phiên 19/1: Khối ngoại trở lại "gom" ròng gần 500 ' (Created: Hôm nay lúc 16:51)
+2026-01-19 21:21:53,503 - INFO - ✅ PROCESSING: 'EVF mục tiêu 2x P2' (Created: Hôm nay lúc 16:30)
+2026-01-19 21:21:53,768 - INFO - ✅ PROCESSING: '[Châm ngôn đầu tư] Nếu mỗi sáng thức dậy, mọi ngườ' (Created: Hôm nay lúc 16:17)
+2026-01-19 21:21:54,131 - INFO - ✅ PROCESSING: 'Dòng tiền đổ về cổ phiếu khu công nghiệp: IDC, KBC' (Created: Hôm nay lúc 16:07)
+2026-01-19 21:21:54,414 - INFO - ✅ PROCESSING: 'Những Cái Tên Được Cấp Phép CCDV cho Tài Sản Mã Hó' (Created: Hôm nay lúc 15:43)
+2026-01-19 21:21:54,673 - INFO - ✅ PROCESSING: 'KSQ nhỏ nhưng hiệu quả.' (Created: Hôm nay lúc 15:41)
+2026-01-19 21:21:54,903 - INFO - ✅ PROCESSING: 'Khi 'Thiên Thời" Hội Tụ tại Tam Giác Vĩ Mô' (Created: Hôm nay lúc 15:20)
+2026-01-19 21:21:55,148 - INFO - ✅ PROCESSING: '....Thời của...Đầu tư công...' (Created: Hôm nay lúc 13:39)
+2026-01-19 21:21:55,399 - INFO - ✅ PROCESSING: 'Nhóm ngành tăng trưởng quy mô tài sản' (Created: Hôm nay lúc 13:30)
+2026-01-19 21:21:55,671 - INFO - ✅ PROCESSING: 'NGHỊ ĐỊNH 20/2026/NĐ-CP: khi chính sách "MỞ KHOÁ" ' (Created: Hôm nay lúc 13:25)
+2026-01-19 21:21:56,005 - INFO - ✅ PROCESSING: '19/1 Bắt đáy' (Created: Hôm nay lúc 13:23)
+2026-01-19 21:21:56,189 - INFO - ✅ PROCESSING: 'Cảm ơn A Long. Chốt 28 sau 3 tháng Mòn Mỏi' (Created: Hôm nay lúc 12:48)
+2026-01-19 21:21:56,361 - INFO - ✅ PROCESSING: 'Gấp - Viên kim cương thô còn sót lại !!!' (Created: Hôm nay lúc 12:31)
+2026-01-19 21:21:56,362 - INFO - 📊 Page 1: 20 threads to process
+2026-01-19 21:21:56,362 - INFO - Đã thu thập thông tin 20 threads, bắt đầu crawl posts...
+2026-01-19 21:21:56,370 - INFO - [1/20] Crawl thread: Đầu cơ vs Đầu tư...
+2026-01-19 21:21:56,370 - INFO - [2/20] Crawl thread: Năm 2025 tăng trưởng thứ 2 thế giới, năm 2026 phải...
+2026-01-19 21:22:00,116 - INFO - [Thread 1944283] New thread, crawling forward 1→1...
+2026-01-19 21:22:00,205 - INFO - [Thread 1944279] Existing thread, crawling reverse 1→1 until last_post_id: post-47889373
+2026-01-19 21:22:02,771 - INFO - [Thread 1944283] Final batch inserted 1/1 posts
+2026-01-19 21:22:02,773 - INFO - [Thread 1944283] Collected 1 posts in 6.4s
+2026-01-19 21:22:02,774 - INFO - Thu thập được 1 posts từ thread
+2026-01-19 21:22:02,778 - INFO - [3/20] Crawl thread: Góc nhìn phân tích kỹ thuật cổ phiếu ngành Xây dựn...
+2026-01-19 21:22:02,815 - INFO - [Thread 1944279] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:02,816 - INFO - [Thread 1944279] Collected 0 posts in 6.4s
+2026-01-19 21:22:02,817 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:02,820 - INFO - [4/20] Crawl thread: Vĩnh Hoàn và KIDO cùng thông báo mua lại cổ phiếu ...
+2026-01-19 21:22:05,284 - INFO - [Thread 1944275] Existing thread, crawling reverse 1→1 until last_post_id: post-47889425
+2026-01-19 21:22:05,290 - INFO - [Thread 1944277] Existing thread, crawling reverse 1→1 until last_post_id: post-47889509
+2026-01-19 21:22:07,677 - INFO - [Thread 1944275] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:07,683 - INFO - [Thread 1944277] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:07,684 - INFO - [Thread 1944275] Collected 0 posts in 4.9s
+2026-01-19 21:22:07,684 - INFO - [Thread 1944277] Collected 0 posts in 4.9s
+2026-01-19 21:22:07,685 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:07,686 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:07,690 - INFO - [5/20] Crawl thread: Kỷ nguyên mới, Kỷ nguyên Vươn mình của Việt Nam!...
+2026-01-19 21:22:07,691 - INFO - [6/20] Crawl thread: Vừa bán hết hôm nay giờ nhìn DJF giảm hết hồn...
+2026-01-19 21:22:10,067 - INFO - [Thread 1944269] Existing thread, crawling reverse 3→1 until last_post_id: post-47889461
+2026-01-19 21:22:10,070 - INFO - [Thread 1944273] Existing thread, crawling reverse 1→1 until last_post_id: post-47889445
+2026-01-19 21:22:12,500 - INFO - [Thread 1944273] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:12,509 - INFO - [Thread 1944273] Collected 0 posts in 4.8s
+2026-01-19 21:22:12,509 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:12,512 - INFO - [Thread 1944269] Found last_post_id at page 3, stopping...
+2026-01-19 21:22:12,551 - INFO - [Thread 1944269] Final batch inserted 1/1 posts
+2026-01-19 21:22:12,553 - INFO - [7/20] Crawl thread: LCG-mua gom chờ bứt phá...
+2026-01-19 21:22:12,559 - INFO - [Thread 1944269] Collected 1 posts in 4.9s
+2026-01-19 21:22:12,574 - INFO - Thu thập được 1 posts từ thread
+2026-01-19 21:22:12,588 - INFO - [8/20] Crawl thread: Phiên 19/1: Khối ngoại trở lại "gom" ròng gần 500 ...
+2026-01-19 21:22:14,886 - INFO - [Thread 1944263] Existing thread, crawling reverse 1→1 until last_post_id: post-47888863
+2026-01-19 21:22:14,971 - INFO - [Thread 1944267] Existing thread, crawling reverse 1→1 until last_post_id: post-47889193
+2026-01-19 21:22:18,706 - INFO - [Thread 1944263] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:18,707 - INFO - [Thread 1944263] Collected 0 posts in 6.1s
+2026-01-19 21:22:18,707 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:18,710 - INFO - [9/20] Crawl thread: EVF mục tiêu 2x P2...
+2026-01-19 21:22:19,172 - INFO - [Thread 1944267] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:19,173 - INFO - [Thread 1944267] Collected 0 posts in 6.6s
+2026-01-19 21:22:19,174 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:19,176 - INFO - [10/20] Crawl thread: [Châm ngôn đầu tư] Nếu mỗi sáng thức dậy, mọi ngườ...
+2026-01-19 21:22:24,934 - INFO - [Thread 1944253] Existing thread, crawling reverse 1→1 until last_post_id: post-47888749
+2026-01-19 21:22:24,934 - INFO - [Thread 1944259] Existing thread, crawling reverse 1→1 until last_post_id: post-47888893
+2026-01-19 21:22:27,231 - INFO - [Thread 1944259] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:27,232 - INFO - [Thread 1944259] Collected 0 posts in 8.5s
+2026-01-19 21:22:27,233 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:27,236 - INFO - [11/20] Crawl thread: Dòng tiền đổ về cổ phiếu khu công nghiệp: IDC, KBC...
+2026-01-19 21:22:27,273 - INFO - [Thread 1944253] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:27,273 - INFO - [Thread 1944253] Collected 0 posts in 8.1s
+2026-01-19 21:22:27,274 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:27,277 - INFO - [12/20] Crawl thread: Những Cái Tên Được Cấp Phép CCDV cho Tài Sản Mã Hó...
+2026-01-19 21:22:29,661 - INFO - [Thread 1944247] Existing thread, crawling reverse 1→1 until last_post_id: post-47888623
+2026-01-19 21:22:29,662 - INFO - [Thread 1944251] Existing thread, crawling reverse 1→1 until last_post_id: post-47888717
+2026-01-19 21:22:31,906 - INFO - [Thread 1944247] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:31,907 - INFO - [Thread 1944247] Collected 0 posts in 4.6s
+2026-01-19 21:22:31,907 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:31,911 - INFO - [13/20] Crawl thread: KSQ nhỏ nhưng hiệu quả....
+2026-01-19 21:22:31,951 - INFO - [Thread 1944251] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:31,952 - INFO - [Thread 1944251] Collected 0 posts in 4.7s
+2026-01-19 21:22:31,952 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:31,955 - INFO - [14/20] Crawl thread: Khi 'Thiên Thời" Hội Tụ tại Tam Giác Vĩ Mô...
+2026-01-19 21:22:34,145 - INFO - [Thread 1944245] Existing thread, crawling reverse 1→1 until last_post_id: post-47888809
+2026-01-19 21:22:34,299 - INFO - [Thread 1944241] Existing thread, crawling reverse 1→1 until last_post_id: post-47888465
+2026-01-19 21:22:36,393 - INFO - [Thread 1944245] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:36,394 - INFO - [Thread 1944245] Collected 0 posts in 4.5s
+2026-01-19 21:22:36,396 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:36,399 - INFO - [15/20] Crawl thread: ....Thời của...Đầu tư công......
+2026-01-19 21:22:36,633 - INFO - [Thread 1944241] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:36,634 - INFO - [Thread 1944241] Collected 0 posts in 4.7s
+2026-01-19 21:22:36,635 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:36,638 - INFO - [16/20] Crawl thread: Nhóm ngành tăng trưởng quy mô tài sản...
+2026-01-19 21:22:38,756 - INFO - [Thread 1944235] Existing thread, crawling reverse 1→1 until last_post_id: post-47889423
+2026-01-19 21:22:38,916 - INFO - [Thread 1944233] Existing thread, crawling reverse 1→1 until last_post_id: post-47887757
+2026-01-19 21:22:41,249 - INFO - [Thread 1944233] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:41,250 - INFO - [Thread 1944233] Collected 0 posts in 4.6s
+2026-01-19 21:22:41,261 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:41,263 - INFO - [Thread 1944235] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:41,301 - INFO - [Thread 1944235] Final batch inserted 1/1 posts
+2026-01-19 21:22:41,303 - INFO - [Thread 1944235] Collected 1 posts in 4.9s
+2026-01-19 21:22:41,304 - INFO - Thu thập được 1 posts từ thread
+2026-01-19 21:22:41,304 - INFO - [17/20] Crawl thread: NGHỊ ĐỊNH 20/2026/NĐ-CP: khi chính sách "MỞ KHOÁ" ...
+2026-01-19 21:22:41,308 - INFO - [18/20] Crawl thread: 19/1 Bắt đáy...
+2026-01-19 21:22:43,800 - INFO - [Thread 1944229] Existing thread, crawling reverse 1→1 until last_post_id: post-47887919
+2026-01-19 21:22:46,771 - INFO - [Thread 1944229] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:46,771 - INFO - [Thread 1944231] Existing thread, crawling reverse 1→1 until last_post_id: post-47889435
+2026-01-19 21:22:46,772 - INFO - [Thread 1944229] Collected 0 posts in 5.5s
+2026-01-19 21:22:46,773 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:46,776 - INFO - [19/20] Crawl thread: Cảm ơn A Long. Chốt 28 sau 3 tháng Mòn Mỏi...
+2026-01-19 21:22:49,428 - INFO - [Thread 1944231] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:49,428 - INFO - [Thread 1944231] Collected 0 posts in 8.1s
+2026-01-19 21:22:49,429 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:49,433 - INFO - [20/20] Crawl thread: Gấp - Viên kim cương thô còn sót lại !!!...
+2026-01-19 21:22:49,434 - INFO - [Thread 1944227] Existing thread, crawling reverse 1→1 until last_post_id: post-47888899
+2026-01-19 21:22:51,921 - INFO - [Thread 1944227] Found last_post_id at page 1, stopping...
+2026-01-19 21:22:51,921 - INFO - [Thread 1944227] Collected 0 posts in 5.1s
+2026-01-19 21:22:51,922 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:22:51,940 - INFO - [Thread 1944225] Existing thread, crawling reverse 2→1 until last_post_id: post-47889349
+2026-01-19 21:22:58,231 - INFO - [Thread 1944225] Found last_post_id at page 2, stopping...
+2026-01-19 21:22:58,268 - INFO - [Thread 1944225] Final batch inserted 1/1 posts
+2026-01-19 21:22:58,270 - INFO - [Thread 1944225] Collected 1 posts in 8.8s
+2026-01-19 21:22:58,271 - INFO - Thu thập được 1 posts từ thread
+2026-01-19 21:22:58,273 - INFO - ✓ Hoàn thành trang 1/3, tổng posts: 4
+2026-01-19 21:23:01,691 - INFO - 📄 Đang xử lý trang 2/3
+2026-01-19 21:23:07,400 - INFO - Tìm thấy 20 threads trên trang 2
+2026-01-19 21:23:07,672 - INFO - ✅ PROCESSING: 'Trong đầu tư chứng khoán, chúng ta thường: NHANH Q' (Created: Hôm nay lúc 12:19)
+2026-01-19 21:23:07,931 - INFO - ✅ PROCESSING: 'Trung Quốc sau mục tiêu GDP 5%: Xuất khẩu cứu tăng' (Created: Hôm nay lúc 11:43)
+2026-01-19 21:23:08,228 - INFO - ✅ PROCESSING: 'IJC giá trà chanh, cổ phiếu đáng đầu tư nhất năm 2' (Created: Hôm nay lúc 11:22)
+2026-01-19 21:23:08,496 - INFO - ✅ PROCESSING: 'MBB: Mục tiêu 2026 tăng trưởng 25% tín dụng là sao' (Created: Hôm nay lúc 11:21)
+2026-01-19 21:23:08,739 - INFO - ✅ PROCESSING: 'Chiến lược giao dịch VIX dự kiến (Đầu năm 2026)' (Created: Hôm nay lúc 10:51)
+2026-01-19 21:23:08,987 - INFO - ✅ PROCESSING: 'việc nên làm khi thị trường vào uptrend.' (Created: Hôm nay lúc 10:43)
+2026-01-19 21:23:09,237 - INFO - ✅ PROCESSING: 'CII cùng cổ đông nhà nước nghiên cứu 2 dự án công ' (Created: Hôm nay lúc 10:37)
+2026-01-19 21:23:09,501 - INFO - ✅ PROCESSING: 'IDC trần 10% rồi. Ai chung tàu không nào.' (Created: Hôm nay lúc 10:24)
+2026-01-19 21:23:09,767 - INFO - ✅ PROCESSING: 'MBS: KQKD Q4-2025 – Sống khỏe nhờ chiến lược đúng ' (Created: Hôm nay lúc 10:18)
+2026-01-19 21:23:09,998 - INFO - ✅ PROCESSING: 'Bộ KHCN ban hành Danh mục NVL cho sx bán dẫn ( 8/1' (Created: Hôm nay lúc 09:56)
+2026-01-19 21:23:10,242 - INFO - ✅ PROCESSING: 'Dòng tiền địa ốc 'Nam tiến' khi giá nhà Hà Nội tiế' (Created: Hôm nay lúc 09:53)
+2026-01-19 21:23:10,678 - INFO - ✅ PROCESSING: 'Sell in may and go away' (Created: Hôm nay lúc 09:52)
+2026-01-19 21:23:11,075 - INFO - ✅ PROCESSING: 'Đầu tư công gọi tên em .LN quý 4 được dự báo đột b' (Created: Hôm nay lúc 09:43)
+2026-01-19 21:23:11,490 - INFO - ✅ PROCESSING: 'Doanh nghiệp Nhà nước duy nhất chưa tăng giá trên ' (Created: Hôm nay lúc 08:58)
+2026-01-19 21:23:11,884 - INFO - ✅ PROCESSING: 'Dòng V tăng mạnh đón chào Đại Hội' (Created: Hôm nay lúc 08:54)
+2026-01-19 21:23:12,325 - INFO - ✅ PROCESSING: 'HPG - Thời đến cản không nổi' (Created: Hôm nay lúc 08:39)
+2026-01-19 21:23:12,732 - INFO - ✅ PROCESSING: 'Chiến lược giao dịch 19/1/2026: VN-Index vẫn thiếu' (Created: Hôm nay lúc 08:13)
+2026-01-19 21:23:13,123 - INFO - ✅ PROCESSING: 'GAS BSR PLX BID - Áp lực Bán gia tăng khi lượng hà' (Created: Hôm nay lúc 06:54)
+2026-01-19 21:23:13,557 - INFO - ✅ PROCESSING: 'Có thể bạn cũng vậy, rủi ro tài chính cá nhân tăng' (Created: Hôm qua, lúc 23:27)
+2026-01-19 21:23:13,952 - INFO - ✅ PROCESSING: '"Nếu một quốc gia giàu lên bằng vay mượn, thì có p' (Created: Hôm qua, lúc 23:16)
+2026-01-19 21:23:13,954 - INFO - 📊 Page 2: 20 threads to process
+2026-01-19 21:23:13,954 - INFO - Đã thu thập thông tin 20 threads, bắt đầu crawl posts...
+2026-01-19 21:23:13,964 - INFO - [1/20] Crawl thread: Trong đầu tư chứng khoán, chúng ta thường: NHANH Q...
+2026-01-19 21:23:13,965 - INFO - [2/20] Crawl thread: Trung Quốc sau mục tiêu GDP 5%: Xuất khẩu cứu tăng...
+2026-01-19 21:23:16,434 - INFO - [Thread 1944221] Existing thread, crawling reverse 1→1 until last_post_id: post-47889133
+2026-01-19 21:23:16,483 - INFO - [Thread 1944219] Existing thread, crawling reverse 1→1 until last_post_id: post-47889469
+2026-01-19 21:23:18,751 - INFO - [Thread 1944221] Found last_post_id at page 1, stopping...
+2026-01-19 21:23:18,752 - INFO - [Thread 1944221] Collected 0 posts in 4.8s
+2026-01-19 21:23:18,752 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:23:18,755 - INFO - [3/20] Crawl thread: IJC giá trà chanh, cổ phiếu đáng đầu tư nhất năm 2...
+2026-01-19 21:23:18,827 - INFO - [Thread 1944219] Found last_post_id at page 1, stopping...
+2026-01-19 21:23:18,828 - INFO - [Thread 1944219] Collected 0 posts in 4.9s
+2026-01-19 21:23:18,828 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:23:18,831 - INFO - [4/20] Crawl thread: MBB: Mục tiêu 2026 tăng trưởng 25% tín dụng là sao...
+2026-01-19 21:23:21,359 - INFO - [Thread 1944217] Existing thread, crawling reverse 1→1 until last_post_id: post-47888513
+2026-01-19 21:23:23,128 - INFO - [Thread 1944215] Existing thread, crawling reverse 1→1 until last_post_id: post-47887533
+2026-01-19 21:23:24,775 - INFO - [Thread 1944217] Found last_post_id at page 1, stopping...
+2026-01-19 21:23:24,776 - INFO - [Thread 1944217] Collected 0 posts in 6.0s
+2026-01-19 21:23:24,776 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:23:24,778 - INFO - [5/20] Crawl thread: Chiến lược giao dịch VIX dự kiến (Đầu năm 2026)...
+2026-01-19 21:23:25,545 - INFO - [Thread 1944215] Found last_post_id at page 1, stopping...
+2026-01-19 21:23:25,546 - INFO - [Thread 1944215] Collected 0 posts in 6.7s
+2026-01-19 21:23:25,546 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:23:25,548 - INFO - [6/20] Crawl thread: việc nên làm khi thị trường vào uptrend....
+2026-01-19 21:23:27,175 - INFO - [Thread 1944205] Existing thread, crawling reverse 1→1 until last_post_id: post-47889241
+2026-01-19 21:23:28,106 - INFO - [Thread 1944201] Existing thread, crawling reverse 2→1 until last_post_id: post-47889235
+2026-01-19 21:23:30,508 - INFO - [Thread 1944201] Found last_post_id at page 2, stopping...
+2026-01-19 21:23:30,509 - INFO - [Thread 1944201] Collected 0 posts in 5.0s
+2026-01-19 21:23:30,509 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:23:30,511 - INFO - [7/20] Crawl thread: CII cùng cổ đông nhà nước nghiên cứu 2 dự án công ...
+2026-01-19 21:23:32,864 - INFO - [Thread 1944199] Existing thread, crawling reverse 1→1 until last_post_id: post-47888667
+2026-01-19 21:23:35,728 - INFO - [Thread 1944199] Found last_post_id at page 1, stopping...
+2026-01-19 21:23:35,729 - INFO - [Thread 1944199] Collected 0 posts in 5.2s
+2026-01-19 21:23:35,729 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:23:35,732 - INFO - [8/20] Crawl thread: IDC trần 10% rồi. Ai chung tàu không nào....
+2026-01-19 21:23:37,746 - INFO - [Thread 1944205] Found last_post_id at page 1, stopping...
+2026-01-19 21:23:37,747 - INFO - [Thread 1944205] Collected 0 posts in 13.0s
+2026-01-19 21:23:37,747 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:23:37,749 - INFO - [9/20] Crawl thread: MBS: KQKD Q4-2025 – Sống khỏe nhờ chiến lược đúng ...
+2026-01-19 21:23:40,814 - INFO - [Thread 1944195] Existing thread, crawling reverse 1→1 until last_post_id: post-47889463
+2026-01-19 21:23:40,861 - INFO - [Thread 1944193] Existing thread, crawling reverse 1→1 until last_post_id: post-47886843
+2026-01-19 21:23:43,679 - INFO - [Thread 1944195] Found last_post_id at page 1, stopping...
+2026-01-19 21:23:43,680 - INFO - [Thread 1944195] Collected 0 posts in 7.9s
+2026-01-19 21:23:43,681 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:23:43,684 - INFO - [10/20] Crawl thread: Bộ KHCN ban hành Danh mục NVL cho sx bán dẫn ( 8/1...
+2026-01-19 21:23:43,736 - INFO - [Thread 1944193] Found last_post_id at page 1, stopping...
+2026-01-19 21:23:43,737 - INFO - [Thread 1944193] Collected 0 posts in 6.0s
+2026-01-19 21:23:43,738 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:23:43,740 - INFO - [11/20] Crawl thread: Dòng tiền địa ốc 'Nam tiến' khi giá nhà Hà Nội tiế...
+2026-01-19 21:23:46,003 - INFO - [Thread 1944187] Existing thread, crawling reverse 1→1 until last_post_id: post-47886629
+2026-01-19 21:23:46,418 - INFO - [Thread 1944189] Existing thread, crawling reverse 1→1 until last_post_id: post-47887555
+2026-01-19 21:23:48,394 - INFO - [Thread 1944187] Found last_post_id at page 1, stopping...
+2026-01-19 21:23:48,395 - INFO - [Thread 1944187] Collected 0 posts in 4.7s
+2026-01-19 21:23:48,395 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:23:48,397 - INFO - [12/20] Crawl thread: Sell in may and go away...
+2026-01-19 21:23:48,754 - INFO - [Thread 1944189] Found last_post_id at page 1, stopping...
+2026-01-19 21:23:48,755 - INFO - [Thread 1944189] Collected 0 posts in 5.1s
+2026-01-19 21:23:48,755 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:23:48,758 - INFO - [13/20] Crawl thread: Đầu tư công gọi tên em .LN quý 4 được dự báo đột b...
+2026-01-19 21:23:50,689 - INFO - [Thread 1944185] Existing thread, crawling reverse 1→1 until last_post_id: post-47886617
+2026-01-19 21:23:51,147 - INFO - [Thread 1944183] Existing thread, crawling reverse 1→1 until last_post_id: post-47887171
+2026-01-19 21:23:52,950 - INFO - [Thread 1944185] Found last_post_id at page 1, stopping...
+2026-01-19 21:23:52,951 - INFO - [Thread 1944185] Collected 0 posts in 4.6s
+2026-01-19 21:23:52,952 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:23:52,954 - INFO - [14/20] Crawl thread: Doanh nghiệp Nhà nước duy nhất chưa tăng giá trên ...
+2026-01-19 21:23:53,727 - INFO - [Thread 1944183] Found last_post_id at page 1, stopping...
+2026-01-19 21:23:53,728 - INFO - [Thread 1944183] Collected 0 posts in 5.0s
+2026-01-19 21:23:53,728 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:23:53,729 - INFO - [15/20] Crawl thread: Dòng V tăng mạnh đón chào Đại Hội...
+2026-01-19 21:23:57,332 - INFO - [Thread 1944173] Existing thread, crawling reverse 1→1 until last_post_id: post-47886271
+2026-01-19 21:24:00,943 - WARNING - Attempt 1/3 failed for https://f319.com/threads/doanh-nghiep-nha-nuoc-duy-nhat-chua-tang-gia-tren-san-ck.1944175/: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-01-19 21:24:03,019 - INFO - [Thread 1944173] Found last_post_id at page 1, stopping...
+2026-01-19 21:24:03,020 - INFO - [Thread 1944173] Collected 0 posts in 9.3s
+2026-01-19 21:24:03,020 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:24:03,024 - INFO - [16/20] Crawl thread: HPG - Thời đến cản không nổi...
+2026-01-19 21:24:06,500 - INFO - [Thread 1944175] Existing thread, crawling reverse 1→1 until last_post_id: post-47887645
+2026-01-19 21:24:08,133 - INFO - [Thread 1944169] Existing thread, crawling reverse 5→1 until last_post_id: post-47887967
+2026-01-19 21:24:11,508 - INFO - [Thread 1944175] Found last_post_id at page 1, stopping...
+2026-01-19 21:24:11,509 - INFO - [Thread 1944175] Collected 0 posts in 18.6s
+2026-01-19 21:24:11,509 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:24:11,511 - INFO - [17/20] Crawl thread: Chiến lược giao dịch 19/1/2026: VN-Index vẫn thiếu...
+2026-01-19 21:24:11,646 - INFO - [Thread 1944169] Found last_post_id at page 5, stopping...
+2026-01-19 21:24:11,654 - INFO - [Thread 1944169] Final batch inserted 1/1 posts
+2026-01-19 21:24:11,655 - INFO - [Thread 1944169] Collected 1 posts in 8.6s
+2026-01-19 21:24:11,655 - INFO - Thu thập được 1 posts từ thread
+2026-01-19 21:24:11,657 - INFO - [18/20] Crawl thread: GAS BSR PLX BID - Áp lực Bán gia tăng khi lượng hà...
+2026-01-19 21:24:13,787 - INFO - [Thread 1944165] Existing thread, crawling reverse 1→1 until last_post_id: post-47886161
+2026-01-19 21:24:14,151 - INFO - [Thread 1944163] Existing thread, crawling reverse 1→1 until last_post_id: post-47886115
+2026-01-19 21:24:16,130 - INFO - [Thread 1944165] Found last_post_id at page 1, stopping...
+2026-01-19 21:24:16,131 - INFO - [Thread 1944165] Collected 0 posts in 4.6s
+2026-01-19 21:24:16,132 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:24:16,136 - INFO - [19/20] Crawl thread: Có thể bạn cũng vậy, rủi ro tài chính cá nhân tăng...
+2026-01-19 21:24:16,479 - INFO - [Thread 1944163] Found last_post_id at page 1, stopping...
+2026-01-19 21:24:16,479 - INFO - [Thread 1944163] Collected 0 posts in 4.8s
+2026-01-19 21:24:16,480 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:24:16,482 - INFO - [20/20] Crawl thread: "Nếu một quốc gia giàu lên bằng vay mượn, thì có p...
+2026-01-19 21:24:18,740 - INFO - [Thread 1944157] Existing thread, crawling reverse 1→1 until last_post_id: post-47886057
+2026-01-19 21:24:18,871 - INFO - [Thread 1944155] Existing thread, crawling reverse 1→1 until last_post_id: post-47887455
+2026-01-19 21:24:21,565 - INFO - [Thread 1944157] Found last_post_id at page 1, stopping...
+2026-01-19 21:24:21,565 - INFO - [Thread 1944157] Collected 0 posts in 5.4s
+2026-01-19 21:24:21,566 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:24:21,773 - INFO - [Thread 1944155] Found last_post_id at page 1, stopping...
+2026-01-19 21:24:21,774 - INFO - [Thread 1944155] Collected 0 posts in 5.3s
+2026-01-19 21:24:21,774 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:24:21,775 - INFO - ✓ Hoàn thành trang 2/3, tổng posts: 5
+2026-01-19 21:24:30,248 - INFO - 📄 Đang xử lý trang 3/3
+2026-01-19 21:24:36,848 - INFO - Tìm thấy 2 threads trên trang 3
+2026-01-19 21:24:37,095 - INFO - ✅ PROCESSING: 'Thị Trường Tài Chính 19/01 - 23/01/2026, MBS Resea' (Created: Hôm qua, lúc 21:39)
+2026-01-19 21:24:37,336 - INFO - ✅ PROCESSING: 'Hành trình 10k tỷ của ELCOM (ELC) - Số 1 về công n' (Created: Hôm qua, lúc 21:31)
+2026-01-19 21:24:37,336 - INFO - 📊 Page 3: 2 threads to process
+2026-01-19 21:24:37,337 - INFO - Đã thu thập thông tin 2 threads, bắt đầu crawl posts...
+2026-01-19 21:24:37,339 - INFO - [1/2] Crawl thread: Thị Trường Tài Chính 19/01 - 23/01/2026, MBS Resea...
+2026-01-19 21:24:37,340 - INFO - [2/2] Crawl thread: Hành trình 10k tỷ của ELCOM (ELC) - Số 1 về công n...
+2026-01-19 21:24:39,623 - INFO - [Thread 1944151] Existing thread, crawling reverse 1→1 until last_post_id: post-47885871
+2026-01-19 21:24:39,759 - INFO - [Thread 1944149] Existing thread, crawling reverse 8→1 until last_post_id: post-47889397
+2026-01-19 21:24:43,535 - INFO - [Thread 1944151] Found last_post_id at page 1, stopping...
+2026-01-19 21:24:43,536 - INFO - [Thread 1944151] Collected 0 posts in 6.2s
+2026-01-19 21:24:43,536 - INFO - Thu thập được 0 posts từ thread
+2026-01-19 21:24:43,652 - INFO - [Thread 1944149] Found last_post_id at page 8, stopping...
+2026-01-19 21:24:43,690 - INFO - [Thread 1944149] Final batch inserted 1/1 posts
+2026-01-19 21:24:43,692 - INFO - [Thread 1944149] Collected 1 posts in 6.4s
+2026-01-19 21:24:43,693 - INFO - Thu thập được 1 posts từ thread
+2026-01-19 21:24:43,695 - INFO - ✓ Hoàn thành trang 3/3, tổng posts: 6
+2026-01-19 21:24:47,163 - INFO - ============================================================
+2026-01-19 21:24:47,164 - INFO - 📋 FULL CRAWLER SUMMARY
+2026-01-19 21:24:47,166 - INFO - ============================================================
+2026-01-19 21:24:47,166 - INFO - 📄 Pages processed: 3
+2026-01-19 21:24:47,167 - INFO - ✅ Threads processed: 42
+2026-01-19 21:24:47,168 - INFO - 📝 Total posts collected: 6
+2026-01-19 21:24:47,168 - INFO - ============================================================
+2026-01-19 21:24:49,513 - INFO - Selenium driver stopped
+2026-01-19 21:24:49,513 - INFO - 🎉 HOÀN TẤT! Tổng cộng thu thập: 6 posts
+2026-01-19 21:24:49,515 - INFO - ✅ Full Crawler completed: 6 posts in 203.1s
+2026-01-19 21:24:49,516 - INFO - 📊 Summary: 42 threads (1 new)
+2026-01-19 21:24:49,564 - INFO - ✅ Full completed in 203.1s
+2026-01-19 21:24:49,593 - INFO - 🎯 Sequential crawling completed in 1881.1s
+2026-01-19 21:24:49,607 - INFO - 🔄 Scheduler is running. Press Ctrl+C to stop.
