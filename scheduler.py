@@ -135,7 +135,10 @@ class CrawlerScheduler:
                 ),
                 id='sequential_crawlers_job',
                 name='Sequential Crawlers (Hybrid → Full)',
-                replace_existing=True
+                replace_existing=True,
+                misfire_grace_time=300,  # 5 phút
+                coalesce=False,
+                max_instances=1
             )
             logger.info(f"📅 Sequential crawlers scheduled every {self.scheduler_config.sequential_interval_hours} hours")
             
@@ -166,6 +169,7 @@ class CrawlerScheduler:
                     id='hybrid_crawler_job',
                     name='Hybrid Crawler Interval Job',
                     replace_existing=True
+     
                 )
                 logger.info(f"⏰ Hybrid Crawler scheduled every {self.scheduler_config.hybrid_crawler_interval_hours} hours")
 
